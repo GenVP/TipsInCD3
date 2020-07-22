@@ -47,7 +47,7 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>https://github.com/GenVP/bsl_in_cd3</Vendor>
-			<Version>1.0.0.1</Version>
+			<Version>1.0.0.2</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation>
 				<v8:item>
@@ -84,6 +84,8 @@
 			<Enum>ВариантыИдентификацииОбъектов</Enum>
 			<Enum>ТипыОбъектов</Enum>
 			<Enum>ВидыСвойств</Enum>
+			<DataProcessor>ЗагрузкаСтруктурыКонфигурации</DataProcessor>
+			<InformationRegister>БезопасноеХранилищеДанных</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
