@@ -27,6 +27,9 @@
 				</v8:item>
 			</Title>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="21"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="ОсновныеСведения" id="22">
 					<Title>

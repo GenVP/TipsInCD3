@@ -25,6 +25,9 @@
 				</v8:item>
 			</Title>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="79"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="ОсновныеСведения" id="80">
 					<Title>
@@ -66,7 +69,6 @@
 							</ChildItems>
 						</UsualGroup>
 						<InputField name="Код" id="51">
-							<DataPath>1/-2</DataPath>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="КодКонтекстноеМеню" id="52"/>
 							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
@@ -396,9 +398,9 @@
 								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;fontsize 12&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;
+										<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;ДанныеИБ&lt;/&gt;
 Тип: СправочникОбъект, ДокументОбъект
@@ -420,7 +422,7 @@
 Тип: Массив.
 Содержит ссылки на выгружаемые объекты с учетом вложенности..
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации логики конвертации данных, содержащихся в объекте информационной базы, в описание объекта XDTO.
 </v8:content>
 									</v8:item>
@@ -461,9 +463,9 @@
 								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;fontsize 12&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;
+										<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;ДанныеXDTO&lt;/&gt;
 Тип: Структура
@@ -477,7 +479,7 @@
 Тип: Структура
 Содержит параметры и правила обмена, инициализированные в рамках выполнения текущего сеанса обмена.
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации произвольной логики конвертации данных XDTO.</v8:content>
 									</v8:item>
 								</Title>
@@ -510,9 +512,9 @@
 								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
+										<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;ПолученныеДанные&lt;/&gt;
 Тип: СправочникОбъект, ДокументОбъект
@@ -533,11 +535,11 @@
 Тип: Структура
 Содержит параметры и правила обмена,  инициализированные в рамках выполнения сеанса обмена..
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации дополнительной логики, которую необходимо выполнить перед записью объекта в информационную базу.
 Например, в этом обработчике указывается, нужно ли загрузить изменения в существующие данные ИБ, либо нужно загрузить как новые данные.
 
-&lt;fontsize 10&gt;&lt;b&gt;См. также&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;См. также&lt;/&gt;&lt;/&gt;
 ЗаполнитьТабличнуюЧастьОбъектаНачальнымиДанными()
 </v8:content>
 									</v8:item>
@@ -588,9 +590,9 @@
 										<Title formatted="true">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
+												<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры обработчика:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры обработчика:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;Объект&lt;/&gt;
 Тип: СправочникОбъект, ДокументОбъект
@@ -605,7 +607,7 @@
 Признак модификации объекта, по умолчанию &lt;b&gt;Истина&lt;/&gt;.
 После выполнения обработчика объект не будет записан, если установить параметру значение &lt;b&gt;Ложь&lt;/&gt;.
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик выполняется для каждого объекта, загруженного по данному правилу конвертации.
 Выполнение обработчика происходит на этапе, когда загрузка данных в информационную базу завершена.
 
@@ -894,7 +896,6 @@
 								</ChildItems>
 							</UsualGroup>
 							<InputField name="Код" id="51">
-								<DataPath>1/-2</DataPath>
 								<AutoMaxWidth>false</AutoMaxWidth>
 								<ContextMenu name="КодКонтекстноеМеню" id="52"/>
 								<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
@@ -1224,9 +1225,9 @@
 									<Title formatted="true">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;fontsize 12&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;
+											<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;ДанныеИБ&lt;/&gt;
 Тип: СправочникОбъект, ДокументОбъект
@@ -1248,7 +1249,7 @@
 Тип: Массив.
 Содержит ссылки на выгружаемые объекты с учетом вложенности..
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации логики конвертации данных, содержащихся в объекте информационной базы, в описание объекта XDTO.
 </v8:content>
 										</v8:item>
@@ -1289,9 +1290,9 @@
 									<Title formatted="true">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;fontsize 12&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;
+											<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;ДанныеXDTO&lt;/&gt;
 Тип: Структура
@@ -1305,7 +1306,7 @@
 Тип: Структура
 Содержит параметры и правила обмена, инициализированные в рамках выполнения текущего сеанса обмена.
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации произвольной логики конвертации данных XDTO.</v8:content>
 										</v8:item>
 									</Title>
@@ -1338,9 +1339,9 @@
 									<Title formatted="true">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
+											<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;ПолученныеДанные&lt;/&gt;
 Тип: СправочникОбъект, ДокументОбъект
@@ -1361,11 +1362,11 @@
 Тип: Структура
 Содержит параметры и правила обмена,  инициализированные в рамках выполнения сеанса обмена..
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации дополнительной логики, которую необходимо выполнить перед записью объекта в информационную базу.
 Например, в этом обработчике указывается, нужно ли загрузить изменения в существующие данные ИБ, либо нужно загрузить как новые данные.
 
-&lt;fontsize 10&gt;&lt;b&gt;См. также&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;См. также&lt;/&gt;&lt;/&gt;
 ЗаполнитьТабличнуюЧастьОбъектаНачальнымиДанными()
 </v8:content>
 										</v8:item>
@@ -1416,9 +1417,9 @@
 											<Title formatted="true">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>&lt;fontsize 12&gt;&lt;b&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
+													<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
 
-&lt;fontsize 10&gt;&lt;b&gt;Параметры обработчика:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Параметры обработчика:&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;Объект&lt;/&gt;
 Тип: СправочникОбъект, ДокументОбъект
@@ -1433,7 +1434,7 @@
 Признак модификации объекта, по умолчанию &lt;b&gt;Истина&lt;/&gt;.
 После выполнения обработчика объект не будет записан, если установить параметру значение &lt;b&gt;Ложь&lt;/&gt;.
 
-&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик выполняется для каждого объекта, загруженного по данному правилу конвертации.
 Выполнение обработчика происходит на этапе, когда загрузка данных в информационную базу завершена.
 
