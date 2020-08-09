@@ -36,9 +36,9 @@
 		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="dee05228bdef4a8457de6e386ac90300f4a4ff9f"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент" id="a691df89-0833-493e-9797-81b13405d709" configVersion="6d0aceb69ead99f8c51026da898c908145db564a"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент.Module" id="a691df89-0833-493e-9797-81b13405d709.0" configVersion="ea9b60268847dd99fd83f4d215a2ca2d8a02039e"/>
-		<Metadata name="CommonTemplate.КД3_src" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1" configVersion="a390fd34b5d1be8d73da7438805a4956208239da"/>
+		<Metadata name="CommonTemplate.КД3_src" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1" configVersion="0fe72ae9a6b221fb9682ec0344141103df03bfba"/>
 		<Metadata name="CommonTemplate.КД3_src.Template" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1.0" configVersion="66ec12e8fb9a2cdb14d612cbbfca82dddf5bf114"/>
-		<Metadata name="Configuration.КД3_КонтекстнаяПодсказка" id="59dc98e0-91d7-4053-81de-9598a13ba0f0" configVersion="2dc229e232bca20fcd88953dd3f1717228fe9953"/>
+		<Metadata name="Configuration.КД3_КонтекстнаяПодсказка" id="59dc98e0-91d7-4053-81de-9598a13ba0f0" configVersion="7b6e5cc5bf4c4c4b1c89bf7ac43480131c88a965"/>
 		<Metadata name="Configuration.КД3_КонтекстнаяПодсказка.ManagedApplicationModule" id="35cd47ae-a282-4ac7-908a-e2761cda9c7c.6" configVersion="60c124bcfc0d770c46781f9621bab76a2cc3558d"/>
 		<Metadata name="DataProcessor.ЗагрузкаСтруктурыКонфигурации" id="c6847fc5-2708-4028-84e5-015b6a1ec6cc" configVersion="affecf2999c9b0e3d42cbb42e71cd0c17541e5b7"/>
 		<Metadata name="DataProcessor.ЗагрузкаСтруктурыКонфигурации.ManagerModule" id="c6847fc5-2708-4028-84e5-015b6a1ec6cc.2" configVersion="ee6c1bc11edcd19a542a72a510731e647d4b568d"/>
