@@ -615,6 +615,9 @@
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange" callType="After">КД3_АлгоритмПослеЗагрузкиВсехДанныхПриИзмененииПосле</Event>
+									</Events>
 								</InputField>
 								<Button name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанных" id="252">
 									<Type>Hyperlink</Type>

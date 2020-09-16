@@ -19,7 +19,7 @@
 		</Metadata>
 		<Metadata name="Catalog.ПравилаКонвертацииОбъектов" id="6a3a91d1-1abc-427d-ae13-9ecae70e4a20" configVersion="bfe8a43fe03584ed82d1b02e7a58f7080fd27796"/>
 		<Metadata name="Catalog.ПравилаКонвертацииОбъектов.Form.ФормаЭлемента" id="77c4eb8d-6ca1-4ada-9736-8c50b33149dd" configVersion="c42d39b2b61867b478520c4af3a9268ab94659f4"/>
-		<Metadata name="Catalog.ПравилаКонвертацииОбъектов.Form.ФормаЭлемента.Form" id="77c4eb8d-6ca1-4ada-9736-8c50b33149dd.0" configVersion="dd9f0a66b446708960a7e6a9cce583eea2c9d174"/>
+		<Metadata name="Catalog.ПравилаКонвертацииОбъектов.Form.ФормаЭлемента.Form" id="77c4eb8d-6ca1-4ada-9736-8c50b33149dd.0" configVersion="05ec4da5002c2baeb340c7a1e79a9cd0b5562f81"/>
 		<Metadata name="Catalog.ПравилаОбработкиДанных" id="50d56c36-5d63-45fd-b5c8-a3b15a57a9bc" configVersion="d53b88bf5b579590ea7ede78eda852b3a0325586"/>
 		<Metadata name="Catalog.ПравилаОбработкиДанных.Form.ФормаЭлемента" id="b24780a1-d56d-463d-a474-567d0322b5f5" configVersion="2e8e08c0e13ee878580d4a147f1e5dd75b16880f"/>
 		<Metadata name="Catalog.ПравилаОбработкиДанных.Form.ФормаЭлемента.Form" id="b24780a1-d56d-463d-a474-567d0322b5f5.0" configVersion="dfce49977a3ae33944cc63b92973794a51932957"/>
@@ -33,9 +33,9 @@
 		</Metadata>
 		<Metadata name="CommonCommand.ИсторияИзменений" id="6c345092-3717-4d6b-a940-28e1e8fefb65" configVersion="42b3c12324c2965799130fcc086e7c8c1fa6a61e"/>
 		<Metadata name="CommonModule.КД3_Метаданные" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f" configVersion="7c25c770ea8c80e3a29b9bab423a6fa70625256d"/>
-		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="86ed3a4d5bef1c6da2bd6bcf7e1ea6df91590fcd"/>
+		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="6d8febee889717f97fda2cf473f2d9ae5f101c4e"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент" id="a691df89-0833-493e-9797-81b13405d709" configVersion="6d0aceb69ead99f8c51026da898c908145db564a"/>
-		<Metadata name="CommonModule.КД3_МетаданныеКлиент.Module" id="a691df89-0833-493e-9797-81b13405d709.0" configVersion="5e4b928e159ebe301d95c848562851c8da8a2804"/>
+		<Metadata name="CommonModule.КД3_МетаданныеКлиент.Module" id="a691df89-0833-493e-9797-81b13405d709.0" configVersion="b38f90b363d6088751de2d83578fb9beb997ccd4"/>
 		<Metadata name="CommonTemplate.КД3_src" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1" configVersion="0fe72ae9a6b221fb9682ec0344141103df03bfba"/>
 		<Metadata name="CommonTemplate.КД3_src.Template" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1.0" configVersion="7dc4efa603729b3547c5cd80abfa1505cae5982b"/>
 		<Metadata name="Configuration.КД3_КонтекстнаяПодсказка" id="59dc98e0-91d7-4053-81de-9598a13ba0f0" configVersion="7b6e5cc5bf4c4c4b1c89bf7ac43480131c88a965"/>
