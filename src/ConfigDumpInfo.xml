@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.9">
 	<ConfigVersions>
 		<Metadata name="Catalog.Алгоритмы" id="170513bf-c41d-4d7f-8dca-54535ee464fa" configVersion="85cd2070d2e11dca0f7236b46690f814aac13a26"/>
@@ -33,7 +33,7 @@
 		</Metadata>
 		<Metadata name="CommonCommand.ИсторияИзменений" id="6c345092-3717-4d6b-a940-28e1e8fefb65" configVersion="42b3c12324c2965799130fcc086e7c8c1fa6a61e"/>
 		<Metadata name="CommonModule.КД3_Метаданные" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f" configVersion="7c25c770ea8c80e3a29b9bab423a6fa70625256d"/>
-		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="6d8febee889717f97fda2cf473f2d9ae5f101c4e"/>
+		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="0dc389f99fa6e6deb5a5370e039a1b7198dd264e"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент" id="a691df89-0833-493e-9797-81b13405d709" configVersion="6d0aceb69ead99f8c51026da898c908145db564a"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент.Module" id="a691df89-0833-493e-9797-81b13405d709.0" configVersion="b38f90b363d6088751de2d83578fb9beb997ccd4"/>
 		<Metadata name="CommonTemplate.КД3_src" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1" configVersion="0fe72ae9a6b221fb9682ec0344141103df03bfba"/>
