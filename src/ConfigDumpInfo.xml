@@ -11,7 +11,7 @@
 			<Metadata name="Catalog.Конвертации.Attribute.Конфигурация" id="ebfadcc2-0510-470e-aa71-2b8f7dfa36cf"/>
 		</Metadata>
 		<Metadata name="Catalog.Конвертации.Form.ФормаЭлемента" id="5ea01fc2-fabc-4f2d-b44c-40087c3109e5" configVersion="afc09162cdda2a418304a1818a0484955f151600"/>
-		<Metadata name="Catalog.Конвертации.Form.ФормаЭлемента.Form" id="5ea01fc2-fabc-4f2d-b44c-40087c3109e5.0" configVersion="cabccc52fc563706ac9bf85ff2cb36df737c559a"/>
+		<Metadata name="Catalog.Конвертации.Form.ФормаЭлемента.Form" id="5ea01fc2-fabc-4f2d-b44c-40087c3109e5.0" configVersion="beb3e679b38922a6bbb2632372a6d4e66b981bac"/>
 		<Metadata name="Catalog.Конфигурации" id="69ae3c5d-7100-4307-b368-05d67fc79521" configVersion="47324a8198aa2966fda7bd8194bd040f41911264"/>
 		<Metadata name="Catalog.Объекты" id="00629404-6e34-4f78-9c63-c4c600340856" configVersion="63c621598c457f03bf8b3f982164231ef73afed8">
 			<Metadata name="Catalog.Объекты.Attribute.Тип" id="b2054aa3-6cd8-4a54-bb17-e4dc467fde57"/>
@@ -33,7 +33,7 @@
 		</Metadata>
 		<Metadata name="CommonCommand.ИсторияИзменений" id="6c345092-3717-4d6b-a940-28e1e8fefb65" configVersion="42b3c12324c2965799130fcc086e7c8c1fa6a61e"/>
 		<Metadata name="CommonModule.КД3_Метаданные" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f" configVersion="7c25c770ea8c80e3a29b9bab423a6fa70625256d"/>
-		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="a089c89dfb601d1175e3f7cb19baa118d3e2bbb0"/>
+		<Metadata name="CommonModule.КД3_Метаданные.Module" id="750f2cf5-6b88-4a89-9ca3-af2ad3dac72f.0" configVersion="54e419b16bf62d6563d54815ddfcdbdf02ac00cb"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент" id="a691df89-0833-493e-9797-81b13405d709" configVersion="6d0aceb69ead99f8c51026da898c908145db564a"/>
 		<Metadata name="CommonModule.КД3_МетаданныеКлиент.Module" id="a691df89-0833-493e-9797-81b13405d709.0" configVersion="69dc9c5a2a119c1148d916540278b38921171169"/>
 		<Metadata name="CommonTemplate.КД3_src" id="03ecc7d4-0137-4a1f-8df8-dc15b4c322e1" configVersion="0fe72ae9a6b221fb9682ec0344141103df03bfba"/>

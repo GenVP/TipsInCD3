@@ -89,6 +89,9 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<ContextMenu name="КонфигурацияКонтекстноеМеню" id="5"/>
 									<ExtendedTooltip name="КонфигурацияРасширеннаяПодсказка" id="6"/>
+									<Events>
+										<Event name="OnChange" callType="After">КД3_КонфигурацияПриИзмененииПосле</Event>
+									</Events>
 								</InputField>
 								<RadioButtonField name="ВерсияФорматаМенеджера" id="96">
 									<Title>
