@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Catalog uuid="fd660e61-cbb0-454d-b0c3-39e05f422eda">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.Конвертации" category="Object">
+				<xr:TypeId>4b39bf50-acb2-4031-aa01-d43407bfd78b</xr:TypeId>
+				<xr:ValueId>2254babb-1ab5-4cca-80f7-687260742785</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.Конвертации" category="Ref">
+				<xr:TypeId>f40a28df-f42e-4e73-9387-b660c6cad0a8</xr:TypeId>
+				<xr:ValueId>9cd7e32d-6465-446b-b09d-8e34542c842c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.Конвертации" category="Selection">
+				<xr:TypeId>9a9c5c1f-5cab-4987-a61a-74dd8e1dc5ab</xr:TypeId>
+				<xr:ValueId>1da68dbd-a6ae-4200-8779-354c3214df5b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.Конвертации" category="List">
+				<xr:TypeId>d320e3ea-82b0-4111-b862-b1971f672cfc</xr:TypeId>
+				<xr:ValueId>c37d14ea-2c34-452c-ba5a-d496b5a08eb9</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.Конвертации" category="Manager">
+				<xr:TypeId>0a0197aa-dee7-4abd-ac8e-d8f43c5db2db</xr:TypeId>
+				<xr:ValueId>2ec3cfb2-e11f-4ed4-8a78-16cf63a9ed4d</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>Конвертации</Name>
+			<Comment/>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<ExtendedConfigurationObject>e18d9381-4a28-46d8-a92d-755ca9a89e17</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="13d1c19b-c9ef-49fa-aacb-ed90bb27f131">
+				<InternalInfo/>
+				<Properties>
+					<Name>Конфигурация</Name>
+					<Comment/>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<ExtendedConfigurationObject>addb7fe7-f84d-4058-afa7-f181b8be5d1f</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Релизы</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="a9512529-c0d9-45ba-9bfc-1ac0cb69b12b">
+				<InternalInfo/>
+				<Properties>
+					<Name>КонфигурацияКорреспондент</Name>
+					<Comment/>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<ExtendedConfigurationObject>60e74b24-33b4-45b0-8b87-59165e372942</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Релизы</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Form>ФормаЭлемента</Form>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

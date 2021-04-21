@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Catalog uuid="6a71c540-e2ed-4486-901b-2630893b2189">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.Алгоритмы" category="Object">
+				<xr:TypeId>ab0d1a54-6cc8-46dd-9a52-59042e9e57c9</xr:TypeId>
+				<xr:ValueId>6bc46f6e-db81-4cc1-a85a-97cbb942a001</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.Алгоритмы" category="Ref">
+				<xr:TypeId>2f977e74-abca-431a-a081-5cfabe383963</xr:TypeId>
+				<xr:ValueId>99187ad3-b466-46b4-9dfc-525c79c5e639</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.Алгоритмы" category="Selection">
+				<xr:TypeId>92e536b7-54ba-4cbd-adf5-75421d06c447</xr:TypeId>
+				<xr:ValueId>83ac4c00-cfac-4a79-bad0-d7c19fa81f8a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.Алгоритмы" category="List">
+				<xr:TypeId>fbaeaa57-c72f-4c64-bfcb-0ec20024ad59</xr:TypeId>
+				<xr:ValueId>3d80573d-792e-41c9-b36f-f6403d155466</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.Алгоритмы" category="Manager">
+				<xr:TypeId>fa72ea8a-c72c-4962-a466-81b7de872f3d</xr:TypeId>
+				<xr:ValueId>5e3bf10c-c633-441e-95d2-30e5656065ff</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>Алгоритмы</Name>
+			<Comment/>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<ExtendedConfigurationObject>a89dcb4c-9da0-4a58-a7ad-1978a216b163</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Form>ФормаЭлемента</Form>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

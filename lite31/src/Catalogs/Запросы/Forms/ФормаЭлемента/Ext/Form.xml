@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="15">
+				<Type>CommandBarButton</Type>
+				<CommandName>0</CommandName>
+				<ExtendedTooltip name="ФормаДобавитьЭлементВСоставКонвертацииРасширеннаяПодсказка" id="16"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeClose" callType="After">КД3_ПередЗакрытиемПосле</Event>
+		<Event name="9cc34712-da5f-4faa-a653-343d2085fbe8" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияНуженЗахват" id="23">
+			<TextColor>style:FieldSelectionBackColor</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для редактирования следует захватить объект</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияНуженЗахватКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="ДекорацияНуженЗахватРасширеннаяПодсказка" id="25"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаКодГоризонтальная" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код горизонтальная</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКодГоризонтальнаяРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Родитель" id="17">
+					<ContextMenu name="РодительКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<CheckBoxField name="ИспользуетсяПриЗагрузке" id="7">
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользуетсяПриЗагрузкеКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ИспользуетсяПриЗагрузкеРасширеннаяПодсказка" id="9"/>
+				</CheckBoxField>
+				<LabelDecoration name="ДекорацияЗахвачен" id="20">
+					<TextColor>style:SpecialTextColor</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>захвачен</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="22"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<TextDocumentField name="ТекстЗапроса" id="4">
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТекстЗапросаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ТекстЗапросаРасширеннаяПодсказка" id="6"/>
+		</TextDocumentField>
+		<HTMLDocumentField name="КД3_ТекстЗапроса" id="26">
+			<DataPath>1000001</DataPath>
+			<Visible>false</Visible>
+			<TitleLocation>None</TitleLocation>
+			<ContextMenu name="КД3_ТекстЗапросаКонтекстноеМеню" id="27">
+				<Autofill>false</Autofill>
+			</ContextMenu>
+			<ExtendedTooltip name="КД3_ТекстЗапросаРасширеннаяПодсказка" id="28"/>
+		</HTMLDocumentField>
+		<InputField name="Комментарий" id="10">
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="12"/>
+		</InputField>
+	</ChildItems>
+	<Attributes/>
+	<BaseForm version="2.10">
+		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+			<ChildItems>
+				<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="15">
+					<Type>CommandBarButton</Type>
+					<CommandName>0</CommandName>
+					<ExtendedTooltip name="ФормаДобавитьЭлементВСоставКонвертацииРасширеннаяПодсказка" id="16"/>
+				</Button>
+			</ChildItems>
+		</AutoCommandBar>
+		<ChildItems>
+			<LabelDecoration name="ДекорацияНуженЗахват" id="23">
+				<TextColor>style:FieldSelectionBackColor</TextColor>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Для редактирования следует захватить объект</v8:content>
+					</v8:item>
+				</Title>
+				<ContextMenu name="ДекорацияНуженЗахватКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ДекорацияНуженЗахватРасширеннаяПодсказка" id="25"/>
+			</LabelDecoration>
+			<UsualGroup name="ГруппаКодГоризонтальная" id="13">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа код горизонтальная</v8:content>
+					</v8:item>
+				</Title>
+				<Group>AlwaysHorizontal</Group>
+				<Representation>None</Representation>
+				<ShowTitle>false</ShowTitle>
+				<ExtendedTooltip name="ГруппаКодГоризонтальнаяРасширеннаяПодсказка" id="14"/>
+				<ChildItems>
+					<InputField name="Код" id="1">
+						<EditMode>EnterOnInput</EditMode>
+						<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+						<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+					</InputField>
+					<InputField name="Родитель" id="17">
+						<ContextMenu name="РодительКонтекстноеМеню" id="18"/>
+						<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="19"/>
+					</InputField>
+					<CheckBoxField name="ИспользуетсяПриЗагрузке" id="7">
+						<TitleLocation>Right</TitleLocation>
+						<EditMode>EnterOnInput</EditMode>
+						<CheckBoxType>Auto</CheckBoxType>
+						<ContextMenu name="ИспользуетсяПриЗагрузкеКонтекстноеМеню" id="8"/>
+						<ExtendedTooltip name="ИспользуетсяПриЗагрузкеРасширеннаяПодсказка" id="9"/>
+					</CheckBoxField>
+					<LabelDecoration name="ДекорацияЗахвачен" id="20">
+						<TextColor>style:SpecialTextColor</TextColor>
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>захвачен</v8:content>
+							</v8:item>
+						</Title>
+						<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="21"/>
+						<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="22"/>
+					</LabelDecoration>
+				</ChildItems>
+			</UsualGroup>
+			<TextDocumentField name="ТекстЗапроса" id="4">
+				<EditMode>EnterOnInput</EditMode>
+				<ContextMenu name="ТекстЗапросаКонтекстноеМеню" id="5"/>
+				<ExtendedTooltip name="ТекстЗапросаРасширеннаяПодсказка" id="6"/>
+			</TextDocumentField>
+			<InputField name="Комментарий" id="10">
+				<EditMode>EnterOnInput</EditMode>
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<ContextMenu name="КомментарийКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="12"/>
+			</InputField>
+		</ChildItems>
+		<Attributes/>
+	</BaseForm>
+</Form>

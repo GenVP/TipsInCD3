@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Catalog uuid="04d6de74-a0dd-4883-a347-52238f444fe6">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.ПравилаКонвертацииПредопределенныхДанных" category="Object">
+				<xr:TypeId>a71e59f6-ac35-4c36-aafc-c1ec6887657c</xr:TypeId>
+				<xr:ValueId>742d8235-3e00-47cf-9af0-843c6b434fea</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.ПравилаКонвертацииПредопределенныхДанных" category="Ref">
+				<xr:TypeId>27956fb5-c10d-43ff-a246-3996aa602eaa</xr:TypeId>
+				<xr:ValueId>7c1b329f-6441-4fcf-a66b-226ff70332f7</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.ПравилаКонвертацииПредопределенныхДанных" category="Selection">
+				<xr:TypeId>97b6c688-d0b0-412e-9dec-a14d9dd5b56b</xr:TypeId>
+				<xr:ValueId>d4cbae96-94c1-4258-aebf-e5d666e49e1b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.ПравилаКонвертацииПредопределенныхДанных" category="List">
+				<xr:TypeId>a9ee5f80-c1e2-444e-8d09-8ecddb0bf5ad</xr:TypeId>
+				<xr:ValueId>a0b34338-dbef-411a-8ab5-0839947f7129</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.ПравилаКонвертацииПредопределенныхДанных" category="Manager">
+				<xr:TypeId>8d2d8a39-3393-4571-a358-3f59d86f9b1b</xr:TypeId>
+				<xr:ValueId>c9a586e3-e9cc-49bf-a5eb-e2dc404c3fd5</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ПравилаКонвертацииПредопределенныхДанных</Name>
+			<Comment/>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<ExtendedConfigurationObject>d0aeb7f1-3c00-46ca-a311-452aa54a89c9</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Form>ФормаЭлементаXML</Form>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>
