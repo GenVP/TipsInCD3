@@ -12,7 +12,7 @@
 	<Events>
 		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
 		<Event name="BeforeClose" callType="After">КД3_ПередЗакрытиемПосле</Event>
-		<Event name="9cc34712-da5f-4faa-a653-343d2085fbe8" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
 		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
 	</Events>
 	<ChildItems>
@@ -139,10 +139,6 @@
 				<Autofill>false</Autofill>
 			</ContextMenu>
 			<ExtendedTooltip name="КД3_АлгоритмРасширеннаяПодсказка" id="51"/>
-			<Events>
-				<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-				<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-			</Events>
 		</HTMLDocumentField>
 	</ChildItems>
 	<Attributes>

@@ -22,8 +22,8 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<CheckBoxField name="НеЗагружатьМетаданные" id="1">
-			<DataPath>НеЗагружатьМетаданные</DataPath>
+		<CheckBoxField name="Использование" id="1">
+			<DataPath>Использование</DataPath>
 			<TitleLocation>Left</TitleLocation>
 			<ToolTip>
 				<v8:item>
@@ -32,8 +32,8 @@
 				</v8:item>
 			</ToolTip>
 			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="НеЗагружатьМетаданныеКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="НеЗагружатьМетаданныеРасширеннаяПодсказка" id="3"/>
+			<ContextMenu name="ИспользованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ИспользованиеРасширеннаяПодсказка" id="3"/>
 		</CheckBoxField>
 		<CheckBoxField name="НеОтображатьКартуКода" id="7">
 			<DataPath>НеОтображатьКартуКода</DataPath>
@@ -125,11 +125,11 @@
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="НеЗагружатьМетаданные" id="1">
+		<Attribute name="Использование" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Не загружать метаданные</v8:content>
+					<v8:content>Использование</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -171,21 +171,6 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ИмяТемы" id="5">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Имя темы</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<Attribute name="УдалятьВременныеФайлыПриЗакрытии" id="6">

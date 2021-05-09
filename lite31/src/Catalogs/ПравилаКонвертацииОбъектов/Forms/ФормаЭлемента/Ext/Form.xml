@@ -12,7 +12,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="BeforeClose" callType="After">КД3_ПередЗакрытиемПосле</Event>
-		<Event name="9cc34712-da5f-4faa-a653-343d2085fbe8" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
 		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
 	</Events>
 	<ChildItems>
@@ -537,10 +537,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПриОтправкеДанныхРасширеннаяПодсказка" id="512"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -598,10 +594,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПередПолучениемДанныхРасширеннаяПодсказка" id="509"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -671,10 +663,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПриПолученииДанныхРасширеннаяПодсказка" id="515"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -769,10 +757,6 @@
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПослеЗагрузкиВсехДанныхТекстКонтекстноеМеню" id="517"/>
 											<ExtendedTooltip name="КД3_АлгоритмПослеЗагрузкиВсехДанныхТекстРасширеннаяПодсказка" id="518"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -875,10 +859,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="521"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -939,10 +919,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="524"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -998,10 +974,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="527"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -1055,10 +1027,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="530"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -1113,10 +1081,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПоследовательностьПолейПоискаРасширеннаяПодсказка" id="533"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -1174,10 +1138,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="536"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -1228,10 +1188,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="539"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -1286,10 +1242,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="542"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>

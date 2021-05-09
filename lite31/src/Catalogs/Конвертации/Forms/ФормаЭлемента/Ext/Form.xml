@@ -13,7 +13,7 @@
 	<Events>
 		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
 		<Event name="BeforeClose" callType="After">КД3_ПередЗакрытиемПосле</Event>
-		<Event name="9cc34712-da5f-4faa-a653-343d2085fbe8" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
 		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
 	</Events>
 	<ChildItems>
@@ -94,9 +94,6 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<ContextMenu name="КонфигурацияКонтекстноеМеню" id="5"/>
 									<ExtendedTooltip name="КонфигурацияРасширеннаяПодсказка" id="6"/>
-									<Events>
-										<Event name="OnChange" callType="After">КД3_КонфигурацияПриИзмененииПосле</Event>
-									</Events>
 								</InputField>
 								<CheckBoxField name="Версия82" id="99">
 									<Title>
@@ -390,6 +387,9 @@
 																<Autofill>false</Autofill>
 															</ContextMenu>
 															<ExtendedTooltip name="КД3_АлгоритмПередОтложеннымЗаполнениемРасширеннаяПодсказка" id="290"/>
+															<Events>
+																<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
+															</Events>
 														</HTMLDocumentField>
 													</ChildItems>
 												</Page>
@@ -443,6 +443,10 @@
 																<Autofill>false</Autofill>
 															</ContextMenu>
 															<ExtendedTooltip name="КД3_АлгоритмПослеКонвертацииРасширеннаяПодсказка" id="293"/>
+															<Events>
+																<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
+																<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
+															</Events>
 														</HTMLDocumentField>
 													</ChildItems>
 												</Page>
@@ -484,9 +488,6 @@
 									</Title>
 									<ContextMenu name="КонфигурацияИсточникКонтекстноеМеню" id="120"/>
 									<ExtendedTooltip name="КонфигурацияИсточникРасширеннаяПодсказка" id="121"/>
-									<Events>
-										<Event name="OnChange" callType="After">КД3_КонфигурацияИсточникПриИзмененииПосле</Event>
-									</Events>
 								</InputField>
 								<InputField name="КонфигурацияКорреспондент" id="116">
 									<Title>
@@ -497,9 +498,6 @@
 									</Title>
 									<ContextMenu name="КонфигурацияКорреспондентКонтекстноеМеню" id="117"/>
 									<ExtendedTooltip name="КонфигурацияКорреспондентРасширеннаяПодсказка" id="118"/>
-									<Events>
-										<Event name="OnChange" callType="After">КД3_КонфигурацияКорреспондентПриИзмененииПосле</Event>
-									</Events>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>

@@ -5,7 +5,7 @@
 	<Events>
 		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
 		<Event name="BeforeClose" callType="After">КД3_ПередЗакрытиемПосле</Event>
-		<Event name="9cc34712-da5f-4faa-a653-343d2085fbe8" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
 		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
 	</Events>
 	<ChildItems>
@@ -539,10 +539,6 @@
 												<Autofill>false</Autofill>
 											</ContextMenu>
 											<ExtendedTooltip name="КД3_АлгоритмПередВыгрузкойСвойстваРасширеннаяПодсказка" id="236"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -605,10 +601,6 @@
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПриВыгрузкеСвойстваКонтекстноеМеню" id="238"/>
 											<ExtendedTooltip name="КД3_АлгоритмПриВыгрузкеСвойстваРасширеннаяПодсказка" id="239"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
@@ -671,10 +663,6 @@
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиСвойстваКонтекстноеМеню" id="241"/>
 											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиСвойстваРасширеннаяПодсказка" id="242"/>
-											<Events>
-												<Event name="DocumentComplete" callType="After">КД3_Подключаемый_ДокументСформирован</Event>
-												<Event name="OnClick" callType="After">КД3_Подключаемый_HTMLПриНажатии</Event>
-											</Events>
 										</HTMLDocumentField>
 									</ChildItems>
 								</Page>

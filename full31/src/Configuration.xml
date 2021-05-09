@@ -50,11 +50,8 @@
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
-			<DefaultRoles>
-				<xr:Item xsi:type="xr:MDObjectRef">Role.КД3_ОсновнаяРоль</xr:Item>
-			</DefaultRoles>
-			<Vendor>https://github.com/GenVP/bsl_in_cd3</Vendor>
-			<Version>1.1.1.1</Version>
+			<Vendor>https://github.com/GenVP/TipsInCD3</Vendor>
+			<Version>1.1.1.2</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation>
 				<v8:item>
@@ -72,7 +69,6 @@
 			<Language>Русский</Language>
 			<Subsystem>Администрирование</Subsystem>
 			<CommonPicture>Папка</CommonPicture>
-			<Role>КД3_ОсновнаяРоль</Role>
 			<CommonTemplate>КД3_src</CommonTemplate>
 			<CommonModule>КД3_Метаданные</CommonModule>
 			<CommonModule>КД3_МетаданныеКлиент</CommonModule>
