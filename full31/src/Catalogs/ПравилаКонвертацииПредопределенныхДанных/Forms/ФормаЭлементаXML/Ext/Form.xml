@@ -257,9 +257,6 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="ОбработчикиXMLРасширеннаяПодсказка" id="82"/>
-							<Events>
-								<Event name="OnCurrentPageChange" callType="After">КД3_ОбработчикиXMLПриСменеСтраницыПосле</Event>
-							</Events>
 							<ChildItems>
 								<Page name="Страница_ПередВыгрузкой" id="83">
 									<Title>

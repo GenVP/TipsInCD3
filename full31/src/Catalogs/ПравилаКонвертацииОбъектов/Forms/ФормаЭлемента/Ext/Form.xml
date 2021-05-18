@@ -462,9 +462,6 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="ОбработчикиXDTOРасширеннаяПодсказка" id="260"/>
-							<Events>
-								<Event name="OnCurrentPageChange" callType="After">КД3_ОбработчикиXDTOПриСменеСтраницыПосле</Event>
-							</Events>
 							<ChildItems>
 								<Page name="Страница_ПриОтправке" id="35">
 									<Title>
@@ -781,9 +778,6 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="ОбработчикиXMLРасширеннаяПодсказка" id="264"/>
-							<Events>
-								<Event name="OnCurrentPageChange" callType="After">КД3_ОбработчикиXMLПриСменеСтраницыПосле</Event>
-							</Events>
 							<ChildItems>
 								<Page name="Страница_ПередВыгрузкой" id="265">
 									<Title>

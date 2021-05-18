@@ -388,9 +388,6 @@
 							<HorizontalStretch>true</HorizontalStretch>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыТекстОбработчиковРасширеннаяПодсказка" id="41"/>
-							<Events>
-								<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыТекстОбработчиковПриСменеСтраницыПосле</Event>
-							</Events>
 							<ChildItems>
 								<Page name="СтраницаПередОбработкой" id="42">
 									<Title>
