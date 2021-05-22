@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="60">
+				<Type>CommandBarButton</Type>
+				<CommandName>0</CommandName>
+				<ExtendedTooltip name="ФормаДобавитьЭлементВСоставКонвертацииРасширеннаяПодсказка" id="61"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияНуженЗахват" id="65">
+			<TextColor>style:FieldSelectionBackColor</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для редактирования следует захватить объект</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияНуженЗахватКонтекстноеМеню" id="66"/>
+			<ExtendedTooltip name="ДекорацияНуженЗахватРасширеннаяПодсказка" id="67"/>
+		</LabelDecoration>
+		<Pages name="Страницы" id="75">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="76"/>
+			<ChildItems>
+				<Page name="ОсновныеСведения" id="77">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные сведения</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОсновныеСведенияРасширеннаяПодсказка" id="78"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаВладельцы" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа владельцы</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВладельцыРасширеннаяПодсказка" id="54"/>
+							<ChildItems>
+								<InputField name="СписокКонвертаций" id="55">
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="СписокКонвертацийКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="СписокКонвертацийРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="ГруппаПравил" id="16">
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ГруппаПравилКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ГруппаПравилРасширеннаяПодсказка" id="18"/>
+								</InputField>
+								<LabelDecoration name="ДекорацияЗахвачен" id="62">
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>захвачен</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="64"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаИдентификатор" id="70">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа идентификатор</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИдентификаторРасширеннаяПодсказка" id="71"/>
+							<ChildItems>
+								<InputField name="Код" id="1">
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<Button name="ЗаполнитьИдентификатор" id="147">
+									<Type>UsualButton</Type>
+									<CommandName>0</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнить</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ЗаполнитьИдентификаторРасширеннаяПодсказка" id="148"/>
+								</Button>
+								<InputField name="Порядок" id="72">
+									<ContextMenu name="ПорядокКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="74"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСопоставлениеОбъектов" id="58">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сопоставление объектов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСопоставлениеОбъектовРасширеннаяПодсказка" id="59"/>
+							<ChildItems>
+								<InputField name="ОбъектКонфигурации" id="4">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Источник</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ContextMenu name="ОбъектКонфигурацииКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ОбъектКонфигурацииРасширеннаяПодсказка" id="6"/>
+								</InputField>
+								<InputField name="ОбъектКонфигурацииКорреспондент" id="25">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Получатель</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="27"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="СопоставлениеЗначений" id="28">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сопоставление значений</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СопоставлениеЗначенийКонтекстноеМеню" id="29"/>
+							<AutoCommandBar name="СопоставлениеЗначенийКоманднаяПанель" id="30">
+								<ChildItems>
+									<Button name="СопоставлениеЗначенийСопоставитьАвтоматически" id="68">
+										<Type>CommandBarButton</Type>
+										<CommandName>0</CommandName>
+										<ExtendedTooltip name="СопоставлениеЗначенийСопоставитьАвтоматическиРасширеннаяПодсказка" id="69"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СопоставлениеЗначенийРасширеннаяПодсказка" id="31"/>
+							<SearchStringAddition name="СопоставлениеЗначенийСтрокаПоиска" id="32">
+								<AdditionSource>
+									<Item>СопоставлениеЗначений</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СопоставлениеЗначенийСтрокаПоискаКонтекстноеМеню" id="33"/>
+								<ExtendedTooltip name="СопоставлениеЗначенийСтрокаПоискаРасширеннаяПодсказка" id="34"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СопоставлениеЗначенийСостояниеПросмотра" id="35">
+								<AdditionSource>
+									<Item>СопоставлениеЗначений</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СопоставлениеЗначенийСостояниеПросмотраКонтекстноеМеню" id="36"/>
+								<ExtendedTooltip name="СопоставлениеЗначенийСостояниеПросмотраРасширеннаяПодсказка" id="37"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СопоставлениеЗначенийУправлениеПоиском" id="38">
+								<AdditionSource>
+									<Item>СопоставлениеЗначений</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СопоставлениеЗначенийУправлениеПоискомКонтекстноеМеню" id="39"/>
+								<ExtendedTooltip name="СопоставлениеЗначенийУправлениеПоискомРасширеннаяПодсказка" id="40"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СопоставлениеЗначенийНомерСтроки" id="41">
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СопоставлениеЗначенийНомерСтрокиКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="СопоставлениеЗначенийНомерСтрокиРасширеннаяПодсказка" id="43"/>
+								</LabelField>
+								<InputField name="СопоставлениеЗначенийЗначениеКонфигурации" id="44">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение источника</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СопоставлениеЗначенийЗначениеКонфигурацииКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="СопоставлениеЗначенийЗначениеКонфигурацииРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="СопоставлениеЗначенийЗначениеКонфигурацииКорреспондент" id="50">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение получателя</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СопоставлениеЗначенийЗначениеКонфигурацииКорреспондентКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="СопоставлениеЗначенийЗначениеКонфигурацииКорреспондентРасширеннаяПодсказка" id="52"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ОбработчикиСобытий" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработчики событий</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОбработчикиСобытийРасширеннаяПодсказка" id="80"/>
+					<ChildItems>
+						<Pages name="ОбработчикиXML" id="81">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обработчики XML</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+							<ExtendedTooltip name="ОбработчикиXMLРасширеннаяПодсказка" id="82"/>
+							<ChildItems>
+								<Page name="Страница_ПередВыгрузкой" id="83">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перед выгрузкой</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПередВыгрузкойРасширеннаяПодсказка" id="84"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПередВыгрузкой" id="85">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПередВыгрузкойКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="ИмяОбработчикаПередВыгрузкойРасширеннаяПодсказка" id="87">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Перед выгрузкой&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется перед выгрузкой каждого объекта в файл обмена, не  зависимо от того как выгружается объект по правилу выгрузки данных либо потому  что на него есть ссылки. Событие вызывается, когда узел объекта приемника еще не  создан и недоступен. Возможен отказ от выгрузки, например, в случае невыполнения  каких-либо условий.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Параметры - Структура, в которой хранятся переменные доступные во всех  обработчиках
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+Приемник - Строка. Строковое представление объекта приемника. Может  использоваться для тех правил, у которых приемник является значением  примитивного типа (Строка, Число, Булево, Дата) или если при помощи правила  предполагается идентифицировать по имени предопределенные значения какого-либо  ссылочного типа.
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные. Данные  передаются по следующим правилам:
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПВД.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКО.ВходящиеДанные -&gt;&gt;  ПКС.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКС.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных
+Отказ - Булево - Если Истина, то объект не выгружается
+КлючВыгружаемыхДанных - Произвольный. По умолчанию - это ссылка на объект  Источник, а если Источник неопределен, то используется ИмяПКО (подразумевается,  что правило описывает в таком случае один объект-приемник). Данный параметр  необходимо использовать если одному объекту источнику могут соответствовать  несколько объектов приемника, например, в зависимости от входящих данных, или в  случае, когда объект приемник полностью заполняется из входящих данных (например  по результатам запроса), а объект источник, как таковой отсутствует.
+ЗапоминатьВыгруженные - Булево. По умолчанию  - определяется в правилах  обмена, но может быть изменено. Универсальная обработка выгрузки данных хранит  все выгруженные объекты в специальном списке и, таким образом, многократно  встречающиеся объекты (по ссылкам из реквизитов других объектов) выгружаются  единожды. Однако, установив данный параметр в значение Ложь, можно отключить  этот режим. Данный режим может быть полезен для оптимизации, например, когда  точно известно, что на выгружаемые объекты нет ссылок, а так же в случае, когда  на основании одного объекта-источника в зависимости от различных условий могут  формироваться несколько различных объектов-приемников. Только для платформы  1С:Предприятие 8.
+НеЗапоминатьВыгруженные - Булево. Параметр противоположный по смыслу  параметру ЗапоминатьВыгруженные. По умолчанию  - определяется в правилах обмена,  но может быть изменено. Только для платформы 1С:Предприятие 7.7.
+НеЗамещатьОбъектПриЗагрузке - Булево. По умолчанию  - определяется в правилах  обмена, но может быть изменено. Если для данного параметра установить значение  Истина, то объект идентифицированный при загрузке (т.е. найденный в  информационной базе приемнике по значению синхронизирующих полей) не будет  изменен/замещен.
+НеСоздаватьЕслиНеНайден – Булево. По умолчанию определяется в форме элемента  правила конвертации объекта. Если Истина, то выполняется только поиск объекта в  приемнике, новый объект не создается.
+ВсеОбъектыВыгружены - Булево. Если установить Истина, то объект не  выгружается - лишь формируется узел ссылки. В списке выгруженных - объект не  ищется.
+ТолькоПолучитьУзелСсылки - Если Истина, то объект не выгружается - лишь  формируется узел ссылки. В списке выгруженных - объект ищется.
+РегистрироватьОбъектНаУзлеОтправителе – Булево. По умолчанию - Ложь. Если  установить значение параметра в Истина, то объект будет зарегистрирован к  выгрузке в базе-приемнике при загрузке данных. Такой режим обмена необходим при  расщеплении одного объекта в первой информационной базе на несколько дочерних  объектов во второй информационной базе (разных типов метаданных). ПКО дочернего  объекта в родительский объект должно выставлять этот флаг в значение Истина. ПКО  родительского объекта в дочерний объект не должно поднимать этот флаг. В  противном случае возможен случай бесконечной миграции объекта между парой  обменивающихся информационных баз. 
+РежимЗаписи - Строка. Режим записи документа. Имеет смысл только если тип  объекта приемника "Документ". Возможные значения "Запись", "Проведение",  "ОтменаПроведения"
+РежимПроведения - Строка. Режим проведения документа. Имеет смысл только если  тип объекта приемника "Документ". Возможные значения "Неоперативный",  "Оперативный"
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Пример:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Отказ = Источник.ЭтоГруппа();
+Если (ПустаяСтрока(Источник.Адрес) = 1) И   
+ (ПустаяСтрока(Источник.АдресПочт) = 1)  И
+ (ПустаяСтрока(Источник.Телефоны) = 1) И
+ (ПустаяСтрока(Источник.eMail)  = 1) Тогда
+ Отказ = 1;
+КонецЕсли;</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПередВыгрузкойОбъекта" id="88">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="89"/>
+											<ExtendedTooltip name="АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="90"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПередВыгрузкойОбъекта" id="149">
+											<DataPath>КД3_АлгоритмПередВыгрузкойОбъекта</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="150">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="151"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ПриВыгрузке" id="91">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При выгрузке</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПриВыгрузкеРасширеннаяПодсказка" id="92"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПриВыгрузке" id="93">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПриВыгрузкеКонтекстноеМеню" id="94"/>
+											<ExtendedTooltip name="ИмяОбработчикаПриВыгрузкеРасширеннаяПодсказка" id="95">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;При выгрузке&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется при выгрузке каждого объекта в файл обмена, не зависимо  от того как выгружается объект по правилу выгрузки данных либо потому что на  него есть ссылки. Событие вызывается, когда узел объекта приемника уже создан и  доступен для изменения. 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра.
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные. Данные  передаются по следующим правилам:
+&lt;fontsize 9&gt;&lt;color #000000&gt;&lt;bgcolor #F5F5F5&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПВД.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКО.ВходящиеДанные -&gt;&gt;  ПКС.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКС.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных.
+КлючВыгружаемыхДанных – значение ключа в соответствии «ВыгруженныеОбъекты».  Только для платформы 1С:Предприятие 8.
+Отказ – Булево. Если Истина, то объект выгружаться не будет.
+СтандартнаяОбработка - Булево - Если установить значение Ложь, то стандартное  заполнение Приемника не производится, то есть не выполняется обработка правил  конвертации свойств.
+Приемник - инициализированный xml-узел объекта приемника. Может быть дополнен  произвольным xml-содержимым, например используемым при загрузке. В случае  отключения СтандартнойОбработки, правила конвертации свойств (ПКС) не  обрабатываются, т.е. необходимо реализовать алгоритм заполняющий узел приемника  в соответствии с форматом файла обмена
+УзелСсылки - инициализированный xml-узел ссылки. Может использоваться,  например для инициализации свойств других объектов.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПриВыгрузкеОбъекта" id="96">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПриВыгрузкеОбъектаКонтекстноеМеню" id="97"/>
+											<ExtendedTooltip name="АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="98"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПриВыгрузкеОбъекта" id="152">
+											<DataPath>КД3_АлгоритмПриВыгрузкеОбъекта</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПриВыгрузкеОбъектаКонтекстноеМеню" id="153">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="154"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ПослеВыгрузки" id="99">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>После выгрузки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПослеВыгрузкиРасширеннаяПодсказка" id="100"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПослеВыгрузки" id="101">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПослеВыгрузкиКонтекстноеМеню" id="102"/>
+											<ExtendedTooltip name="ИмяОбработчикаПослеВыгрузкиРасширеннаяПодсказка" id="103">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;После выгрузки&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется после выгрузки объекта в промежуточную структуру данных,  но до выгрузки его непосредственно в файл обмена. Возможен отказ от записи  объекта в файл. Может быть использован для выгрузки дополнительной информации по  выгруженному объекту в файл обмена.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра.
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные,  передаваемые правилам конвертации свойств (ПКС). 
+ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных.
+КлючВыгружаемыхДанных – значение ключа в соответствии «ВыгруженныеОбъекты».  Только для платформы 1С:Предприятие 8.
+Отказ - Булево - Если Истина, то выгруженный объект в файл не  записывается
+Приемник - xml-узел объекта приемника, заполненный в соответствии с  правилом
+УзелСсылки - инициализированный xml-узел ссылки. Может использоваться,  например для инициализации свойств других объектов
+</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПослеВыгрузкиОбъекта" id="104">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="105"/>
+											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="106"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъекта" id="155">
+											<DataPath>КД3_АлгоритмПослеВыгрузкиОбъекта</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="156">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="157"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ПослеВыгрузкиВФайл" id="107">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>После выгрузки в файл</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПослеВыгрузкиВФайлРасширеннаяПодсказка" id="108"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПослеВыгрузкиВФайл" id="109">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПослеВыгрузкиВФайлКонтекстноеМеню" id="110"/>
+											<ExtendedTooltip name="ИмяОбработчикаПослеВыгрузкиВФайлРасширеннаяПодсказка" id="111">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;После выгрузки в файл&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется после выгрузки объекта в файл обмена. Может быть  использован для выгрузки дополнительной информации по выгруженному объекту в  файл обмена. При этом информация будет записана в файл обмена после выгруженного  объекта.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра.
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные,  передаваемые правилам конвертации свойств (ПКС). 
+ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных.
+Приемник - xml-узел объекта приемника, заполненный в соответствии с  правилом
+УзелСсылки - инициализированный xml-узел ссылки. Может использоваться,  например для инициализации свойств других объектов
+</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="112">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаКонтекстноеМеню" id="113"/>
+											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="114"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="158">
+											<DataPath>КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбменаКонтекстноеМеню" id="159">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="160"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ПередЗагрузкой" id="123">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перед загрузкой</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПередЗагрузкойРасширеннаяПодсказка" id="124"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПередЗагрузкой" id="125">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПередЗагрузкойКонтекстноеМеню" id="126"/>
+											<ExtendedTooltip name="ИмяОбработчикаПередЗагрузкойРасширеннаяПодсказка" id="127">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Перед загрузкой&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Только для платформы V8.
+Событие выполняется перед загрузкой объекта.  Возможен отказ от загрузки, например, в случае невыполнения каких-либо условий.  Загружаемый в БД объект еще не инициализирован.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Отказ - Булево - Если Истина, то объект загружен не будет.
+Нпп - Число. Уникальный порядковый номер объекта в файле.
+Источник - Строка. Представление объекта источника. Пустая строка, если  представление объекта источника не выгружалось.
+ИмяПравила - Строка. Имя правила конвертации. Пустая строка, если правила  конвертации не используются.
+Правило – строка таблицы значений. Ссылка на правило конвертации объекта.
+ГенерироватьНовыйНомерИлиКодЕслиНеУказан – Булево. Если Истина и номер или  код объекта не заданы, то перед записью будет сгенерирован новый номер или  код.
+ТипОбъектаСтрокой - Строка. Тип загружаемого объекта. Например:  СправочникСсылка.Номенклатура или РегистрСведенийЗапись.ЦеныТоваров
+ТипОбъекта - Значение типа Тип. Тип загружаемого объекта.
+НеЗамещатьОбъект - Если для данного параметра установить значение Истина, то  объект идентифицированный при загрузке (т.е. найденный в информационной базе  приемнике по значению синхронизирующих полей) не будет изменен/замещен.
+РежимЗаписи - Строка. Режим записи документа. Имеет смысл только если тип  объекта приемника "Документ". Возможные значения "Запись", "Проведение",  "ОтменаПроведения"
+РежимПроведения - Строка. Режим проведения документа. Имеет смысл только если  тип объекта приемника "Документ". Возможные значения "Неоперативный",  "Оперативный"
+</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПередЗагрузкойОбъекта" id="128">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПередЗагрузкойОбъектаКонтекстноеМеню" id="129"/>
+											<ExtendedTooltip name="АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="130"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПередЗагрузкойОбъекта" id="161">
+											<DataPath>КД3_АлгоритмПередЗагрузкойОбъекта</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПередЗагрузкойОбъектаКонтекстноеМеню" id="162">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="163"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ПриЗагрузке" id="131">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При загрузке</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПриЗагрузкеРасширеннаяПодсказка" id="132"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПриЗагрузке" id="133">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПриЗагрузкеКонтекстноеМеню" id="134"/>
+											<ExtendedTooltip name="ИмяОбработчикаПриЗагрузкеРасширеннаяПодсказка" id="135">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;При загрузке&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Только для платформы V8.
+Событие выполняется после попытки идентификации.  В случае успешной синхронизации доступен найденный объект. В противном случае  его значение Неопределено. Можно произвести произвольную инициализацию,  заполняемого данными объекта.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+ОбъектНайден - Булево. Если значение параметра равно Ложь, то объект не  идентифицирован, то есть не найден в информационной базе
+Объект - Произвольный. Загружаемый, модифицируемый объект, созданный по  ссылке или найденный в информационной базе. Если способ идентификации объекта в  файле не указан (т.е. отсутствует узел "Ссылка"), то параметр содержит значение  Неопределено. В этом случае в обработчике возможна произвольная инициализация  загружаемого объекта, в противном случае, объект будет создан автоматически.
+НеЗамещатьОбъект - Булево - Если установить значение Истина, то существующий  объект информационной базы не будет изменен.
+ОбъектМодифицирован – Булево. Флажок указывает на то, что в обработчике  объект был модифицирован. По умолчанию содержит значение Истина. То есть  обработка загрузки считает, что если выполнялся какой-либо обработчик, то объект  мог быть модифицирован, и его необходимо записать в информационную базу.  Параметр относится только к текущему обработчику и только к найденным объектам.  Если объект не был найден, то при любом значении он будет создан и записан.  Только для платформы 1С:Предприятие 8.
+</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПриЗагрузкеОбъекта" id="136">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПриЗагрузкеОбъектаКонтекстноеМеню" id="137"/>
+											<ExtendedTooltip name="АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="138"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПриЗагрузкеОбъекта" id="164">
+											<DataPath>КД3_АлгоритмПриЗагрузкеОбъекта</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПриЗагрузкеОбъектаКонтекстноеМеню" id="165">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="166"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ПослеЗагрузки" id="139">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>После загрузки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ПослеЗагрузкиРасширеннаяПодсказка" id="140"/>
+									<ChildItems>
+										<InputField name="ИмяОбработчикаПослеЗагрузки" id="141">
+											<ReadOnly>true</ReadOnly>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="ИмяОбработчикаПослеЗагрузкиКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ИмяОбработчикаПослеЗагрузкиРасширеннаяПодсказка" id="143">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;После загрузки&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Только для платформы V8.
+Событие выполняется после прочтения и установки  атрибутов объекта из файла, но до его записи в информационную базу. Возможна  модификация загруженного объекта.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Отказ - Булево - Если Истина, то объект загружен не будет.
+Объект - Произвольный - загруженный объект.
+Ссылка – Произвольный – ссылка на найденный объект в информационной базе.
+ОбъектНайден - Булево. Если значение параметра равно Ложь, то объект не  идентифицирован, то есть не найден в информационной базе
+ПараметрыОбъекта - либо Неопределено либо Соответствие, в котором хранятся  дополнительные параметры переданные для данного объекта из источника в приемник.  Если параметров передано не было, то ПараметрыОбъекта = Неопределено.
+ОбъектМодифицирован – Булево. Флажок указывает на то, что в обработчике  объект был изменен. По умолчанию содержит значение Истина. То есть обработка  загрузки считает, что если выполнялся какой-либо обработчик, то объект мог быть  модифицирован, и его необходимо записать в информационную базу. Параметр  относится только к текущему обработчику. Если объект был изменен ранее, то при  любом значении переменной ОбъектМодифицирован он будет записан. Только для  платформы 1С:Предприятие 8.
+ИмяТипаОбъекта – Строка. Имя типа загруженного объекта, например,  «СправочникСсылка.Номенклатура».
+НаборЗаписей – РегистрСведенийНаборЗаписей. Загруженный набор записей. Только  при загрузке в обработке УниверсальныйОбменДаннымиXML.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+										<TextDocumentField name="АлгоритмПослеЗагрузкиОбъекта" id="144">
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="АлгоритмПослеЗагрузкиОбъектаКонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="146"/>
+										</TextDocumentField>
+										<HTMLDocumentField name="КД3_АлгоритмПослеЗагрузкиОбъекта" id="167">
+											<DataPath>КД3_АлгоритмПослеЗагрузкиОбъекта</DataPath>
+											<Visible>false</Visible>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="КД3_АлгоритмПослеЗагрузкиОбъектаКонтекстноеМеню" id="168">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="КД3_АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="169"/>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="КД3_АлгоритмПередВыгрузкойОбъекта" id="1000001">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм перед выгрузкой объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_АлгоритмПриВыгрузкеОбъекта" id="1000002">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм при выгрузке объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_АлгоритмПослеВыгрузкиОбъекта" id="1000003">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм после выгрузки объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="1000004">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм после выгрузки объекта в файл обмена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_АлгоритмПередЗагрузкойОбъекта" id="1000005">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм перед загрузкой объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_АлгоритмПриЗагрузкеОбъекта" id="1000006">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм при загрузке объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_АлгоритмПослеЗагрузкиОбъекта" id="1000007">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 алгоритм после загрузки объекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<BaseForm version="2.10">
+		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+			<ChildItems>
+				<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="60">
+					<Type>CommandBarButton</Type>
+					<CommandName>0</CommandName>
+					<ExtendedTooltip name="ФормаДобавитьЭлементВСоставКонвертацииРасширеннаяПодсказка" id="61"/>
+				</Button>
+			</ChildItems>
+		</AutoCommandBar>
+		<ChildItems>
+			<LabelDecoration name="ДекорацияНуженЗахват" id="65">
+				<TextColor>style:FieldSelectionBackColor</TextColor>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Для редактирования следует захватить объект</v8:content>
+					</v8:item>
+				</Title>
+				<ContextMenu name="ДекорацияНуженЗахватКонтекстноеМеню" id="66"/>
+				<ExtendedTooltip name="ДекорацияНуженЗахватРасширеннаяПодсказка" id="67"/>
+			</LabelDecoration>
+			<Pages name="Страницы" id="75">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Страницы</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="76"/>
+				<ChildItems>
+					<Page name="ОсновныеСведения" id="77">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Основные сведения</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ОсновныеСведенияРасширеннаяПодсказка" id="78"/>
+						<ChildItems>
+							<UsualGroup name="ГруппаВладельцы" id="53">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа владельцы</v8:content>
+									</v8:item>
+								</Title>
+								<Group>AlwaysHorizontal</Group>
+								<Representation>None</Representation>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаВладельцыРасширеннаяПодсказка" id="54"/>
+								<ChildItems>
+									<InputField name="СписокКонвертаций" id="55">
+										<ReadOnly>true</ReadOnly>
+										<ContextMenu name="СписокКонвертацийКонтекстноеМеню" id="56"/>
+										<ExtendedTooltip name="СписокКонвертацийРасширеннаяПодсказка" id="57"/>
+									</InputField>
+									<InputField name="ГруппаПравил" id="16">
+										<EditMode>EnterOnInput</EditMode>
+										<ContextMenu name="ГруппаПравилКонтекстноеМеню" id="17"/>
+										<ExtendedTooltip name="ГруппаПравилРасширеннаяПодсказка" id="18"/>
+									</InputField>
+									<LabelDecoration name="ДекорацияЗахвачен" id="62">
+										<TextColor>style:SpecialTextColor</TextColor>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>захвачен</v8:content>
+											</v8:item>
+										</Title>
+										<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="63"/>
+										<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="64"/>
+									</LabelDecoration>
+								</ChildItems>
+							</UsualGroup>
+							<UsualGroup name="ГруппаИдентификатор" id="70">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа идентификатор</v8:content>
+									</v8:item>
+								</Title>
+								<Group>AlwaysHorizontal</Group>
+								<Representation>None</Representation>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаИдентификаторРасширеннаяПодсказка" id="71"/>
+								<ChildItems>
+									<InputField name="Код" id="1">
+										<EditMode>EnterOnInput</EditMode>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+										<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+									</InputField>
+									<Button name="ЗаполнитьИдентификатор" id="147">
+										<Type>UsualButton</Type>
+										<CommandName>0</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ЗаполнитьИдентификаторРасширеннаяПодсказка" id="148"/>
+									</Button>
+									<InputField name="Порядок" id="72">
+										<ContextMenu name="ПорядокКонтекстноеМеню" id="73"/>
+										<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="74"/>
+									</InputField>
+								</ChildItems>
+							</UsualGroup>
+							<UsualGroup name="ГруппаСопоставлениеОбъектов" id="58">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа сопоставление объектов</v8:content>
+									</v8:item>
+								</Title>
+								<Group>AlwaysHorizontal</Group>
+								<Representation>None</Representation>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаСопоставлениеОбъектовРасширеннаяПодсказка" id="59"/>
+								<ChildItems>
+									<InputField name="ОбъектКонфигурации" id="4">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Источник</v8:content>
+											</v8:item>
+										</Title>
+										<EditMode>EnterOnInput</EditMode>
+										<DropListButton>false</DropListButton>
+										<ChoiceButton>true</ChoiceButton>
+										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ContextMenu name="ОбъектКонфигурацииКонтекстноеМеню" id="5"/>
+										<ExtendedTooltip name="ОбъектКонфигурацииРасширеннаяПодсказка" id="6"/>
+									</InputField>
+									<InputField name="ОбъектКонфигурацииКорреспондент" id="25">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Получатель</v8:content>
+											</v8:item>
+										</Title>
+										<EditMode>EnterOnInput</EditMode>
+										<DropListButton>false</DropListButton>
+										<ChoiceButton>true</ChoiceButton>
+										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="26"/>
+										<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="27"/>
+									</InputField>
+								</ChildItems>
+							</UsualGroup>
+							<Table name="СопоставлениеЗначений" id="28">
+								<Representation>List</Representation>
+								<AutoInsertNewRow>true</AutoInsertNewRow>
+								<EnableStartDrag>true</EnableStartDrag>
+								<EnableDrag>true</EnableDrag>
+								<FileDragMode>AsFile</FileDragMode>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сопоставление значений</v8:content>
+									</v8:item>
+								</Title>
+								<RowFilter xsi:nil="true"/>
+								<ContextMenu name="СопоставлениеЗначенийКонтекстноеМеню" id="29"/>
+								<AutoCommandBar name="СопоставлениеЗначенийКоманднаяПанель" id="30">
+									<ChildItems>
+										<Button name="СопоставлениеЗначенийСопоставитьАвтоматически" id="68">
+											<Type>CommandBarButton</Type>
+											<CommandName>0</CommandName>
+											<ExtendedTooltip name="СопоставлениеЗначенийСопоставитьАвтоматическиРасширеннаяПодсказка" id="69"/>
+										</Button>
+									</ChildItems>
+								</AutoCommandBar>
+								<ExtendedTooltip name="СопоставлениеЗначенийРасширеннаяПодсказка" id="31"/>
+								<SearchStringAddition name="СопоставлениеЗначенийСтрокаПоиска" id="32">
+									<AdditionSource>
+										<Item>СопоставлениеЗначений</Item>
+										<Type>SearchStringRepresentation</Type>
+									</AdditionSource>
+									<ContextMenu name="СопоставлениеЗначенийСтрокаПоискаКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="СопоставлениеЗначенийСтрокаПоискаРасширеннаяПодсказка" id="34"/>
+								</SearchStringAddition>
+								<ViewStatusAddition name="СопоставлениеЗначенийСостояниеПросмотра" id="35">
+									<AdditionSource>
+										<Item>СопоставлениеЗначений</Item>
+										<Type>ViewStatusRepresentation</Type>
+									</AdditionSource>
+									<ContextMenu name="СопоставлениеЗначенийСостояниеПросмотраКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="СопоставлениеЗначенийСостояниеПросмотраРасширеннаяПодсказка" id="37"/>
+								</ViewStatusAddition>
+								<SearchControlAddition name="СопоставлениеЗначенийУправлениеПоиском" id="38">
+									<AdditionSource>
+										<Item>СопоставлениеЗначений</Item>
+										<Type>SearchControl</Type>
+									</AdditionSource>
+									<ContextMenu name="СопоставлениеЗначенийУправлениеПоискомКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="СопоставлениеЗначенийУправлениеПоискомРасширеннаяПодсказка" id="40"/>
+								</SearchControlAddition>
+								<ChildItems>
+									<LabelField name="СопоставлениеЗначенийНомерСтроки" id="41">
+										<EditMode>EnterOnInput</EditMode>
+										<ContextMenu name="СопоставлениеЗначенийНомерСтрокиКонтекстноеМеню" id="42"/>
+										<ExtendedTooltip name="СопоставлениеЗначенийНомерСтрокиРасширеннаяПодсказка" id="43"/>
+									</LabelField>
+									<InputField name="СопоставлениеЗначенийЗначениеКонфигурации" id="44">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Значение источника</v8:content>
+											</v8:item>
+										</Title>
+										<EditMode>EnterOnInput</EditMode>
+										<ContextMenu name="СопоставлениеЗначенийЗначениеКонфигурацииКонтекстноеМеню" id="45"/>
+										<ExtendedTooltip name="СопоставлениеЗначенийЗначениеКонфигурацииРасширеннаяПодсказка" id="46"/>
+									</InputField>
+									<InputField name="СопоставлениеЗначенийЗначениеКонфигурацииКорреспондент" id="50">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Значение получателя</v8:content>
+											</v8:item>
+										</Title>
+										<EditMode>EnterOnInput</EditMode>
+										<ContextMenu name="СопоставлениеЗначенийЗначениеКонфигурацииКорреспондентКонтекстноеМеню" id="51"/>
+										<ExtendedTooltip name="СопоставлениеЗначенийЗначениеКонфигурацииКорреспондентРасширеннаяПодсказка" id="52"/>
+									</InputField>
+								</ChildItems>
+							</Table>
+						</ChildItems>
+					</Page>
+					<Page name="ОбработчикиСобытий" id="79">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обработчики событий</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ОбработчикиСобытийРасширеннаяПодсказка" id="80"/>
+						<ChildItems>
+							<Pages name="ОбработчикиXML" id="81">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обработчики XML</v8:content>
+									</v8:item>
+								</Title>
+								<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+								<ExtendedTooltip name="ОбработчикиXMLРасширеннаяПодсказка" id="82"/>
+								<ChildItems>
+									<Page name="Страница_ПередВыгрузкой" id="83">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Перед выгрузкой</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПередВыгрузкойРасширеннаяПодсказка" id="84"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПередВыгрузкой" id="85">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПередВыгрузкойКонтекстноеМеню" id="86"/>
+												<ExtendedTooltip name="ИмяОбработчикаПередВыгрузкойРасширеннаяПодсказка" id="87">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Перед выгрузкой&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется перед выгрузкой каждого объекта в файл обмена, не  зависимо от того как выгружается объект по правилу выгрузки данных либо потому  что на него есть ссылки. Событие вызывается, когда узел объекта приемника еще не  создан и недоступен. Возможен отказ от выгрузки, например, в случае невыполнения  каких-либо условий.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Параметры - Структура, в которой хранятся переменные доступные во всех  обработчиках
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+Приемник - Строка. Строковое представление объекта приемника. Может  использоваться для тех правил, у которых приемник является значением  примитивного типа (Строка, Число, Булево, Дата) или если при помощи правила  предполагается идентифицировать по имени предопределенные значения какого-либо  ссылочного типа.
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные. Данные  передаются по следующим правилам:
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПВД.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКО.ВходящиеДанные -&gt;&gt;  ПКС.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКС.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных
+Отказ - Булево - Если Истина, то объект не выгружается
+КлючВыгружаемыхДанных - Произвольный. По умолчанию - это ссылка на объект  Источник, а если Источник неопределен, то используется ИмяПКО (подразумевается,  что правило описывает в таком случае один объект-приемник). Данный параметр  необходимо использовать если одному объекту источнику могут соответствовать  несколько объектов приемника, например, в зависимости от входящих данных, или в  случае, когда объект приемник полностью заполняется из входящих данных (например  по результатам запроса), а объект источник, как таковой отсутствует.
+ЗапоминатьВыгруженные - Булево. По умолчанию  - определяется в правилах  обмена, но может быть изменено. Универсальная обработка выгрузки данных хранит  все выгруженные объекты в специальном списке и, таким образом, многократно  встречающиеся объекты (по ссылкам из реквизитов других объектов) выгружаются  единожды. Однако, установив данный параметр в значение Ложь, можно отключить  этот режим. Данный режим может быть полезен для оптимизации, например, когда  точно известно, что на выгружаемые объекты нет ссылок, а так же в случае, когда  на основании одного объекта-источника в зависимости от различных условий могут  формироваться несколько различных объектов-приемников. Только для платформы  1С:Предприятие 8.
+НеЗапоминатьВыгруженные - Булево. Параметр противоположный по смыслу  параметру ЗапоминатьВыгруженные. По умолчанию  - определяется в правилах обмена,  но может быть изменено. Только для платформы 1С:Предприятие 7.7.
+НеЗамещатьОбъектПриЗагрузке - Булево. По умолчанию  - определяется в правилах  обмена, но может быть изменено. Если для данного параметра установить значение  Истина, то объект идентифицированный при загрузке (т.е. найденный в  информационной базе приемнике по значению синхронизирующих полей) не будет  изменен/замещен.
+НеСоздаватьЕслиНеНайден – Булево. По умолчанию определяется в форме элемента  правила конвертации объекта. Если Истина, то выполняется только поиск объекта в  приемнике, новый объект не создается.
+ВсеОбъектыВыгружены - Булево. Если установить Истина, то объект не  выгружается - лишь формируется узел ссылки. В списке выгруженных - объект не  ищется.
+ТолькоПолучитьУзелСсылки - Если Истина, то объект не выгружается - лишь  формируется узел ссылки. В списке выгруженных - объект ищется.
+РегистрироватьОбъектНаУзлеОтправителе – Булево. По умолчанию - Ложь. Если  установить значение параметра в Истина, то объект будет зарегистрирован к  выгрузке в базе-приемнике при загрузке данных. Такой режим обмена необходим при  расщеплении одного объекта в первой информационной базе на несколько дочерних  объектов во второй информационной базе (разных типов метаданных). ПКО дочернего  объекта в родительский объект должно выставлять этот флаг в значение Истина. ПКО  родительского объекта в дочерний объект не должно поднимать этот флаг. В  противном случае возможен случай бесконечной миграции объекта между парой  обменивающихся информационных баз. 
+РежимЗаписи - Строка. Режим записи документа. Имеет смысл только если тип  объекта приемника "Документ". Возможные значения "Запись", "Проведение",  "ОтменаПроведения"
+РежимПроведения - Строка. Режим проведения документа. Имеет смысл только если  тип объекта приемника "Документ". Возможные значения "Неоперативный",  "Оперативный"
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Пример:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Отказ = Источник.ЭтоГруппа();
+Если (ПустаяСтрока(Источник.Адрес) = 1) И   
+ (ПустаяСтрока(Источник.АдресПочт) = 1)  И
+ (ПустаяСтрока(Источник.Телефоны) = 1) И
+ (ПустаяСтрока(Источник.eMail)  = 1) Тогда
+ Отказ = 1;
+КонецЕсли;</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПередВыгрузкойОбъекта" id="88">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="89"/>
+												<ExtendedTooltip name="АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="90"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ПриВыгрузке" id="91">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>При выгрузке</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПриВыгрузкеРасширеннаяПодсказка" id="92"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПриВыгрузке" id="93">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПриВыгрузкеКонтекстноеМеню" id="94"/>
+												<ExtendedTooltip name="ИмяОбработчикаПриВыгрузкеРасширеннаяПодсказка" id="95">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;При выгрузке&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется при выгрузке каждого объекта в файл обмена, не зависимо  от того как выгружается объект по правилу выгрузки данных либо потому что на  него есть ссылки. Событие вызывается, когда узел объекта приемника уже создан и  доступен для изменения. 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра.
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные. Данные  передаются по следующим правилам:
+&lt;fontsize 9&gt;&lt;color #000000&gt;&lt;bgcolor #F5F5F5&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПВД.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКО.ВходящиеДанные -&gt;&gt;  ПКС.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Tahoma&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt;ПКС.ИсходящиеДанные -&gt;&gt;  ПКО.ВходящиеДанные&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 8&gt;&lt;color #000000&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных.
+КлючВыгружаемыхДанных – значение ключа в соответствии «ВыгруженныеОбъекты».  Только для платформы 1С:Предприятие 8.
+Отказ – Булево. Если Истина, то объект выгружаться не будет.
+СтандартнаяОбработка - Булево - Если установить значение Ложь, то стандартное  заполнение Приемника не производится, то есть не выполняется обработка правил  конвертации свойств.
+Приемник - инициализированный xml-узел объекта приемника. Может быть дополнен  произвольным xml-содержимым, например используемым при загрузке. В случае  отключения СтандартнойОбработки, правила конвертации свойств (ПКС) не  обрабатываются, т.е. необходимо реализовать алгоритм заполняющий узел приемника  в соответствии с форматом файла обмена
+УзелСсылки - инициализированный xml-узел ссылки. Может использоваться,  например для инициализации свойств других объектов.</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПриВыгрузкеОбъекта" id="96">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПриВыгрузкеОбъектаКонтекстноеМеню" id="97"/>
+												<ExtendedTooltip name="АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="98"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ПослеВыгрузки" id="99">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>После выгрузки</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПослеВыгрузкиРасширеннаяПодсказка" id="100"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПослеВыгрузки" id="101">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПослеВыгрузкиКонтекстноеМеню" id="102"/>
+												<ExtendedTooltip name="ИмяОбработчикаПослеВыгрузкиРасширеннаяПодсказка" id="103">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;После выгрузки&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется после выгрузки объекта в промежуточную структуру данных,  но до выгрузки его непосредственно в файл обмена. Возможен отказ от записи  объекта в файл. Может быть использован для выгрузки дополнительной информации по  выгруженному объекту в файл обмена.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра.
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные,  передаваемые правилам конвертации свойств (ПКС). 
+ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных.
+КлючВыгружаемыхДанных – значение ключа в соответствии «ВыгруженныеОбъекты».  Только для платформы 1С:Предприятие 8.
+Отказ - Булево - Если Истина, то выгруженный объект в файл не  записывается
+Приемник - xml-узел объекта приемника, заполненный в соответствии с  правилом
+УзелСсылки - инициализированный xml-узел ссылки. Может использоваться,  например для инициализации свойств других объектов
+</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПослеВыгрузкиОбъекта" id="104">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="105"/>
+												<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="106"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ПослеВыгрузкиВФайл" id="107">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>После выгрузки в файл</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПослеВыгрузкиВФайлРасширеннаяПодсказка" id="108"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПослеВыгрузкиВФайл" id="109">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПослеВыгрузкиВФайлКонтекстноеМеню" id="110"/>
+												<ExtendedTooltip name="ИмяОбработчикаПослеВыгрузкиВФайлРасширеннаяПодсказка" id="111">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;После выгрузки в файл&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Событие выполняется после выгрузки объекта в файл обмена. Может быть  использован для выгрузки дополнительной информации по выгруженному объекту в  файл обмена. При этом информация будет записана в файл обмена после выгруженного  объекта.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Источник - Произвольный - выгружаемый объект источник (ссылка или  произвольные данные)
+ВходящиеДанные - Произвольный - произвольные вспомогательные данные,  переданные правилу конвертации из других правил (например из правила выгрузки  данных или правила конвертации свойств). Значение параметра, как правило, имеет  тип Структура, где ключи значений соответствуют структуре свойств объекта  приемника. Таким образом, при конвертации свойств (в правиле конвертации  свойств), конвертируемые данные (или часть данных) могут быть получены из этого  параметра.
+ИсходящиеДанные - Произвольный - произвольные вспомогательные данные,  передаваемые правилам конвертации свойств (ПКС). 
+ИмяПКО - Имя данного правила конвертации объектов
+ПКО - ссылка на данное правило конвертации объектов
+ВыгруженныеОбъекты - Соответствие.  Содержит перечень выгруженных по данному  правилу объектов. Ключом соответствия является параметр КлючВыгружаемыхДанных,  значением - число-номер объекта в файле. Может использоваться для проверки -  выгружен ли объект по ссылкам из других объектов. В целях оптимизации, при  выгрузке больших массивов данных, значение параметра может быть очищено -  например в обработчике ПослеОбработкиПравилаВыгрузкиДанных.
+Приемник - xml-узел объекта приемника, заполненный в соответствии с  правилом
+УзелСсылки - инициализированный xml-узел ссылки. Может использоваться,  например для инициализации свойств других объектов
+</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="112">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаКонтекстноеМеню" id="113"/>
+												<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="114"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ПередЗагрузкой" id="123">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Перед загрузкой</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПередЗагрузкойРасширеннаяПодсказка" id="124"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПередЗагрузкой" id="125">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПередЗагрузкойКонтекстноеМеню" id="126"/>
+												<ExtendedTooltip name="ИмяОбработчикаПередЗагрузкойРасширеннаяПодсказка" id="127">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Перед загрузкой&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Только для платформы V8.
+Событие выполняется перед загрузкой объекта.  Возможен отказ от загрузки, например, в случае невыполнения каких-либо условий.  Загружаемый в БД объект еще не инициализирован.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Отказ - Булево - Если Истина, то объект загружен не будет.
+Нпп - Число. Уникальный порядковый номер объекта в файле.
+Источник - Строка. Представление объекта источника. Пустая строка, если  представление объекта источника не выгружалось.
+ИмяПравила - Строка. Имя правила конвертации. Пустая строка, если правила  конвертации не используются.
+Правило – строка таблицы значений. Ссылка на правило конвертации объекта.
+ГенерироватьНовыйНомерИлиКодЕслиНеУказан – Булево. Если Истина и номер или  код объекта не заданы, то перед записью будет сгенерирован новый номер или  код.
+ТипОбъектаСтрокой - Строка. Тип загружаемого объекта. Например:  СправочникСсылка.Номенклатура или РегистрСведенийЗапись.ЦеныТоваров
+ТипОбъекта - Значение типа Тип. Тип загружаемого объекта.
+НеЗамещатьОбъект - Если для данного параметра установить значение Истина, то  объект идентифицированный при загрузке (т.е. найденный в информационной базе  приемнике по значению синхронизирующих полей) не будет изменен/замещен.
+РежимЗаписи - Строка. Режим записи документа. Имеет смысл только если тип  объекта приемника "Документ". Возможные значения "Запись", "Проведение",  "ОтменаПроведения"
+РежимПроведения - Строка. Режим проведения документа. Имеет смысл только если  тип объекта приемника "Документ". Возможные значения "Неоперативный",  "Оперативный"
+</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПередЗагрузкойОбъекта" id="128">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПередЗагрузкойОбъектаКонтекстноеМеню" id="129"/>
+												<ExtendedTooltip name="АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="130"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ПриЗагрузке" id="131">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>При загрузке</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПриЗагрузкеРасширеннаяПодсказка" id="132"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПриЗагрузке" id="133">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПриЗагрузкеКонтекстноеМеню" id="134"/>
+												<ExtendedTooltip name="ИмяОбработчикаПриЗагрузкеРасширеннаяПодсказка" id="135">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;При загрузке&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Только для платформы V8.
+Событие выполняется после попытки идентификации.  В случае успешной синхронизации доступен найденный объект. В противном случае  его значение Неопределено. Можно произвести произвольную инициализацию,  заполняемого данными объекта.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+ОбъектНайден - Булево. Если значение параметра равно Ложь, то объект не  идентифицирован, то есть не найден в информационной базе
+Объект - Произвольный. Загружаемый, модифицируемый объект, созданный по  ссылке или найденный в информационной базе. Если способ идентификации объекта в  файле не указан (т.е. отсутствует узел "Ссылка"), то параметр содержит значение  Неопределено. В этом случае в обработчике возможна произвольная инициализация  загружаемого объекта, в противном случае, объект будет создан автоматически.
+НеЗамещатьОбъект - Булево - Если установить значение Истина, то существующий  объект информационной базы не будет изменен.
+ОбъектМодифицирован – Булево. Флажок указывает на то, что в обработчике  объект был модифицирован. По умолчанию содержит значение Истина. То есть  обработка загрузки считает, что если выполнялся какой-либо обработчик, то объект  мог быть модифицирован, и его необходимо записать в информационную базу.  Параметр относится только к текущему обработчику и только к найденным объектам.  Если объект не был найден, то при любом значении он будет создан и записан.  Только для платформы 1С:Предприятие 8.
+</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПриЗагрузкеОбъекта" id="136">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПриЗагрузкеОбъектаКонтекстноеМеню" id="137"/>
+												<ExtendedTooltip name="АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="138"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ПослеЗагрузки" id="139">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>После загрузки</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ПослеЗагрузкиРасширеннаяПодсказка" id="140"/>
+										<ChildItems>
+											<InputField name="ИмяОбработчикаПослеЗагрузки" id="141">
+												<ReadOnly>true</ReadOnly>
+												<ToolTipRepresentation>Button</ToolTipRepresentation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<ContextMenu name="ИмяОбработчикаПослеЗагрузкиКонтекстноеМеню" id="142"/>
+												<ExtendedTooltip name="ИмяОбработчикаПослеЗагрузкиРасширеннаяПодсказка" id="143">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;После загрузки&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условия возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Только для платформы V8.
+Событие выполняется после прочтения и установки  атрибутов объекта из файла, но до его записи в информационную базу. Возможна  модификация загруженного объекта.
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+Отказ - Булево - Если Истина, то объект загружен не будет.
+Объект - Произвольный - загруженный объект.
+Ссылка – Произвольный – ссылка на найденный объект в информационной базе.
+ОбъектНайден - Булево. Если значение параметра равно Ложь, то объект не  идентифицирован, то есть не найден в информационной базе
+ПараметрыОбъекта - либо Неопределено либо Соответствие, в котором хранятся  дополнительные параметры переданные для данного объекта из источника в приемник.  Если параметров передано не было, то ПараметрыОбъекта = Неопределено.
+ОбъектМодифицирован – Булево. Флажок указывает на то, что в обработчике  объект был изменен. По умолчанию содержит значение Истина. То есть обработка  загрузки считает, что если выполнялся какой-либо обработчик, то объект мог быть  модифицирован, и его необходимо записать в информационную базу. Параметр  относится только к текущему обработчику. Если объект был изменен ранее, то при  любом значении переменной ОбъектМодифицирован он будет записан. Только для  платформы 1С:Предприятие 8.
+ИмяТипаОбъекта – Строка. Имя типа загруженного объекта, например,  «СправочникСсылка.Номенклатура».
+НаборЗаписей – РегистрСведенийНаборЗаписей. Загруженный набор записей. Только  при загрузке в обработке УниверсальныйОбменДаннымиXML.</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</InputField>
+											<TextDocumentField name="АлгоритмПослеЗагрузкиОбъекта" id="144">
+												<TitleLocation>None</TitleLocation>
+												<ContextMenu name="АлгоритмПослеЗагрузкиОбъектаКонтекстноеМеню" id="145"/>
+												<ExtendedTooltip name="АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="146"/>
+											</TextDocumentField>
+										</ChildItems>
+									</Page>
+								</ChildItems>
+							</Pages>
+						</ChildItems>
+					</Page>
+				</ChildItems>
+			</Pages>
+		</ChildItems>
+		<Attributes/>
+	</BaseForm>
+</Form>
