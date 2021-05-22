@@ -1,24 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
-	<DataProcessor uuid="690b94ea-2955-47b9-a5d8-5d50f6347a2e">
-		<InternalInfo>
-			<xr:GeneratedType name="DataProcessorObject.ЗагрузкаСтруктурыКонфигурации" category="Object">
-				<xr:TypeId>b5836063-3b6c-4840-b1a0-e8d7d8dbd700</xr:TypeId>
-				<xr:ValueId>9d7be9f1-9e3c-4c39-afe2-81d3d5659a53</xr:ValueId>
-			</xr:GeneratedType>
-			<xr:GeneratedType name="DataProcessorManager.ЗагрузкаСтруктурыКонфигурации" category="Manager">
-				<xr:TypeId>756d638d-c6f7-49eb-b7b3-dd9623cdca32</xr:TypeId>
-				<xr:ValueId>f498746a-af82-4970-a234-4704719c20c6</xr:ValueId>
-			</xr:GeneratedType>
-		</InternalInfo>
+	<Form uuid="e57d08cb-e9a8-4961-a4b8-8e2458764ed3">
+		<InternalInfo/>
 		<Properties>
-			<Name>ЗагрузкаСтруктурыКонфигурации</Name>
+			<Name>Форма</Name>
 			<Comment/>
 			<ObjectBelonging>Adopted</ObjectBelonging>
-			<ExtendedConfigurationObject>f4443c73-634b-4ad5-80b3-854bcd2a0539</ExtendedConfigurationObject>
+			<ExtendedConfigurationObject>6a76f3a6-2ecf-4fba-a830-7412fc9868e8</ExtendedConfigurationObject>
+			<FormType>Managed</FormType>
 		</Properties>
-		<ChildObjects>
-			<Form>Форма</Form>
-		</ChildObjects>
-	</DataProcessor>
+	</Form>
 </MetaDataObject>

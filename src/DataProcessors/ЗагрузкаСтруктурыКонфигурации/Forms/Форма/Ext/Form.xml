@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаВыполнитьЗагрузку" id="13">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>0</CommandName>
+				<ExtendedTooltip name="ФормаВыполнитьЗагрузкуРасширеннаяПодсказка" id="14"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Page name="Основная" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основная</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОсновнаяРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<InputField name="ИмяФайлаЗагрузки" id="1">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Файл со структурой конфигурации</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Укажите файл, содержащий структуру конфигурации</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ИмяФайлаЗагрузкиКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ИмяФайлаЗагрузкиРасширеннаяПодсказка" id="3"/>
+						</InputField>
+						<RadioButtonField name="СпособЗагрузки" id="10">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способ загрузки</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В новую версию конфигурации</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В существующую версию конфигурации</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СпособЗагрузкиКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="СпособЗагрузкиРасширеннаяПодсказка" id="12"/>
+						</RadioButtonField>
+						<InputField name="Конфигурация" id="4">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Конфигурация</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="КонфигурацияКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="КонфигурацияРасширеннаяПодсказка" id="6"/>
+						</InputField>
+						<CheckBoxField name="ДобавлятьТолькоНовыеОбъектыСвойстваЗначения" id="7">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Добавлять только новые объекты, свойства, значения</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ДобавлятьТолькоНовыеОбъектыСвойстваЗначенияКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ДобавлятьТолькоНовыеОбъектыСвойстваЗначенияРасширеннаяПодсказка" id="9"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="Ожидание" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ожидание</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="ОжиданиеРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<PictureDecoration name="КартинкаОжидание" id="21">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка ожидание</v8:content>
+								</v8:item>
+							</Title>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="КартинкаОжиданиеРасширеннаяПодсказка" id="23"/>
+						</PictureDecoration>
+						<LabelDecoration name="НадписьОжидание" id="24">
+							<Height>4</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выполняется загрузка структуры конфигурации. Пожалуйста, подождите...</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьОжиданиеКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="НадписьОжиданиеРасширеннаяПодсказка" id="26"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes/>
+	<BaseForm version="2.10">
+		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+			<ChildItems>
+				<Button name="ФормаВыполнитьЗагрузку" id="13">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>0</CommandName>
+					<ExtendedTooltip name="ФормаВыполнитьЗагрузкуРасширеннаяПодсказка" id="14"/>
+				</Button>
+			</ChildItems>
+		</AutoCommandBar>
+		<ChildItems>
+			<Pages name="ГруппаСтраницы" id="15">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа страницы</v8:content>
+					</v8:item>
+				</Title>
+				<PagesRepresentation>None</PagesRepresentation>
+				<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="16"/>
+				<ChildItems>
+					<Page name="Основная" id="17">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Основная</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ОсновнаяРасширеннаяПодсказка" id="18"/>
+						<ChildItems>
+							<InputField name="ИмяФайлаЗагрузки" id="1">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Файл со структурой конфигурации</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Укажите файл, содержащий структуру конфигурации</v8:content>
+									</v8:item>
+								</ToolTip>
+								<EditMode>EnterOnInput</EditMode>
+								<ChoiceButton>true</ChoiceButton>
+								<AutoMarkIncomplete>true</AutoMarkIncomplete>
+								<ContextMenu name="ИмяФайлаЗагрузкиКонтекстноеМеню" id="2"/>
+								<ExtendedTooltip name="ИмяФайлаЗагрузкиРасширеннаяПодсказка" id="3"/>
+							</InputField>
+							<RadioButtonField name="СпособЗагрузки" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Способ загрузки</v8:content>
+									</v8:item>
+								</Title>
+								<TitleLocation>Top</TitleLocation>
+								<RadioButtonType>Auto</RadioButtonType>
+								<ChoiceList>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>В новую версию конфигурации</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">0</Value>
+										</xr:Value>
+									</xr:Item>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>В существующую версию конфигурации</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">1</Value>
+										</xr:Value>
+									</xr:Item>
+								</ChoiceList>
+								<ContextMenu name="СпособЗагрузкиКонтекстноеМеню" id="11"/>
+								<ExtendedTooltip name="СпособЗагрузкиРасширеннаяПодсказка" id="12"/>
+							</RadioButtonField>
+							<InputField name="Конфигурация" id="4">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Конфигурация</v8:content>
+									</v8:item>
+								</Title>
+								<EditMode>EnterOnInput</EditMode>
+								<AutoMarkIncomplete>true</AutoMarkIncomplete>
+								<ContextMenu name="КонфигурацияКонтекстноеМеню" id="5"/>
+								<ExtendedTooltip name="КонфигурацияРасширеннаяПодсказка" id="6"/>
+							</InputField>
+							<CheckBoxField name="ДобавлятьТолькоНовыеОбъектыСвойстваЗначения" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавлять только новые объекты, свойства, значения</v8:content>
+									</v8:item>
+								</Title>
+								<TitleLocation>Right</TitleLocation>
+								<EditMode>EnterOnInput</EditMode>
+								<CheckBoxType>Auto</CheckBoxType>
+								<ContextMenu name="ДобавлятьТолькоНовыеОбъектыСвойстваЗначенияКонтекстноеМеню" id="8"/>
+								<ExtendedTooltip name="ДобавлятьТолькоНовыеОбъектыСвойстваЗначенияРасширеннаяПодсказка" id="9"/>
+							</CheckBoxField>
+						</ChildItems>
+					</Page>
+					<Page name="Ожидание" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ожидание</v8:content>
+							</v8:item>
+						</Title>
+						<Group>Horizontal</Group>
+						<ExtendedTooltip name="ОжиданиеРасширеннаяПодсказка" id="20"/>
+						<ChildItems>
+							<PictureDecoration name="КартинкаОжидание" id="21">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Картинка ожидание</v8:content>
+									</v8:item>
+								</Title>
+								<FileDragMode>AsFile</FileDragMode>
+								<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="КартинкаОжиданиеРасширеннаяПодсказка" id="23"/>
+							</PictureDecoration>
+							<LabelDecoration name="НадписьОжидание" id="24">
+								<Height>4</Height>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выполняется загрузка структуры конфигурации. Пожалуйста, подождите...</v8:content>
+									</v8:item>
+								</Title>
+								<ContextMenu name="НадписьОжиданиеКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="НадписьОжиданиеРасширеннаяПодсказка" id="26"/>
+							</LabelDecoration>
+						</ChildItems>
+					</Page>
+				</ChildItems>
+			</Pages>
+		</ChildItems>
+		<Attributes/>
+	</BaseForm>
+</Form>

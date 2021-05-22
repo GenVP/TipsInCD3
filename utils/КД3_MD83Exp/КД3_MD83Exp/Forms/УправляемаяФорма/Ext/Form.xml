@@ -168,6 +168,7 @@
 				</CheckBoxField>
 				<CheckBoxField name="КД3_ВыгружатьОбщиеМодули" id="60">
 					<DataPath>ВыгружатьОбщиеМодули</DataPath>
+					<Enabled>false</Enabled>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="КД3_ВыгружатьОбщиеМодулиКонтекстноеМеню" id="61"/>
