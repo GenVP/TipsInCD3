@@ -68,6 +68,7 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>Администрирование</Subsystem>
+			<StyleItem>ГиперссылкаЦвет</StyleItem>
 			<CommonPicture>Папка</CommonPicture>
 			<CommonTemplate>КД3_src</CommonTemplate>
 			<CommonModule>КД3_Метаданные</CommonModule>
