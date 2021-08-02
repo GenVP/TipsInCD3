@@ -31,6 +31,7 @@
 		</Properties>
 		<ChildObjects>
 			<Form>ФормаЭлемента</Form>
+			<Form>ФормаГруппы</Form>
 		</ChildObjects>
 	</Catalog>
 </MetaDataObject>
