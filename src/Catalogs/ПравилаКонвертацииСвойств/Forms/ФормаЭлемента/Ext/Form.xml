@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -519,14 +519,6 @@
 											<ContextMenu name="АлгоритмПередВыгрузкойСвойстваКонтекстноеМеню" id="183"/>
 											<ExtendedTooltip name="АлгоритмПередВыгрузкойСвойстваРасширеннаяПодсказка" id="184"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПередВыгрузкойСвойства" id="234">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПередВыгрузкойСвойстваКонтекстноеМеню" id="235">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПередВыгрузкойСвойстваРасширеннаяПодсказка" id="236"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="ПриВыгрузке" id="178">
@@ -582,12 +574,6 @@
 											<ContextMenu name="АлгоритмПриВыгрузкеСвойстваКонтекстноеМеню" id="186"/>
 											<ExtendedTooltip name="АлгоритмПриВыгрузкеСвойстваРасширеннаяПодсказка" id="187"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПриВыгрузкеСвойства" id="237">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПриВыгрузкеСвойстваКонтекстноеМеню" id="238"/>
-											<ExtendedTooltip name="КД3_АлгоритмПриВыгрузкеСвойстваРасширеннаяПодсказка" id="239"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="ПослеВыгрузки" id="180">
@@ -643,12 +629,6 @@
 											<ContextMenu name="АлгоритмПослеВыгрузкиСвойстваКонтекстноеМеню" id="189"/>
 											<ExtendedTooltip name="АлгоритмПослеВыгрузкиСвойстваРасширеннаяПодсказка" id="190"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиСвойства" id="240">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиСвойстваКонтекстноеМеню" id="241"/>
-											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиСвойстваРасширеннаяПодсказка" id="242"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 							</ChildItems>
@@ -716,7 +696,7 @@
 		</InputField>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.10">
+	<BaseForm version="2.11">
 		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>

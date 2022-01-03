@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
@@ -316,14 +316,6 @@
 											<ContextMenu name="АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="89"/>
 											<ExtendedTooltip name="АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="90"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПередВыгрузкойОбъекта" id="149">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="150">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="151"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ПриВыгрузке" id="91">
@@ -375,14 +367,6 @@
 											<ContextMenu name="АлгоритмПриВыгрузкеОбъектаКонтекстноеМеню" id="97"/>
 											<ExtendedTooltip name="АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="98"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПриВыгрузкеОбъекта" id="152">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПриВыгрузкеОбъектаКонтекстноеМеню" id="153">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="154"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ПослеВыгрузки" id="99">
@@ -429,14 +413,6 @@
 											<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="105"/>
 											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="106"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъекта" id="155">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="156">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="157"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ПослеВыгрузкиВФайл" id="107">
@@ -481,14 +457,6 @@
 											<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаКонтекстноеМеню" id="113"/>
 											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="114"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="158">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбменаКонтекстноеМеню" id="159">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="160"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ПередЗагрузкой" id="123">
@@ -537,14 +505,6 @@
 											<ContextMenu name="АлгоритмПередЗагрузкойОбъектаКонтекстноеМеню" id="129"/>
 											<ExtendedTooltip name="АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="130"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПередЗагрузкойОбъекта" id="161">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПередЗагрузкойОбъектаКонтекстноеМеню" id="162">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="163"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ПриЗагрузке" id="131">
@@ -586,14 +546,6 @@
 											<ContextMenu name="АлгоритмПриЗагрузкеОбъектаКонтекстноеМеню" id="137"/>
 											<ExtendedTooltip name="АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="138"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПриЗагрузкеОбъекта" id="164">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПриЗагрузкеОбъектаКонтекстноеМеню" id="165">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="166"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ПослеЗагрузки" id="139">
@@ -638,14 +590,6 @@
 											<ContextMenu name="АлгоритмПослеЗагрузкиОбъектаКонтекстноеМеню" id="145"/>
 											<ExtendedTooltip name="АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="146"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПослеЗагрузкиОбъекта" id="167">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПослеЗагрузкиОбъектаКонтекстноеМеню" id="168">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="169"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 							</ChildItems>
@@ -656,7 +600,7 @@
 		</Pages>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.10">
+	<BaseForm version="2.11">
 		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>

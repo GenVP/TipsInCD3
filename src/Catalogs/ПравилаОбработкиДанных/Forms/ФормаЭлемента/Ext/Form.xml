@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="112">
@@ -382,14 +382,6 @@
 											<ContextMenu name="АлгоритмПриОбработкеКонтекстноеМеню" id="31"/>
 											<ExtendedTooltip name="АлгоритмПриОбработкеРасширеннаяПодсказка" id="32"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПриОбработке" id="187">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПриОбработкеКонтекстноеМеню" id="188">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПриОбработкеРасширеннаяПодсказка" id="189"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="Страница_ВыборкаДанных" id="92">
@@ -439,14 +431,6 @@
 											<ContextMenu name="АлгоритмВыборкаДанныхКонтекстноеМеню" id="98"/>
 											<ExtendedTooltip name="АлгоритмВыборкаДанныхРасширеннаяПодсказка" id="99"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмВыборкаДанных" id="190">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмВыборкаДанныхКонтекстноеМеню" id="191">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмВыборкаДанныхРасширеннаяПодсказка" id="192"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 							</ChildItems>
@@ -529,14 +513,6 @@
 											<ContextMenu name="АлгоритмПередОбработкойПравилаКонтекстноеМеню" id="134"/>
 											<ExtendedTooltip name="АлгоритмПередОбработкойПравилаРасширеннаяПодсказка" id="135"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПередОбработкойПравила" id="193">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПередОбработкойПравилаКонтекстноеМеню" id="194">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПередОбработкойПравилаРасширеннаяПодсказка" id="195"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="ПередВыгрузкой" id="136">
@@ -585,14 +561,6 @@
 											<ContextMenu name="АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="139"/>
 											<ExtendedTooltip name="АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="140"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПередВыгрузкойОбъекта" id="196">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="197">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="198"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="ПослеВыгрузки" id="144">
@@ -638,14 +606,6 @@
 											<ContextMenu name="АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="150"/>
 											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="151"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъекта" id="199">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="200">
-												<Autofill>false</Autofill>
-											</ContextMenu>
-											<ExtendedTooltip name="КД3_АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="201"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 								<Page name="ПослеОбработки" id="152">
@@ -689,12 +649,6 @@
 											<ContextMenu name="АлгоритмПослеОбработкиПравилаКонтекстноеМеню" id="155"/>
 											<ExtendedTooltip name="АлгоритмПослеОбработкиПравилаРасширеннаяПодсказка" id="156"/>
 										</TextDocumentField>
-										<HTMLDocumentField name="КД3_АлгоритмПослеОбработкиПравила" id="202">
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<ContextMenu name="КД3_АлгоритмПослеОбработкиПравилаКонтекстноеМеню" id="203"/>
-											<ExtendedTooltip name="КД3_АлгоритмПослеОбработкиПравилаРасширеннаяПодсказка" id="204"/>
-										</HTMLDocumentField>
 									</ChildItems>
 								</Page>
 							</ChildItems>
@@ -745,7 +699,7 @@
 		</Pages>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.10">
+	<BaseForm version="2.11">
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>
 				<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="112">

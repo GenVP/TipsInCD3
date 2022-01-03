@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -8,6 +8,12 @@
 	</Title>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="148">
 			<AutoMaxWidth>false</AutoMaxWidth>
@@ -212,6 +218,12 @@
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
+						<CheckBoxField name="ИспользуетсяАлгоритмКонвертации" id="154">
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользуетсяАлгоритмКонвертацииКонтекстноеМеню" id="155"/>
+							<ExtendedTooltip name="ИспользуетсяАлгоритмКонвертацииРасширеннаяПодсказка" id="156"/>
+						</CheckBoxField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаСопоставлениеСвойствВручную" id="51">
@@ -577,7 +589,7 @@
 		</InputField>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.10">
+	<BaseForm version="2.11">
 		<Title>
 			<v8:item>
 				<v8:lang>ru</v8:lang>
@@ -790,6 +802,12 @@
 									</InputField>
 								</ChildItems>
 							</UsualGroup>
+							<CheckBoxField name="ИспользуетсяАлгоритмКонвертации" id="154">
+								<TitleLocation>Right</TitleLocation>
+								<CheckBoxType>Auto</CheckBoxType>
+								<ContextMenu name="ИспользуетсяАлгоритмКонвертацииКонтекстноеМеню" id="155"/>
+								<ExtendedTooltip name="ИспользуетсяАлгоритмКонвертацииРасширеннаяПодсказка" id="156"/>
+							</CheckBoxField>
 						</ChildItems>
 					</Page>
 					<Page name="СтраницаСопоставлениеСвойствВручную" id="51">
