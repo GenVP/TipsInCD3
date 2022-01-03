@@ -77,6 +77,8 @@
 	СоответствиеИмен.Вставить("chartsofcalculationtypes", "chartsOfCalculationTypes");
 	СоответствиеИмен.Вставить("константы", "constants");
 	СоответствиеИмен.Вставить("constants", "constants");
+	СоответствиеИмен.Вставить("общиемодули", "commonmodules");
+	СоответствиеИмен.Вставить("commonmodules", "commonmodules");
 	
 	Возврат СоответствиеИмен[КорневойТип];
 	

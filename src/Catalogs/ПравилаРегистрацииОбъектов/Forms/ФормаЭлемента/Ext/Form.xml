@@ -10,11 +10,6 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
-	<Events>
-		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
-		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
-		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
-	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="142">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -118,7 +113,6 @@
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
 							<FileDragMode>AsFile</FileDragMode>
-							<RowPictureDataPath>6</RowPictureDataPath>
 							<RowsPicture>
 								<xr:Ref>CommonPicture.Папка</xr:Ref>
 								<xr:LoadTransparent>true</xr:LoadTransparent>
@@ -236,7 +230,6 @@
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
 							<FileDragMode>AsFile</FileDragMode>
-							<RowPictureDataPath>5</RowPictureDataPath>
 							<RowsPicture>
 								<xr:Ref>CommonPicture.Папка</xr:Ref>
 								<xr:LoadTransparent>true</xr:LoadTransparent>
@@ -450,7 +443,6 @@
 											</ExtendedTooltip>
 										</InputField>
 										<HTMLDocumentField name="КД3_АлгоритмПередОбработкойПравила" id="147">
-											<DataPath>КД3_АлгоритмПередОбработкойПравила</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -580,7 +572,6 @@
 											</ExtendedTooltip>
 										</InputField>
 										<HTMLDocumentField name="КД3_АлгоритмПриОбработкеДополнительныйПравила" id="153">
-											<DataPath>КД3_АлгоритмПриОбработкеДополнительныйПравила</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -712,7 +703,6 @@
 													</ExtendedTooltip>
 												</InputField>
 												<HTMLDocumentField name="КД3_АлгоритмПриОбработкеПравила" id="150">
-													<DataPath>КД3_АлгоритмПриОбработкеПравила</DataPath>
 													<Visible>false</Visible>
 													<TitleLocation>None</TitleLocation>
 													<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -827,7 +817,6 @@
 											</ExtendedTooltip>
 										</InputField>
 										<HTMLDocumentField name="КД3_АлгоритмПослеОбработкиПравила" id="156">
-											<DataPath>КД3_АлгоритмПослеОбработкиПравила</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -923,66 +912,6 @@
 		</InputField>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="КД3_АлгоритмПередОбработкойПравила" id="1000001">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм перед обработкой правила</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПриОбработкеДополнительныйПравила" id="1000002">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм при обработке дополнительный правила</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПриОбработкеПравила" id="1000003">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм при обработке правила</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПослеОбработкиПравила" id="1000004">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм после обработки правила</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -1246,7 +1175,6 @@
 								<EnableStartDrag>true</EnableStartDrag>
 								<EnableDrag>true</EnableDrag>
 								<FileDragMode>AsFile</FileDragMode>
-								<RowPictureDataPath>6</RowPictureDataPath>
 								<RowsPicture>
 									<xr:Ref>CommonPicture.Папка</xr:Ref>
 									<xr:LoadTransparent>true</xr:LoadTransparent>
@@ -1364,7 +1292,6 @@
 								<EnableStartDrag>true</EnableStartDrag>
 								<EnableDrag>true</EnableDrag>
 								<FileDragMode>AsFile</FileDragMode>
-								<RowPictureDataPath>5</RowPictureDataPath>
 								<RowsPicture>
 									<xr:Ref>CommonPicture.Папка</xr:Ref>
 									<xr:LoadTransparent>true</xr:LoadTransparent>

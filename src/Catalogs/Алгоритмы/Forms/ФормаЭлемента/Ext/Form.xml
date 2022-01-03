@@ -9,12 +9,6 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
-	<Events>
-		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
-		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
-		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
-		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
-	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="43">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -118,9 +112,6 @@
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ИспользуетсяПриЗагрузкеКонтекстноеМеню" id="38"/>
 					<ExtendedTooltip name="ИспользуетсяПриЗагрузкеРасширеннаяПодсказка" id="39"/>
-					<Events>
-						<Event name="OnChange" callType="After">КД3_ИспользуетсяПриЗагрузкеПриИзмененииПосле</Event>
-					</Events>
 				</CheckBoxField>
 				<InputField name="ТегВырезки" id="46">
 					<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="47"/>
@@ -134,33 +125,8 @@
 			<ContextMenu name="АлгоритмКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="АлгоритмРасширеннаяПодсказка" id="12"/>
 		</TextDocumentField>
-		<HTMLDocumentField name="КД3_Алгоритм" id="49">
-			<DataPath>КД3_Алгоритм</DataPath>
-			<Visible>false</Visible>
-			<TitleLocation>None</TitleLocation>
-			<ContextMenu name="КД3_АлгоритмКонтекстноеМеню" id="50">
-				<Autofill>false</Autofill>
-			</ContextMenu>
-			<ExtendedTooltip name="КД3_АлгоритмРасширеннаяПодсказка" id="51"/>
-		</HTMLDocumentField>
 	</ChildItems>
-	<Attributes>
-		<Attribute name="КД3_Алгоритм" id="1000001">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-	</Attributes>
+	<Attributes/>
 	<BaseForm version="2.10">
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>

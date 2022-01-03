@@ -51,7 +51,7 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>https://github.com/GenVP/TipsInCD3</Vendor>
-			<Version>1.2.1</Version>
+			<Version>1.2.2</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation>
 				<v8:item>
@@ -70,10 +70,21 @@
 			<Subsystem>Администрирование</Subsystem>
 			<StyleItem>ГиперссылкаЦвет</StyleItem>
 			<CommonPicture>Папка</CommonPicture>
+			<CommonPicture>Успешно</CommonPicture>
+			<CommonPicture>КД3_УбратьКомментарии</CommonPicture>
+			<CommonPicture>КД3_Закомментировать</CommonPicture>
+			<CommonPicture>КД3_ДобавитьПереносСтроки</CommonPicture>
+			<CommonPicture>КД3_УдалитьПереносСтроки</CommonPicture>
+			<CommonPicture>КД3_Форматировать</CommonPicture>
 			<CommonTemplate>КД3_src</CommonTemplate>
 			<CommonModule>КД3_Метаданные</CommonModule>
 			<CommonModule>КД3_МетаданныеКлиент</CommonModule>
 			<CommonModule>КД3_МетаданныеПовтИсп</CommonModule>
+			<CommonModule>КД3_УправлениеФормой</CommonModule>
+			<CommonModule>КД3_УправлениеФормойКлиент</CommonModule>
+			<CommonModule>КД3_РедакторКодаКлиент</CommonModule>
+			<CommonModule>КД3_Настройки</CommonModule>
+			<CommonModule>КД3_НастройкиКлиент</CommonModule>
 			<CommonCommand>КД3_Настройки</CommonCommand>
 			<CommonForm>КД3_Настройки</CommonForm>
 			<Catalog>ПравилаКонвертацииОбъектов</Catalog>
@@ -87,6 +98,8 @@
 			<Catalog>Конфигурации</Catalog>
 			<Catalog>Запросы</Catalog>
 			<Enum>ВариантыИдентификацииОбъектов</Enum>
+			<Enum>ВидыСвойств</Enum>
+			<Enum>ТипыОбъектов</Enum>
 			<DataProcessor>ЗагрузкаСтруктурыКонфигурации</DataProcessor>
 			<DataProcessor>ЗагрузкаСтруктурыКонфигурацииИзФайловXML</DataProcessor>
 		</ChildObjects>

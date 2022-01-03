@@ -10,11 +10,6 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
-	<Events>
-		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
-		<Event name="BeforeWrite" callType="Before">КД3_ПередЗаписьюПеред</Event>
-		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
-	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="471">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -263,7 +258,6 @@
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
 							<FileDragMode>AsFile</FileDragMode>
-							<RowPictureDataPath>10000000</RowPictureDataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -524,7 +518,6 @@
 											<ExtendedTooltip name="АлгоритмПриОтправкеДанныхРасширеннаяПодсказка" id="21"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПриОтправкеДанных" id="510">
-											<DataPath>КД3_АлгоритмПриОтправкеДанных</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПриОтправкеДанныхКонтекстноеМеню" id="511">
@@ -581,7 +574,6 @@
 											<ExtendedTooltip name="АлгоритмПередПолучениемДанныхРасширеннаяПодсказка" id="24"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПередПолучениемДанных" id="507">
-											<DataPath>КД3_АлгоритмПередПолучениемДанных</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПередПолучениемДанныхКонтекстноеМеню" id="508">
@@ -650,7 +642,6 @@
 											<ExtendedTooltip name="АлгоритмПриПолученииДанныхРасширеннаяПодсказка" id="27"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПриПолученииДанных" id="513">
-											<DataPath>КД3_АлгоритмПриПолученииДанных</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПриПолученииДанныхКонтекстноеМеню" id="514">
@@ -720,9 +711,6 @@
 															</v8:item>
 														</Title>
 													</ExtendedTooltip>
-													<Events>
-														<Event name="OnChange" callType="After">КД3_АлгоритмПослеЗагрузкиВсехДанныхПриИзмененииПосле</Event>
-													</Events>
 												</InputField>
 												<Button name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанных" id="252">
 													<Type>Hyperlink</Type>
@@ -746,7 +734,6 @@
 											<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхТекстРасширеннаяПодсказка" id="249"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПослеЗагрузкиВсехДанныхТекст" id="516">
-											<DataPath>КД3_АлгоритмПослеЗагрузкиВсехДанныхТекст</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПослеЗагрузкиВсехДанныхТекстКонтекстноеМеню" id="517"/>
@@ -843,7 +830,6 @@
 											<ExtendedTooltip name="АлгоритмПередВыгрузкойОбъектаРасширеннаяПодсказка" id="272"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПередВыгрузкойОбъекта" id="519">
-											<DataPath>КД3_АлгоритмПередВыгрузкойОбъекта</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПередВыгрузкойОбъектаКонтекстноеМеню" id="520">
@@ -903,7 +889,6 @@
 											<ExtendedTooltip name="АлгоритмПриВыгрузкеОбъектаРасширеннаяПодсказка" id="277"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПриВыгрузкеОбъекта" id="522">
-											<DataPath>КД3_АлгоритмПриВыгрузкеОбъекта</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПриВыгрузкеОбъектаКонтекстноеМеню" id="523">
@@ -958,7 +943,6 @@
 											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаРасширеннаяПодсказка" id="288"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъекта" id="525">
-											<DataPath>КД3_АлгоритмПослеВыгрузкиОбъекта</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаКонтекстноеМеню" id="526">
@@ -1011,7 +995,6 @@
 											<ExtendedTooltip name="АлгоритмПослеВыгрузкиОбъектаВФайлОбменаРасширеннаяПодсказка" id="293"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="528">
-											<DataPath>КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбменаКонтекстноеМеню" id="529">
@@ -1065,7 +1048,6 @@
 											<ExtendedTooltip name="АлгоритмПоследовательностьПолейПоискаРасширеннаяПодсказка" id="304"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПоследовательностьПолейПоиска" id="531">
-											<DataPath>КД3_АлгоритмПоследовательностьПолейПоиска</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПоследовательностьПолейПоискаКонтекстноеМеню" id="532">
@@ -1122,7 +1104,6 @@
 											<ExtendedTooltip name="АлгоритмПередЗагрузкойОбъектаРасширеннаяПодсказка" id="319"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПередЗагрузкойОбъекта" id="534">
-											<DataPath>КД3_АлгоритмПередЗагрузкойОбъекта</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПередЗагрузкойОбъектаКонтекстноеМеню" id="535">
@@ -1172,7 +1153,6 @@
 											<ExtendedTooltip name="АлгоритмПриЗагрузкеОбъектаРасширеннаяПодсказка" id="313"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПриЗагрузкеОбъекта" id="537">
-											<DataPath>КД3_АлгоритмПриЗагрузкеОбъекта</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПриЗагрузкеОбъектаКонтекстноеМеню" id="538">
@@ -1226,7 +1206,6 @@
 											<ExtendedTooltip name="АлгоритмПослеЗагрузкиОбъектаРасширеннаяПодсказка" id="316"/>
 										</TextDocumentField>
 										<HTMLDocumentField name="КД3_АлгоритмПослеЗагрузкиОбъекта" id="540">
-											<DataPath>КД3_АлгоритмПослеЗагрузкиОбъекта</DataPath>
 											<Visible>false</Visible>
 											<TitleLocation>None</TitleLocation>
 											<ContextMenu name="КД3_АлгоритмПослеЗагрузкиОбъектаКонтекстноеМеню" id="541">
@@ -1710,186 +1689,6 @@
 		</Pages>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="КД3_АлгоритмПриОтправкеДанных" id="1000001">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм при отправке данных</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПередПолучениемДанных" id="1000002">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм перед получением данных</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПриПолученииДанных" id="1000003">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм при получении данных</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПослеЗагрузкиВсехДанныхТекст" id="1000004">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм после загрузки всех данных текст</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПередВыгрузкойОбъекта" id="1000005">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм перед выгрузкой объекта</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПриВыгрузкеОбъекта" id="1000006">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм при выгрузке объекта</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПослеВыгрузкиОбъекта" id="1000007">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм после выгрузки объекта</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПослеВыгрузкиОбъектаВФайлОбмена" id="1000008">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм после выгрузки объекта в файл обмена</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПоследовательностьПолейПоиска" id="1000009">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм последовательность полей поиска</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПередЗагрузкойОбъекта" id="1000010">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм перед загрузкой объекта</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПриЗагрузкеОбъекта" id="1000011">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм при загрузке объекта</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_АлгоритмПослеЗагрузкиОбъекта" id="1000012">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 алгоритм после загрузки объекта</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -2172,7 +1971,6 @@
 								<EnableStartDrag>true</EnableStartDrag>
 								<EnableDrag>true</EnableDrag>
 								<FileDragMode>AsFile</FileDragMode>
-								<RowPictureDataPath>10000000</RowPictureDataPath>
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>

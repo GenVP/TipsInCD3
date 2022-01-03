@@ -30,30 +30,6 @@
 			<ExtendedConfigurationObject>e18d9381-4a28-46d8-a92d-755ca9a89e17</ExtendedConfigurationObject>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="13d1c19b-c9ef-49fa-aacb-ed90bb27f131">
-				<InternalInfo/>
-				<Properties>
-					<Name>Конфигурация</Name>
-					<Comment/>
-					<ObjectBelonging>Adopted</ObjectBelonging>
-					<ExtendedConfigurationObject>addb7fe7-f84d-4058-afa7-f181b8be5d1f</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>cfg:CatalogRef.Релизы</v8:Type>
-					</Type>
-				</Properties>
-			</Attribute>
-			<Attribute uuid="a9512529-c0d9-45ba-9bfc-1ac0cb69b12b">
-				<InternalInfo/>
-				<Properties>
-					<Name>КонфигурацияКорреспондент</Name>
-					<Comment/>
-					<ObjectBelonging>Adopted</ObjectBelonging>
-					<ExtendedConfigurationObject>60e74b24-33b4-45b0-8b87-59165e372942</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>cfg:CatalogRef.Релизы</v8:Type>
-					</Type>
-				</Properties>
-			</Attribute>
 			<Form>ФормаЭлемента</Form>
 		</ChildObjects>
 	</Catalog>
