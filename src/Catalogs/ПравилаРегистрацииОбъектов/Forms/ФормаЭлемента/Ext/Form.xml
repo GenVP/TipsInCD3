@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
-	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаКопироватьПравило" id="145">
@@ -444,6 +443,73 @@
 										</InputField>
 									</ChildItems>
 								</Page>
+								<Page name="СтраницаПриОбработке" id="44">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При обработке</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаПриОбработкеРасширеннаяПодсказка" id="45"/>
+									<ChildItems>
+										<InputField name="АлгоритмПриОбработкеПравила" id="10">
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MultiLine>true</MultiLine>
+											<ContextMenu name="АлгоритмПриОбработкеПравилаКонтекстноеМеню" id="11"/>
+											<ExtendedTooltip name="АлгоритмПриОбработкеПравилаРасширеннаяПодсказка" id="12">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;При обработке&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условие возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Событие  выполняется перед выполнением запроса к информационной базе для определения  узлов-получателей, в момент, когда текст запроса сформирован и получены значения  свойств объекта. Параметры запроса инициализированы значениями из текущей версии  объекта.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;font Verdana&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Контекст выполнения&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Перед записью объекта; При выгрузке объекта.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Отказ  – Булево – флаг отказа от выполнения обработчика и отказа от выполнения запроса  к информационной базе для определения узлов-получателей.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;Объект – объект, для  которого выполняется правило регистрации. При регистрации объектов нессылочного  типа в качестве объекта выступает запись набора записей.&lt;/&gt;
+&lt;fontsize 10&gt;ТекстЗапроса  – Строка – текст запроса, который будет использован для определения  узлов-получателей. Текст запроса должен обязательно включать ключевое слово в  разделе условий: [УсловиеОтбораПоРеквизитуФлагу] – см. пример.&lt;/&gt;
+&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;ПараметрыЗапроса  – Структура – содержит значения свойств текущей версии объекта, которые  используются в качестве параметров в запросе для определения  узлов-получателей.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;ИспользоватьКэш – Булево  – параметр определяет включение платформенного механизма повторно используемых  значений при определении узлов-получателей. Если передаваемые запросу значения в  структуре ПараметрыЗапроса содержат недопустимые типы данных для платформенного  механизма кэширования, то флаг следует сбросить. Значение по умолчанию –  Истина.&lt;/&gt;
+&lt;fontsize 10&gt;Выгрузка (только чтение)  – Булево – параметр определяет контекст выполнения правила регистрации. Истина –  правило регистрации выполняется в контексте выгрузки объекта. Ложь – правило  регистрации выполняется в контексте перед записью объекта.&lt;/&gt;
+
+&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Пример:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+ 
+&lt;fontsize 10&gt;Пример описывает сценарий  регистрации объекта, когда номенклатура в табличной части документа используется  для выборки узлов-получателей. Параметр запроса НоменклатураДокумента  представлен массивом элементов, поэтому платформенный механизм кэширования  отключен (ИспользоватьКэш = Ложь).&lt;/&gt;
+&lt;fontsize 10&gt;ИспользоватьКэш =  Ложь;&lt;/&gt;
+&lt;fontsize 10&gt;// Получаем значение  параметра НоменклатураДокумента из текущей версии  объекта
+НоменклатураДокумента =  Объект.Товары.ВыгрузитьКолонку("Номенклатура");
+ПараметрыЗапроса.Вставить("НоменклатураДокумента",  НоменклатураДокумента);&lt;/&gt;
+&lt;fontsize 10&gt;ТекстЗапроса =  "
+|ВЫБРАТЬ РАЗЛИЧНЫЕ ПланОбменаОсновнаяТаблица.Ссылка КАК  Ссылка
+|ИЗ
+|ПланОбмена._ДемоОбменБСП_БСП КАК  ПланОбменаОсновнаяТаблица
+|ЛЕВОЕ  СОЕДИНЕНИЕ
+|ПланОбмена._ДемоОбменБСП_БСП.Номенклатура КАК  _ДемоОбменБСП_БСПНоменклатура
+|ПО ПланОбменаОсновнаяТаблица.Ссылка =  _ДемоОбменБСП_БСПНоменклатура.Ссылка
+|ГДЕ
+|(ПланОбменаОсновнаяТаблица.ДатаНачалаВыгрузкиДокументов  &lt;&lt;= &amp;СвойствоОбъекта_Дата
+| И  _ДемоОбменБСП_БСПНоменклатура.Номенклатура В  (&amp;СвойствоОбъекта_НоменклатураДокумента) 
+| )
+|И НЕ  ПланОбменаОсновнаяТаблица.Ссылка = &amp;_ДемоОбменБСП_БСПЭтотУзел
+|И НЕ  ПланОбменаОсновнаяТаблица.ПометкаУдаления
+|[УсловиеОтбораПоРеквизитуФлагу]
+|";&lt;/&gt;
+</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</InputField>
+									</ChildItems>
+								</Page>
 								<Page name="СтраницаПриОбработкеДоп" id="46">
 									<Title>
 										<v8:item>
@@ -519,74 +585,6 @@
 												</Title>
 											</ExtendedTooltip>
 										</InputField>
-										<UsualGroup name="СтраницаПриОбработке" id="44">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>При обработке</v8:content>
-												</v8:item>
-											</Title>
-											<Group>Vertical</Group>
-											<ExtendedTooltip name="СтраницаПриОбработкеРасширеннаяПодсказка" id="45"/>
-											<ChildItems>
-												<InputField name="АлгоритмПриОбработкеПравила" id="10">
-													<TitleLocation>None</TitleLocation>
-													<ToolTipRepresentation>Button</ToolTipRepresentation>
-													<EditMode>EnterOnInput</EditMode>
-													<AutoMaxWidth>false</AutoMaxWidth>
-													<MultiLine>true</MultiLine>
-													<ContextMenu name="АлгоритмПриОбработкеПравилаКонтекстноеМеню" id="11"/>
-													<ExtendedTooltip name="АлгоритмПриОбработкеПравилаРасширеннаяПодсказка" id="12">
-														<Title formatted="true">
-															<v8:item>
-																<v8:lang>ru</v8:lang>
-																<v8:content>&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;При обработке&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt; 
-&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Условие возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
- 
-&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Событие  выполняется перед выполнением запроса к информационной базе для определения  узлов-получателей, в момент, когда текст запроса сформирован и получены значения  свойств объекта. Параметры запроса инициализированы значениями из текущей версии  объекта.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;b&gt;&lt;font Verdana&gt;&lt;fontsize 12&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Контекст выполнения&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Перед записью объекта; При выгрузке объекта.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Verdana&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
- 
-&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Отказ  – Булево – флаг отказа от выполнения обработчика и отказа от выполнения запроса  к информационной базе для определения узлов-получателей.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;fontsize 10&gt;Объект – объект, для  которого выполняется правило регистрации. При регистрации объектов нессылочного  типа в качестве объекта выступает запись набора записей.&lt;/&gt;
-&lt;fontsize 10&gt;ТекстЗапроса  – Строка – текст запроса, который будет использован для определения  узлов-получателей. Текст запроса должен обязательно включать ключевое слово в  разделе условий: [УсловиеОтбораПоРеквизитуФлагу] – см. пример.&lt;/&gt;
-&lt;font Verdana&gt;&lt;fontsize 10&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;ПараметрыЗапроса  – Структура – содержит значения свойств текущей версии объекта, которые  используются в качестве параметров в запросе для определения  узлов-получателей.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;fontsize 10&gt;ИспользоватьКэш – Булево  – параметр определяет включение платформенного механизма повторно используемых  значений при определении узлов-получателей. Если передаваемые запросу значения в  структуре ПараметрыЗапроса содержат недопустимые типы данных для платформенного  механизма кэширования, то флаг следует сбросить. Значение по умолчанию –  Истина.&lt;/&gt;
-&lt;fontsize 10&gt;Выгрузка (только чтение)  – Булево – параметр определяет контекст выполнения правила регистрации. Истина –  правило регистрации выполняется в контексте выгрузки объекта. Ложь – правило  регистрации выполняется в контексте перед записью объекта.&lt;/&gt;
-
-&lt;b&gt;&lt;font Arial&gt;&lt;fontsize 9&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;Пример:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
- 
-&lt;fontsize 10&gt;Пример описывает сценарий  регистрации объекта, когда номенклатура в табличной части документа используется  для выборки узлов-получателей. Параметр запроса НоменклатураДокумента  представлен массивом элементов, поэтому платформенный механизм кэширования  отключен (ИспользоватьКэш = Ложь).&lt;/&gt;
-&lt;fontsize 10&gt;ИспользоватьКэш =  Ложь;&lt;/&gt;
-&lt;fontsize 10&gt;// Получаем значение  параметра НоменклатураДокумента из текущей версии  объекта
-НоменклатураДокумента =  Объект.Товары.ВыгрузитьКолонку("Номенклатура");
-ПараметрыЗапроса.Вставить("НоменклатураДокумента",  НоменклатураДокумента);&lt;/&gt;
-&lt;fontsize 10&gt;ТекстЗапроса =  "
-|ВЫБРАТЬ РАЗЛИЧНЫЕ ПланОбменаОсновнаяТаблица.Ссылка КАК  Ссылка
-|ИЗ
-|ПланОбмена._ДемоОбменБСП_БСП КАК  ПланОбменаОсновнаяТаблица
-|ЛЕВОЕ  СОЕДИНЕНИЕ
-|ПланОбмена._ДемоОбменБСП_БСП.Номенклатура КАК  _ДемоОбменБСП_БСПНоменклатура
-|ПО ПланОбменаОсновнаяТаблица.Ссылка =  _ДемоОбменБСП_БСПНоменклатура.Ссылка
-|ГДЕ
-|(ПланОбменаОсновнаяТаблица.ДатаНачалаВыгрузкиДокументов  &lt;&lt;= &amp;СвойствоОбъекта_Дата
-| И  _ДемоОбменБСП_БСПНоменклатура.Номенклатура В  (&amp;СвойствоОбъекта_НоменклатураДокумента) 
-| )
-|И НЕ  ПланОбменаОсновнаяТаблица.Ссылка = &amp;_ДемоОбменБСП_БСПЭтотУзел
-|И НЕ  ПланОбменаОсновнаяТаблица.ПометкаУдаления
-|[УсловиеОтбораПоРеквизитуФлагу]
-|";&lt;/&gt;
-</v8:content>
-															</v8:item>
-														</Title>
-													</ExtendedTooltip>
-												</InputField>
-											</ChildItems>
-										</UsualGroup>
 									</ChildItems>
 								</Page>
 								<Page name="СтраницаПослеОбработки" id="48">
@@ -845,7 +843,6 @@
 		</ConditionalAppearance>
 	</Attributes>
 	<BaseForm version="2.11">
-		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>
 				<Button name="ФормаКопироватьПравило" id="145">

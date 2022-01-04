@@ -144,7 +144,7 @@
 									<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="255"/>
 									<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="256"/>
 								</InputField>
-								<CheckBoxField name="ОбъектСДвижениями" id="543">
+								<CheckBoxField name="ОбъектСДвижениями" id="510">
 									<TitleLocation>Right</TitleLocation>
 									<ToolTip>
 										<v8:item>
@@ -154,8 +154,8 @@
 									</ToolTip>
 									<ToolTipRepresentation>Button</ToolTipRepresentation>
 									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ОбъектСДвижениямиКонтекстноеМеню" id="549"/>
-									<ExtendedTooltip name="ОбъектСДвижениямиРасширеннаяПодсказка" id="550"/>
+									<ContextMenu name="ОбъектСДвижениямиКонтекстноеМеню" id="511"/>
+									<ExtendedTooltip name="ОбъектСДвижениямиРасширеннаяПодсказка" id="512"/>
 								</CheckBoxField>
 							</ChildItems>
 						</UsualGroup>
@@ -1209,7 +1209,7 @@
 									<CommandName>0</CommandName>
 									<ExtendedTooltip name="ЗадатьПорядокПолейПоискаРасширеннаяПодсказка" id="90"/>
 								</Button>
-								<LabelDecoration name="Предупреждение_МногоПолей" id="546">
+								<LabelDecoration name="Предупреждение_МногоПолей" id="507">
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<HorizontalStretch>true</HorizontalStretch>
 									<TextColor>style:SpecialTextColor</TextColor>
@@ -1219,8 +1219,8 @@
 											<v8:content>Первый вариант поиска содержит более 5 полей поиска. При интерактивном сопоставлении  будут задействованы только первые 5 полей поиска.</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="Предупреждение_МногоПолейКонтекстноеМеню" id="551"/>
-									<ExtendedTooltip name="Предупреждение_МногоПолейРасширеннаяПодсказка" id="552"/>
+									<ContextMenu name="Предупреждение_МногоПолейКонтекстноеМеню" id="508"/>
+									<ExtendedTooltip name="Предупреждение_МногоПолейРасширеннаяПодсказка" id="509"/>
 								</LabelDecoration>
 								<UsualGroup name="Страница_Идентификация_ГоризонтальнаяГруппа1" id="148">
 									<Title>
