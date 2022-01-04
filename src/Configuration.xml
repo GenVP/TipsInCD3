@@ -72,12 +72,12 @@
 			<StyleItem>ГиперссылкаЦвет</StyleItem>
 			<CommonPicture>Папка</CommonPicture>
 			<CommonPicture>Успешно</CommonPicture>
+			<CommonPicture>ДлительнаяОперация48</CommonPicture>
 			<CommonPicture>КД3_УбратьКомментарии</CommonPicture>
 			<CommonPicture>КД3_Закомментировать</CommonPicture>
 			<CommonPicture>КД3_ДобавитьПереносСтроки</CommonPicture>
 			<CommonPicture>КД3_УдалитьПереносСтроки</CommonPicture>
 			<CommonPicture>КД3_Форматировать</CommonPicture>
-			<CommonPicture>ДлительнаяОперация48</CommonPicture>
 			<CommonTemplate>КД3_src</CommonTemplate>
 			<CommonTemplate>КД3_RegExWin32</CommonTemplate>
 			<CommonTemplate>КД3_RegExWin64</CommonTemplate>

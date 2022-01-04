@@ -7,6 +7,11 @@
 				<CommandName>0</CommandName>
 				<ExtendedTooltip name="ФормаЗагрузитьСтруктуруКонфигурацииРасширеннаяПодсказка" id="27"/>
 			</Button>
+			<Button name="ФормаКД3_ЗагрузитьСтруктуруКонфигурации" id="104">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КД3_ЗагрузитьСтруктуруКонфигурации</CommandName>
+				<ExtendedTooltip name="ФормаКД3_ЗагрузитьСтруктуруКонфигурацииРасширеннаяПодсказка" id="105"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -562,6 +567,23 @@
 			</Type>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="КД3_ЗагрузитьСтруктуруКонфигурации" id="1000000">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить структуру конфигурации (КД3)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузит структуру конфигурации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action callType="After">КД3_ЗагрузитСтруктуруКонфигурацииПосле</Action>
+		</Command>
+	</Commands>
 	<BaseForm version="2.11">
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>
