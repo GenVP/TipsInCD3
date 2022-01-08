@@ -349,6 +349,7 @@
 									<v8:content>К д3 группа контекстная подсказка</v8:content>
 								</v8:item>
 							</ToolTip>
+							<Group>Vertical</Group>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="КД3_ГруппаКонтекстнаяПодсказкаРасширеннаяПодсказка" id="84"/>
 							<ChildItems>
