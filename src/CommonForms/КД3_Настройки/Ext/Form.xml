@@ -162,35 +162,43 @@
 			<Group>Vertical</Group>
 			<ExtendedTooltip name="ГруппаКонсольКодаРасширеннаяПодсказка" id="34"/>
 			<ChildItems>
-				<UsualGroup name="ГруппаКнопкиЗагрузки" id="45">
+				<CommandBar name="ГруппаЗагрузитьКонсольКода" id="50">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа кнопки загрузки</v8:content>
+							<v8:content>Загрузить:</v8:content>
 						</v8:item>
 					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Группа кнопки загрузки</v8:content>
-						</v8:item>
-					</ToolTip>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаКнопкиЗагрузкиРасширеннаяПодсказка" id="46"/>
+					<ExtendedTooltip name="ГруппаЗагрузитьКонсольКодаРасширеннаяПодсказка" id="51"/>
 					<ChildItems>
-						<Button name="ЗагрузитьКонсольКодаИзФайла" id="41">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.ЗагрузитьКонсольКодаИзФайла</CommandName>
-							<ExtendedTooltip name="ЗагрузитьКонсольКодаИзФайлаРасширеннаяПодсказка" id="42"/>
-						</Button>
-						<Button name="ЗагрузитьКонсольКодаИзМакета" id="43">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.ЗагрузитьКонсольКодаИзМакета</CommandName>
-							<ExtendedTooltip name="ЗагрузитьКонсольКодаИзМакетаРасширеннаяПодсказка" id="44"/>
-						</Button>
+						<Popup name="ГруппаКомандыЗагрузитьКонсольКода" id="52">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузить bsl_console</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаКомандыЗагрузитьКонсольКодаРасширеннаяПодсказка" id="53"/>
+							<ChildItems>
+								<Button name="ЗагрузитьКонсольКодаИзФайла" id="41">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ЗагрузитьКонсольКодаИзФайла</CommandName>
+									<ExtendedTooltip name="ЗагрузитьКонсольКодаИзФайлаРасширеннаяПодсказка" id="42"/>
+								</Button>
+								<Button name="ЗагрузитьКонсольКодаИзМакета" id="43">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ЗагрузитьКонсольКодаИзМакета</CommandName>
+									<ExtendedTooltip name="ЗагрузитьКонсольКодаИзМакетаРасширеннаяПодсказка" id="44"/>
+								</Button>
+								<Button name="ЗагрузитьКонсольКодаИзGitHubDevelop" id="54">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ЗагрузитьКонсольКодаИзGitHubDevelop</CommandName>
+									<ExtendedTooltip name="ЗагрузитьКонсольКодаИзGitHubDevelopРасширеннаяПодсказка" id="55"/>
+								</Button>
+							</ChildItems>
+						</Popup>
 					</ChildItems>
-				</UsualGroup>
+				</CommandBar>
 				<LabelDecoration name="КонсольКодаИнформация" id="35">
 					<HorizontalStretch>true</HorizontalStretch>
 					<Title formatted="false">
@@ -337,7 +345,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Загрузить из файла</v8:content>
+					<v8:content>Из файла</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -352,7 +360,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Загрузить из макета</v8:content>
+					<v8:content>Из макета</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -362,6 +370,15 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьКонсольКодаИзМакета</Action>
+		</Command>
+		<Command name="ЗагрузитьКонсольКодаИзGitHubDevelop" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Из GitHub, ветка develop</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗагрузитьКонсольКодаИзGitHubDevelop</Action>
 		</Command>
 	</Commands>
 </Form>

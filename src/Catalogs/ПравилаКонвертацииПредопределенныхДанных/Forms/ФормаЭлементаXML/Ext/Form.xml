@@ -164,6 +164,8 @@
 									<v8:content>Сопоставление значений</v8:content>
 								</v8:item>
 							</Title>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="СопоставлениеЗначенийКонтекстноеМеню" id="29"/>
 							<AutoCommandBar name="СопоставлениеЗначенийКоманднаяПанель" id="30">
