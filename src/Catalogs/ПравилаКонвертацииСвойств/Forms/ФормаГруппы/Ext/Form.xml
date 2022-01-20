@@ -8,12 +8,6 @@
 	</Title>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
-	<Events>
-		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
-		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
-		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
-		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
-	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="148">
 			<AutoMaxWidth>false</AutoMaxWidth>

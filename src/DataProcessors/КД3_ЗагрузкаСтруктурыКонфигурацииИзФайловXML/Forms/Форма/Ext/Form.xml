@@ -389,7 +389,23 @@
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="КД3_ЗагружатьМетодыМодулейКонтекстноеМеню" id="67"/>
 									<ExtendedTooltip name="КД3_ЗагружатьМетодыМодулейРасширеннаяПодсказка" id="68"/>
+									<Events>
+										<Event name="OnChange">КД3_ЗагружатьМетодыМодулейПриИзменении</Event>
+									</Events>
 								</CheckBoxField>
+								<LabelDecoration name="КД3_ИнфоЗагружаемыеМодули" id="85">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>В конфигурации указан каталог исходных кодов.
+Будет загружен только глобальный контекст.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КД3_ИнфоЗагружаемыеМодулиКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="КД3_ИнфоЗагружаемыеМодулиРасширеннаяПодсказка" id="87"/>
+								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -429,7 +445,7 @@
 									</Title>
 									<Picture>
 										<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="17"/>
@@ -665,7 +681,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КД3_НаКлиенте</Action>
-			<Action>КД3_НаКлиенте</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КД3_НаСервере" id="3">
@@ -681,7 +696,6 @@
 					<v8:content>К д3 на сервере</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>КД3_НаСервере</Action>
 			<Action>КД3_НаСервере</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>

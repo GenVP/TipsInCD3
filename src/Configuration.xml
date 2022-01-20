@@ -51,14 +51,9 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>https://github.com/GenVP/TipsInCD3</Vendor>
-			<Version>1.2.1</Version>
+			<Version>1.2.2</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
-			<BriefInformation>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Контекстная подсказка в КД3</v8:content>
-				</v8:item>
-			</BriefInformation>
+			<BriefInformation/>
 			<DetailedInformation/>
 			<Copyright/>
 			<VendorInformationAddress/>
@@ -96,6 +91,7 @@
 			<CommonModule>КД3_УправлениеФормойВызовСервера</CommonModule>
 			<CommonModule>КД3_УправлениеФормойКлиентСервер</CommonModule>
 			<CommonModule>КонвертацияДанныхXDTOСервер</CommonModule>
+			<CommonModule>СтандартныеПодсистемыКлиент</CommonModule>
 			<CommonCommand>КД3_Настройки</CommonCommand>
 			<CommonForm>КД3_Настройки</CommonForm>
 			<Catalog>ПравилаКонвертацииОбъектов</Catalog>

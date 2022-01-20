@@ -277,6 +277,8 @@
 									<v8:content>Правила конвертации свойств</v8:content>
 								</v8:item>
 							</Title>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<AutoRefresh>false</AutoRefresh>
 							<AutoRefreshPeriod>60</AutoRefreshPeriod>
 							<Period>
@@ -1259,6 +1261,8 @@
 									<SearchStringLocation>None</SearchStringLocation>
 									<ViewStatusLocation>None</ViewStatusLocation>
 									<SearchControlLocation>None</SearchControlLocation>
+									<ViewMode>All</ViewMode>
+									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="ИдентификацияПоПолямПоискаКонтекстноеМеню" id="126"/>
 									<AutoCommandBar name="ИдентификацияПоПолямПоискаКоманднаяПанель" id="127">
@@ -1562,6 +1566,8 @@
 											<v8:content>Варианты настроек полей поиска</v8:content>
 										</v8:item>
 									</Title>
+									<ViewMode>All</ViewMode>
+									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="НастройкаВариантовПоискаОбъектовXMLКонтекстноеМеню" id="479"/>
 									<AutoCommandBar name="НастройкаВариантовПоискаОбъектовXMLКоманднаяПанель" id="480"/>

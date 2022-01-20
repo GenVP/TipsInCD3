@@ -153,12 +153,12 @@
 									<ChoiceParameterLinks>
 										<xr:Link>
 											<xr:Name>Отбор.Родитель</xr:Name>
-											<xr:DataPath xsi:type="xs:string">3</xr:DataPath>
+											<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
 											<xr:ValueChange>Clear</xr:ValueChange>
 										</xr:Link>
 										<xr:Link>
 											<xr:Name>Отбор.Владелец</xr:Name>
-											<xr:DataPath xsi:type="xs:string">20</xr:DataPath>
+											<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
 											<xr:ValueChange>Clear</xr:ValueChange>
 										</xr:Link>
 									</ChoiceParameterLinks>
@@ -850,12 +850,12 @@
 										<ChoiceParameterLinks>
 											<xr:Link>
 												<xr:Name>Отбор.Родитель</xr:Name>
-												<xr:DataPath xsi:type="xs:string">3</xr:DataPath>
+												<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
 												<xr:ValueChange>Clear</xr:ValueChange>
 											</xr:Link>
 											<xr:Link>
 												<xr:Name>Отбор.Владелец</xr:Name>
-												<xr:DataPath xsi:type="xs:string">20</xr:DataPath>
+												<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
 												<xr:ValueChange>Clear</xr:ValueChange>
 											</xr:Link>
 										</ChoiceParameterLinks>

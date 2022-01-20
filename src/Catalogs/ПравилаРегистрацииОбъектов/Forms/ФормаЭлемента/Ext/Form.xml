@@ -114,7 +114,7 @@
 							<FileDragMode>AsFile</FileDragMode>
 							<RowsPicture>
 								<xr:Ref>CommonPicture.Папка</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</RowsPicture>
 							<Title>
 								<v8:item>
@@ -123,6 +123,8 @@
 								</v8:item>
 							</Title>
 							<GroupVerticalAlign>Top</GroupVerticalAlign>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<ContextMenu name="ДеревоОтборПоСвойствамПланаОбменаКонтекстноеМеню" id="55"/>
 							<AutoCommandBar name="ДеревоОтборПоСвойствамПланаОбменаКоманднаяПанель" id="56">
 								<Autofill>false</Autofill>
@@ -231,7 +233,7 @@
 							<FileDragMode>AsFile</FileDragMode>
 							<RowsPicture>
 								<xr:Ref>CommonPicture.Папка</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</RowsPicture>
 							<Title>
 								<v8:item>
@@ -240,6 +242,8 @@
 								</v8:item>
 							</Title>
 							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<ContextMenu name="ДеревоОтборПоСвойствамОбъектаКонтекстноеМеню" id="94"/>
 							<AutoCommandBar name="ДеревоОтборПоСвойствамОбъектаКоманднаяПанель" id="95">
 								<Autofill>false</Autofill>
@@ -957,7 +961,7 @@
 								<FileDragMode>AsFile</FileDragMode>
 								<RowsPicture>
 									<xr:Ref>CommonPicture.Папка</xr:Ref>
-									<xr:LoadTransparent>true</xr:LoadTransparent>
+									<xr:LoadTransparent>false</xr:LoadTransparent>
 								</RowsPicture>
 								<Title>
 									<v8:item>
@@ -1074,7 +1078,7 @@
 								<FileDragMode>AsFile</FileDragMode>
 								<RowsPicture>
 									<xr:Ref>CommonPicture.Папка</xr:Ref>
-									<xr:LoadTransparent>true</xr:LoadTransparent>
+									<xr:LoadTransparent>false</xr:LoadTransparent>
 								</RowsPicture>
 								<Title>
 									<v8:item>

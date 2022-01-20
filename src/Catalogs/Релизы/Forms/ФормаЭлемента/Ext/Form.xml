@@ -9,11 +9,6 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
-	<Events>
-		<Event name="AfterWrite" callType="After">КД3_ПослеЗаписиПосле</Event>
-		<Event name="AfterWriteAtServer" callType="After">КД3_ПослеЗаписиНаСервереПосле</Event>
-		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
-	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаОсновное" id="28">
 			<Title>
@@ -276,6 +271,8 @@
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="РасширенияКонтекстноеМеню" id="72"/>
 							<AutoCommandBar name="РасширенияКоманднаяПанель" id="73"/>

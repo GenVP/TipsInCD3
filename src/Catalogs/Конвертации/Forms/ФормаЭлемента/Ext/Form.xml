@@ -206,6 +206,8 @@
 											<SearchStringLocation>None</SearchStringLocation>
 											<ViewStatusLocation>None</ViewStatusLocation>
 											<SearchControlLocation>None</SearchControlLocation>
+											<ViewMode>All</ViewMode>
+											<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 											<RowFilter xsi:nil="true"/>
 											<ContextMenu name="ВерсииФорматаКонтекстноеМеню" id="11"/>
 											<AutoCommandBar name="ВерсииФорматаКоманднаяПанель" id="12"/>
@@ -1135,6 +1137,8 @@
 									<v8:content>Параметры</v8:content>
 								</v8:item>
 							</Title>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ПараметрыКонтекстноеМеню" id="68"/>
 							<AutoCommandBar name="ПараметрыКоманднаяПанель" id="69"/>

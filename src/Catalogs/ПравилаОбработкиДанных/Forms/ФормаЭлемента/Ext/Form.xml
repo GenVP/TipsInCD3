@@ -267,6 +267,8 @@
 							<SearchStringLocation>None</SearchStringLocation>
 							<ViewStatusLocation>None</ViewStatusLocation>
 							<SearchControlLocation>None</SearchControlLocation>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ПравилаКонвертацииОбъектовКонтекстноеМеню" id="59"/>
 							<AutoCommandBar name="ПравилаКонвертацииОбъектовКоманднаяПанель" id="60"/>
