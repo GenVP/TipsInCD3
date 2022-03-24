@@ -50,8 +50,8 @@
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
-			<Vendor>https://github.com/GenVP/TipsInCD3</Vendor>
-			<Version>1.2.2</Version>
+			<Vendor>https://github.com/GenVP/TipsInCD3_EDT</Vendor>
+			<Version>1.2.4</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -78,6 +78,7 @@
 			<CommonTemplate>КД3_RegExWin64</CommonTemplate>
 			<CommonTemplate>КД3_RegExLin32</CommonTemplate>
 			<CommonTemplate>КД3_RegExLin64</CommonTemplate>
+			<CommonTemplate>КД3_src_linux</CommonTemplate>
 			<CommonModule>КД3_Метаданные</CommonModule>
 			<CommonModule>КД3_МетаданныеКлиент</CommonModule>
 			<CommonModule>КД3_МетаданныеПовтИсп</CommonModule>
@@ -90,22 +91,26 @@
 			<CommonModule>КД3_НастройкиКлиент</CommonModule>
 			<CommonModule>КД3_УправлениеФормойВызовСервера</CommonModule>
 			<CommonModule>КД3_УправлениеФормойКлиентСервер</CommonModule>
+			<CommonModule>КД3_ПарсерМодулей1С</CommonModule>
+			<CommonModule>КД3_ПарсерМодулейRegExp</CommonModule>
 			<CommonModule>КонвертацияДанныхXDTOСервер</CommonModule>
 			<CommonModule>СтандартныеПодсистемыКлиент</CommonModule>
 			<CommonCommand>КД3_Настройки</CommonCommand>
+			<CommonCommand>ИсторияИзменений</CommonCommand>
 			<CommonForm>КД3_Настройки</CommonForm>
+			<Catalog>Алгоритмы</Catalog>
+			<Catalog>Запросы</Catalog>
 			<Catalog>ПравилаКонвертацииОбъектов</Catalog>
 			<Catalog>ПравилаКонвертацииПредопределенныхДанных</Catalog>
 			<Catalog>ПравилаКонвертацииСвойств</Catalog>
 			<Catalog>ПравилаОбработкиДанных</Catalog>
 			<Catalog>ПравилаРегистрацииОбъектов</Catalog>
-			<Catalog>Алгоритмы</Catalog>
 			<Catalog>Релизы</Catalog>
-			<Catalog>Конвертации</Catalog>
 			<Catalog>Конфигурации</Catalog>
-			<Catalog>Запросы</Catalog>
+			<Catalog>Конвертации</Catalog>
 			<Enum>ВариантыИдентификацииОбъектов</Enum>
 			<DataProcessor>КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXML</DataProcessor>
+			<DataProcessor>КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXMLМногопоточно</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

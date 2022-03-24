@@ -1,17 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
-	<Subsystem uuid="7c4ce554-0c9a-49e1-97d8-06e52ba4b59f">
+	<CommonCommand uuid="c2fc8c72-fef3-4b60-85c9-9a1bedae9f2b">
 		<InternalInfo/>
 		<Properties>
-			<Name>Конфигурации</Name>
+			<Name>ИсторияИзменений</Name>
 			<Comment/>
 			<ObjectBelonging>Adopted</ObjectBelonging>
-			<ExtendedConfigurationObject>6ea34b77-ff9e-4dab-8fc7-4f6890591d84</ExtendedConfigurationObject>
-			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXML</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXMLМногопоточно</xr:Item>
-			</Content>
+			<ExtendedConfigurationObject>33f8cd94-71e7-4703-92c3-22690fbd871a</ExtendedConfigurationObject>
+			<Group>FormCommandBarImportant</Group>
 		</Properties>
-		<ChildObjects/>
-	</Subsystem>
+	</CommonCommand>
 </MetaDataObject>

@@ -4,7 +4,7 @@
 		<ChildItems>
 			<Button name="ФормаОбщаяКомандаИсторияИзменений" id="92">
 				<Type>CommandBarButton</Type>
-				<CommandName>0</CommandName>
+				<CommandName>CommonCommand.ИсторияИзменений</CommandName>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаОбщаяКомандаИсторияИзмененийРасширеннаяПодсказка" id="93"/>
 			</Button>
@@ -1272,7 +1272,7 @@
 			<ChildItems>
 				<Button name="ФормаОбщаяКомандаИсторияИзменений" id="92">
 					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
+					<CommandName>CommonCommand.ИсторияИзменений</CommandName>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ФормаОбщаяКомандаИсторияИзмененийРасширеннаяПодсказка" id="93"/>
 				</Button>
