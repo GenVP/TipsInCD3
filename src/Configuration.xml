@@ -51,7 +51,7 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>https://github.com/GenVP/TipsInCD3_EDT</Vendor>
-			<Version>1.2.5</Version>
+			<Version>1.2.6</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -112,8 +112,8 @@
 			<Catalog>Конфигурации</Catalog>
 			<Catalog>Конвертации</Catalog>
 			<Enum>ВариантыИдентификацииОбъектов</Enum>
-			<DataProcessor>КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXML</DataProcessor>
 			<DataProcessor>КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXMLМногопоточно</DataProcessor>
+			<InformationRegister>КомментарииКОбработчикам</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

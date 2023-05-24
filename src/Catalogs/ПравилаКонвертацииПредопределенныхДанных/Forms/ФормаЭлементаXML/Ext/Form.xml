@@ -179,6 +179,11 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="СопоставлениеЗначенийСопоставитьАвтоматическиРасширеннаяПодсказка" id="69"/>
 									</Button>
+									<Button name="СопоставлениеЗначенийПоказатьНеСопоставленные" id="149">
+										<Type>CommandBarButton</Type>
+										<CommandName>0</CommandName>
+										<ExtendedTooltip name="СопоставлениеЗначенийПоказатьНеСопоставленныеРасширеннаяПодсказка" id="150"/>
+									</Button>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="СопоставлениеЗначенийРасширеннаяПодсказка" id="31"/>
@@ -783,6 +788,11 @@
 											<Type>CommandBarButton</Type>
 											<CommandName>0</CommandName>
 											<ExtendedTooltip name="СопоставлениеЗначенийСопоставитьАвтоматическиРасширеннаяПодсказка" id="69"/>
+										</Button>
+										<Button name="СопоставлениеЗначенийПоказатьНеСопоставленные" id="149">
+											<Type>CommandBarButton</Type>
+											<CommandName>0</CommandName>
+											<ExtendedTooltip name="СопоставлениеЗначенийПоказатьНеСопоставленныеРасширеннаяПодсказка" id="150"/>
 										</Button>
 									</ChildItems>
 								</AutoCommandBar>

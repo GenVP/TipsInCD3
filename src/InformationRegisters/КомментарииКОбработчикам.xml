@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<InformationRegister uuid="56f4795d-f033-4073-8688-5bdb343b54d5">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.КомментарииКОбработчикам" category="Record">
+				<xr:TypeId>6b2c04a2-8369-44cb-96c7-8b7d2d02d840</xr:TypeId>
+				<xr:ValueId>1e6da8cf-f704-4f16-af9c-8b34b016390f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.КомментарииКОбработчикам" category="Manager">
+				<xr:TypeId>4b0639dd-9618-48de-af3d-86669a6f946e</xr:TypeId>
+				<xr:ValueId>d0687f14-95a0-40de-b478-ac09535d0c2b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.КомментарииКОбработчикам" category="Selection">
+				<xr:TypeId>86bf8a3d-bb12-4b17-a469-2966a18851f2</xr:TypeId>
+				<xr:ValueId>67fbb656-eb7d-4916-8735-1cb305c14575</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.КомментарииКОбработчикам" category="List">
+				<xr:TypeId>2c527a9f-c83a-43dc-ba2a-1e591b08ae25</xr:TypeId>
+				<xr:ValueId>9bb26063-cf2e-4e74-bda3-463546b5fe5e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.КомментарииКОбработчикам" category="RecordSet">
+				<xr:TypeId>1bb749ae-9240-4d8c-b6d0-c53aeabda45f</xr:TypeId>
+				<xr:ValueId>fb6100a8-0719-4b28-bf8d-dc2f4f988b82</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.КомментарииКОбработчикам" category="RecordKey">
+				<xr:TypeId>7329b5cc-f72c-4f12-9e99-c1d4e408a2ae</xr:TypeId>
+				<xr:ValueId>c82bf086-d49d-4b01-94d2-74df97b8cda0</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.КомментарииКОбработчикам" category="RecordManager">
+				<xr:TypeId>39c32b10-1e43-4010-9f14-8ba68e0b268e</xr:TypeId>
+				<xr:ValueId>4c952e14-0db9-4edc-95e3-1bbdf2bf29f2</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>КомментарииКОбработчикам</Name>
+			<Comment/>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<ExtendedConfigurationObject>86101ae5-0266-4ea5-a6f6-370fb81525f1</ExtendedConfigurationObject>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+		</Properties>
+		<ChildObjects>
+			<Form>Форма</Form>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>

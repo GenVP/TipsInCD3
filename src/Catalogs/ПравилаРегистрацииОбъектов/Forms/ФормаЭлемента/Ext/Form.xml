@@ -675,6 +675,14 @@
 							<ContextMenu name="РодительКонтекстноеМеню" id="5"/>
 							<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="6"/>
 						</InputField>
+						<InputField name="ТегВырезки" id="147">
+							<Height>2</Height>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MaxHeight>1</MaxHeight>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="148"/>
+							<ExtendedTooltip name="ТегВырезкиРасширеннаяПодсказка" id="149"/>
+						</InputField>
 						<InputField name="Описание" id="25">
 							<EditMode>EnterOnInput</EditMode>
 							<AutoMaxWidth>false</AutoMaxWidth>
@@ -1519,6 +1527,14 @@
 								<AutoMaxWidth>false</AutoMaxWidth>
 								<ContextMenu name="РодительКонтекстноеМеню" id="5"/>
 								<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="6"/>
+							</InputField>
+							<InputField name="ТегВырезки" id="147">
+								<Height>2</Height>
+								<AutoMaxHeight>false</AutoMaxHeight>
+								<MaxHeight>1</MaxHeight>
+								<MultiLine>true</MultiLine>
+								<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="148"/>
+								<ExtendedTooltip name="ТегВырезкиРасширеннаяПодсказка" id="149"/>
 							</InputField>
 							<InputField name="Описание" id="25">
 								<EditMode>EnterOnInput</EditMode>

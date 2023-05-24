@@ -127,6 +127,44 @@
 			<ContextMenu name="АлгоритмКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="АлгоритмРасширеннаяПодсказка" id="12"/>
 		</TextDocumentField>
+		<UsualGroup name="ГруппаКомментарий" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Collapsible</Behavior>
+			<CollapsedRepresentationTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий к алгоритму</v8:content>
+				</v8:item>
+			</CollapsedRepresentationTitle>
+			<ExtendedTooltip name="ГруппаКомментарийРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="49">
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст комментария, который размещается в модуле перед алгоритмом.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="51"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes/>
 	<BaseForm version="2.13">
@@ -257,6 +295,44 @@
 				<ContextMenu name="АлгоритмКонтекстноеМеню" id="11"/>
 				<ExtendedTooltip name="АлгоритмРасширеннаяПодсказка" id="12"/>
 			</TextDocumentField>
+			<UsualGroup name="ГруппаКомментарий" id="52">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Комментарий</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа комментарий</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Behavior>Collapsible</Behavior>
+				<CollapsedRepresentationTitle>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Комментарий к алгоритму</v8:content>
+					</v8:item>
+				</CollapsedRepresentationTitle>
+				<ExtendedTooltip name="ГруппаКомментарийРасширеннаяПодсказка" id="53"/>
+				<ChildItems>
+					<InputField name="Комментарий" id="49">
+						<TitleLocation>None</TitleLocation>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Текст комментария, который размещается в модуле перед алгоритмом.</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ToolTipRepresentation>Button</ToolTipRepresentation>
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<MultiLine>true</MultiLine>
+						<ContextMenu name="КомментарийКонтекстноеМеню" id="50"/>
+						<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="51"/>
+					</InputField>
+				</ChildItems>
+			</UsualGroup>
 		</ChildItems>
 		<Attributes/>
 	</BaseForm>

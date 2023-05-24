@@ -327,6 +327,11 @@
 					</Title>
 					<ExtendedTooltip name="ОбработчикиСобытийXDTOРасширеннаяПодсказка" id="121"/>
 					<ChildItems>
+						<InputField name="РасположениеОбработчиков" id="187">
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="РасположениеОбработчиковКонтекстноеМеню" id="188"/>
+							<ExtendedTooltip name="РасположениеОбработчиковРасширеннаяПодсказка" id="189"/>
+						</InputField>
 						<Pages name="СтраницыОбработчикиXDTO" id="122">
 							<Title>
 								<v8:item>
@@ -1032,6 +1037,11 @@
 						</Title>
 						<ExtendedTooltip name="ОбработчикиСобытийXDTOРасширеннаяПодсказка" id="121"/>
 						<ChildItems>
+							<InputField name="РасположениеОбработчиков" id="187">
+								<ChoiceButton>true</ChoiceButton>
+								<ContextMenu name="РасположениеОбработчиковКонтекстноеМеню" id="188"/>
+								<ExtendedTooltip name="РасположениеОбработчиковРасширеннаяПодсказка" id="189"/>
+							</InputField>
 							<Pages name="СтраницыОбработчикиXDTO" id="122">
 								<Title>
 									<v8:item>
