@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаКопироватьПравило" id="145">
@@ -9,6 +10,11 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+		<Event name="OnClose" callType="After">КД3_ПриЗакрытииПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="142">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -31,6 +37,9 @@
 			<VerticalStretch>true</VerticalStretch>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="35"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_ГруппаСтраницыПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="СтраницаОсновное" id="36">
 					<Title>
@@ -64,6 +73,13 @@
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">5</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
 									<ContextMenu name="ОбъектНастройкиКонтекстноеМеню" id="23"/>
 									<ExtendedTooltip name="ОбъектНастройкиРасширеннаяПодсказка" id="24"/>
 								</InputField>
@@ -125,8 +141,6 @@
 								</v8:item>
 							</Title>
 							<GroupVerticalAlign>Top</GroupVerticalAlign>
-							<ViewMode>All</ViewMode>
-							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<ContextMenu name="ДеревоОтборПоСвойствамПланаОбменаКонтекстноеМеню" id="55"/>
 							<AutoCommandBar name="ДеревоОтборПоСвойствамПланаОбменаКоманднаяПанель" id="56">
 								<Autofill>false</Autofill>
@@ -244,8 +258,6 @@
 								</v8:item>
 							</Title>
 							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
-							<ViewMode>All</ViewMode>
-							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<ContextMenu name="ДеревоОтборПоСвойствамОбъектаКонтекстноеМеню" id="94"/>
 							<AutoCommandBar name="ДеревоОтборПоСвойствамОбъектаКоманднаяПанель" id="95">
 								<Autofill>false</Autofill>
@@ -384,6 +396,9 @@
 							<HorizontalStretch>true</HorizontalStretch>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыТекстОбработчиковРасширеннаяПодсказка" id="41"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыТекстОбработчиковПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="СтраницаПередОбработкой" id="42">
 									<Title>
@@ -654,6 +669,76 @@
 						</Pages>
 					</ChildItems>
 				</Page>
+				<Page name="СтраницаПакетныйОбработчик" id="150">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработчик пакетной регистрации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница пакетный обработчик</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПакетныйОбработчикРасширеннаяПодсказка" id="151"/>
+					<ChildItems>
+						<LabelDecoration name="ПакетнаяОбработкаПримечание" id="152">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;fontsize 10&gt;&lt;b&gt;&lt;color #ff0000&gt;Внимание!&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+Событие возникает только при использовании обработки "&lt;b&gt;Регистрация изменений для обмена&lt;/&gt;» (команды "&lt;i&gt;Зарегистрировать изменения всех объектов выбранных типов&lt;/&gt;" и "&lt;i&gt;Зарегистрировать изменения объектов при помощи отбора&lt;/&gt;") и при выгрузке данных через &lt;b&gt;EnterpriseData&lt;/&gt;.
+
+Алгоритм обработчика должен повторять алгоритмы обработчиков "&lt;b&gt;Перед обработкой&lt;/&gt;", "&lt;b&gt;При обработке&lt;/&gt;" и "&lt;b&gt;После обработки&lt;/&gt;", а так же &lt;i&gt;отбор по свойствам плана обмена&lt;/&gt; и&lt;i&gt; отбор по свойствам объекта&lt;/&gt;.
+
+Доступно в Библиотеке синхронизации данных с версии 1.0.3
+
+При записи объекта в ИБ будут выполнены обработчики "&lt;b&gt;Перед обработкой&lt;/&gt;", "&lt;b&gt;При обработке&lt;/&gt;", "&lt;b&gt;При обработке (доп)&lt;/&gt;" и "&lt;b&gt;После обработки&lt;/&gt;" и &lt;i&gt;отбор по свойствам плана обмена&lt;/&gt; и&lt;i&gt; отбор по свойствам объекта&lt;/&gt;.</v8:content>
+								</v8:item>
+							</Title>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ContextMenu name="ПакетнаяОбработкаПримечаниеКонтекстноеМеню" id="153"/>
+							<ExtendedTooltip name="ПакетнаяОбработкаПримечаниеРасширеннаяПодсказка" id="154"/>
+						</LabelDecoration>
+						<InputField name="АлгоритмПакетнаяОбработкаРегистрации" id="155">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обработчик пакетной регистрации</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="АлгоритмПакетнаяОбработкаРегистрацииКонтекстноеМеню" id="156"/>
+							<ExtendedTooltip name="АлгоритмПакетнаяОбработкаРегистрацииРасширеннаяПодсказка" id="157">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Обработчик пакетной регистрации &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Условие возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Событие выполняется &lt;bgcolor #ffffff&gt;при пакетной регистрации массива ссылок на узле&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Контекст выполнения&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;&lt;bgcolor #ffffff&gt;При регистрации изменений на узле&lt;/&gt;; При выгрузке.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;&lt;bgcolor #ffffff&gt;МассивСсылок&lt;/&gt; – &lt;bgcolor #ffffff&gt;Массив&lt;/&gt; – ссылки подлежащие регистрации. Содержимое массива может быть изменено.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;&lt;bgcolor #ffffff&gt;Узел&lt;/&gt; – &lt;bgcolor #ffffff&gt;План обмена ссылка&lt;/&gt; –  уз&lt;bgcolor #ffffff&gt;ел&lt;/&gt;-получатель, на котор&lt;bgcolor #ffffff&gt;ом&lt;/&gt; будет зарегистрирован  объект.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+					</ChildItems>
+				</Page>
 				<Page name="СтраницаДополнительно" id="52">
 					<Title>
 						<v8:item>
@@ -675,14 +760,79 @@
 							<ContextMenu name="РодительКонтекстноеМеню" id="5"/>
 							<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="6"/>
 						</InputField>
-						<InputField name="ТегВырезки" id="147">
-							<Height>2</Height>
-							<AutoMaxHeight>false</AutoMaxHeight>
-							<MaxHeight>1</MaxHeight>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="148"/>
-							<ExtendedTooltip name="ТегВырезкиРасширеннаяПодсказка" id="149"/>
-						</InputField>
+						<UsualGroup name="ГруппаТеги" id="158">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Теги вырезки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа теги</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>false</HorizontalStretch>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalAlign>Left</HorizontalAlign>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="159"/>
+							<ChildItems>
+								<Table name="Теги" id="160">
+									<MaxHeight>3</MaxHeight>
+									<HeightInTableRows>3</HeightInTableRows>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<VerticalStretch>false</VerticalStretch>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТегиКонтекстноеМеню" id="161"/>
+									<AutoCommandBar name="ТегиКоманднаяПанель" id="162"/>
+									<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="163"/>
+									<SearchStringAddition name="ТегиСтрокаПоиска" id="164">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="165"/>
+										<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="166"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТегиСостояниеПросмотра" id="167">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="168"/>
+										<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="169"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТегиУправлениеПоиском" id="170">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="171"/>
+										<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="172"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ТегиНомерСтроки" id="173">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="174"/>
+											<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="175"/>
+										</LabelField>
+										<InputField name="ТегиТег" id="176">
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ТегиТегКонтекстноеМеню" id="177"/>
+											<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="178"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="Описание" id="25">
 							<EditMode>EnterOnInput</EditMode>
 							<AutoMaxWidth>false</AutoMaxWidth>
@@ -856,7 +1006,8 @@
 			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
-	<BaseForm version="2.13">
+	<BaseForm version="2.19">
+		<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>
 				<Button name="ФормаКопироватьПравило" id="145">
@@ -921,6 +1072,13 @@
 										<DropListButton>false</DropListButton>
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ChoiceParameterLinks>
+											<xr:Link>
+												<xr:Name>Отбор.Владелец</xr:Name>
+												<xr:DataPath xsi:type="xs:string">5</xr:DataPath>
+												<xr:ValueChange>Clear</xr:ValueChange>
+											</xr:Link>
+										</ChoiceParameterLinks>
 										<ContextMenu name="ОбъектНастройкиКонтекстноеМеню" id="23"/>
 										<ExtendedTooltip name="ОбъектНастройкиРасширеннаяПодсказка" id="24"/>
 									</InputField>
@@ -1507,6 +1665,76 @@
 							</Pages>
 						</ChildItems>
 					</Page>
+					<Page name="СтраницаПакетныйОбработчик" id="150">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обработчик пакетной регистрации</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Страница пакетный обработчик</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="СтраницаПакетныйОбработчикРасширеннаяПодсказка" id="151"/>
+						<ChildItems>
+							<LabelDecoration name="ПакетнаяОбработкаПримечание" id="152">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>&lt;fontsize 10&gt;&lt;b&gt;&lt;color #ff0000&gt;Внимание!&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+Событие возникает только при использовании обработки "&lt;b&gt;Регистрация изменений для обмена&lt;/&gt;» (команды "&lt;i&gt;Зарегистрировать изменения всех объектов выбранных типов&lt;/&gt;" и "&lt;i&gt;Зарегистрировать изменения объектов при помощи отбора&lt;/&gt;") и при выгрузке данных через &lt;b&gt;EnterpriseData&lt;/&gt;.
+
+Алгоритм обработчика должен повторять алгоритмы обработчиков "&lt;b&gt;Перед обработкой&lt;/&gt;", "&lt;b&gt;При обработке&lt;/&gt;" и "&lt;b&gt;После обработки&lt;/&gt;", а так же &lt;i&gt;отбор по свойствам плана обмена&lt;/&gt; и&lt;i&gt; отбор по свойствам объекта&lt;/&gt;.
+
+Доступно в Библиотеке синхронизации данных с версии 1.0.3
+
+При записи объекта в ИБ будут выполнены обработчики "&lt;b&gt;Перед обработкой&lt;/&gt;", "&lt;b&gt;При обработке&lt;/&gt;", "&lt;b&gt;При обработке (доп)&lt;/&gt;" и "&lt;b&gt;После обработки&lt;/&gt;" и &lt;i&gt;отбор по свойствам плана обмена&lt;/&gt; и&lt;i&gt; отбор по свойствам объекта&lt;/&gt;.</v8:content>
+									</v8:item>
+								</Title>
+								<BackColor>style:ToolTipBackColor</BackColor>
+								<ContextMenu name="ПакетнаяОбработкаПримечаниеКонтекстноеМеню" id="153"/>
+								<ExtendedTooltip name="ПакетнаяОбработкаПримечаниеРасширеннаяПодсказка" id="154"/>
+							</LabelDecoration>
+							<InputField name="АлгоритмПакетнаяОбработкаРегистрации" id="155">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обработчик пакетной регистрации</v8:content>
+									</v8:item>
+								</Title>
+								<TitleLocation>None</TitleLocation>
+								<ToolTipRepresentation>Button</ToolTipRepresentation>
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<MultiLine>true</MultiLine>
+								<ContextMenu name="АлгоритмПакетнаяОбработкаРегистрацииКонтекстноеМеню" id="156"/>
+								<ExtendedTooltip name="АлгоритмПакетнаяОбработкаРегистрацииРасширеннаяПодсказка" id="157">
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Обработчик пакетной регистрации &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Условие возникновения события&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Событие выполняется &lt;bgcolor #ffffff&gt;при пакетной регистрации массива ссылок на узле&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Контекст выполнения&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;&lt;bgcolor #ffffff&gt;При регистрации изменений на узле&lt;/&gt;; При выгрузке.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt; &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;&lt;bgcolor #ffffff&gt;МассивСсылок&lt;/&gt; – &lt;bgcolor #ffffff&gt;Массив&lt;/&gt; – ссылки подлежащие регистрации. Содержимое массива может быть изменено.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Almarai&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;&lt;bgcolor #ffffff&gt;Узел&lt;/&gt; – &lt;bgcolor #ffffff&gt;План обмена ссылка&lt;/&gt; –  уз&lt;bgcolor #ffffff&gt;ел&lt;/&gt;-получатель, на котор&lt;bgcolor #ffffff&gt;ом&lt;/&gt; будет зарегистрирован  объект.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+										</v8:item>
+									</Title>
+								</ExtendedTooltip>
+							</InputField>
+						</ChildItems>
+					</Page>
 					<Page name="СтраницаДополнительно" id="52">
 						<Title>
 							<v8:item>
@@ -1528,14 +1756,79 @@
 								<ContextMenu name="РодительКонтекстноеМеню" id="5"/>
 								<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="6"/>
 							</InputField>
-							<InputField name="ТегВырезки" id="147">
-								<Height>2</Height>
-								<AutoMaxHeight>false</AutoMaxHeight>
-								<MaxHeight>1</MaxHeight>
-								<MultiLine>true</MultiLine>
-								<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="148"/>
-								<ExtendedTooltip name="ТегВырезкиРасширеннаяПодсказка" id="149"/>
-							</InputField>
+							<UsualGroup name="ГруппаТеги" id="158">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Теги вырезки</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа теги</v8:content>
+									</v8:item>
+								</ToolTip>
+								<HorizontalStretch>false</HorizontalStretch>
+								<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+								<Group>AlwaysHorizontal</Group>
+								<HorizontalAlign>Left</HorizontalAlign>
+								<Behavior>Collapsible</Behavior>
+								<Collapsed>true</Collapsed>
+								<Representation>None</Representation>
+								<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="159"/>
+								<ChildItems>
+									<Table name="Теги" id="160">
+										<MaxHeight>3</MaxHeight>
+										<HeightInTableRows>3</HeightInTableRows>
+										<AutoInsertNewRow>true</AutoInsertNewRow>
+										<VerticalStretch>false</VerticalStretch>
+										<EnableStartDrag>true</EnableStartDrag>
+										<EnableDrag>true</EnableDrag>
+										<RowFilter xsi:nil="true"/>
+										<ContextMenu name="ТегиКонтекстноеМеню" id="161"/>
+										<AutoCommandBar name="ТегиКоманднаяПанель" id="162"/>
+										<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="163"/>
+										<SearchStringAddition name="ТегиСтрокаПоиска" id="164">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>SearchStringRepresentation</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="165"/>
+											<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="166"/>
+										</SearchStringAddition>
+										<ViewStatusAddition name="ТегиСостояниеПросмотра" id="167">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>ViewStatusRepresentation</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="168"/>
+											<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="169"/>
+										</ViewStatusAddition>
+										<SearchControlAddition name="ТегиУправлениеПоиском" id="170">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>SearchControl</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="171"/>
+											<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="172"/>
+										</SearchControlAddition>
+										<ChildItems>
+											<LabelField name="ТегиНомерСтроки" id="173">
+												<EditMode>EnterOnInput</EditMode>
+												<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="174"/>
+												<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="175"/>
+											</LabelField>
+											<InputField name="ТегиТег" id="176">
+												<EditMode>EnterOnInput</EditMode>
+												<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+												<ContextMenu name="ТегиТегКонтекстноеМеню" id="177"/>
+												<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="178"/>
+											</InputField>
+										</ChildItems>
+									</Table>
+								</ChildItems>
+							</UsualGroup>
 							<InputField name="Описание" id="25">
 								<EditMode>EnterOnInput</EditMode>
 								<AutoMaxWidth>false</AutoMaxWidth>

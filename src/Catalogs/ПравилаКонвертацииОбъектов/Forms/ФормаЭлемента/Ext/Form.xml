@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="229">
@@ -10,6 +11,12 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing" callType="After">КД3_ОбработкаВыбораПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+		<Event name="OnClose" callType="After">КД3_ПриЗакрытииПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="471">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -31,6 +38,9 @@
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="79"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="ОсновныеСведения" id="80">
 					<Title>
@@ -41,18 +51,25 @@
 					</Title>
 					<ExtendedTooltip name="ОсновныеСведенияРасширеннаяПодсказка" id="81"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаВладельцы" id="74">
+						<UsualGroup name="ГруппаВерхнийРяд" id="519">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа владельцы</v8:content>
+									<v8:content>Группа верхний ряд</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа верхний ряд</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>AlwaysHorizontal</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаВладельцыРасширеннаяПодсказка" id="75"/>
+							<ExtendedTooltip name="ГруппаВерхнийРядРасширеннаяПодсказка" id="520"/>
 							<ChildItems>
 								<InputField name="СписокКонвертаций" id="164">
 									<ReadOnly>true</ReadOnly>
@@ -62,12 +79,10 @@
 											<v8:content>Конвертации</v8:content>
 										</v8:item>
 									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
 									<ContextMenu name="СписокКонвертацийКонтекстноеМеню" id="165"/>
 									<ExtendedTooltip name="СписокКонвертацийРасширеннаяПодсказка" id="166"/>
-								</InputField>
-								<InputField name="Группа" id="71">
-									<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
-									<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
 								</InputField>
 								<LabelDecoration name="ДекорацияЗахвачен" id="465">
 									<TextColor>style:SpecialTextColor</TextColor>
@@ -77,11 +92,19 @@
 											<v8:content>захвачен</v8:content>
 										</v8:item>
 									</Title>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<HorizontalAlign>Right</HorizontalAlign>
 									<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="466"/>
 									<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="467"/>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
+						<InputField name="Группа" id="71">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
+						</InputField>
 						<UsualGroup name="ГруппаИдентификатор" id="503">
 							<Title>
 								<v8:item>
@@ -89,6 +112,7 @@
 									<v8:content>Группа идентификатор</v8:content>
 								</v8:item>
 							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
 							<Group>AlwaysHorizontal</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
@@ -97,11 +121,13 @@
 							<ChildItems>
 								<InputField name="Код" id="51">
 									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
 									<ContextMenu name="КодКонтекстноеМеню" id="52"/>
 									<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
 								</InputField>
 								<Button name="ЗаполнитьИдентификатор" id="505">
 									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 									<CommandName>0</CommandName>
 									<Title>
 										<v8:item>
@@ -120,7 +146,7 @@
 									<v8:content>Группа объекты</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
+							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
@@ -128,26 +154,487 @@
 							<ChildItems>
 								<InputField name="ОбъектКонфигурации" id="10">
 									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<Height>1</Height>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">31</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
 									<ContextMenu name="ОбъектКонфигурацииКонтекстноеМеню" id="11"/>
 									<ExtendedTooltip name="ОбъектКонфигурацииРасширеннаяПодсказка" id="12"/>
+									<Events>
+										<Event name="OnChange" callType="After">КД3_ОбъектКонфигурацииПриИзмененииПосле</Event>
+									</Events>
 								</InputField>
 								<InputField name="ОбъектФормата" id="13">
 									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<ChoiceButton>true</ChoiceButton>
 									<ContextMenu name="ОбъектФорматаКонтекстноеМеню" id="14"/>
 									<ExtendedTooltip name="ОбъектФорматаРасширеннаяПодсказка" id="15"/>
 								</InputField>
 								<InputField name="ОбъектКонфигурацииКорреспондент" id="254">
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">42</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
 									<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="255"/>
 									<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="256"/>
+									<Events>
+										<Event name="OnChange" callType="After">КД3_ОбъектКонфигурацииКорреспондентПриИзмененииПосле</Event>
+									</Events>
 								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Порядок" id="331">
+							<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
+							<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
+						</InputField>
+						<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
+							<TitleLocation>Left</TitleLocation>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для отправки</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для получения</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для отправки и получения</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
+						</RadioButtonField>
+						<UsualGroup name="ГруппаТеги" id="592">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Теги вырезки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа теги</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>false</HorizontalStretch>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalAlign>Left</HorizontalAlign>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="593"/>
+							<ChildItems>
+								<Table name="Теги" id="600">
+									<HeightInTableRows>3</HeightInTableRows>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТегиКонтекстноеМеню" id="601"/>
+									<AutoCommandBar name="ТегиКоманднаяПанель" id="602"/>
+									<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="603"/>
+									<SearchStringAddition name="ТегиСтрокаПоиска" id="604">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="605"/>
+										<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="606"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТегиСостояниеПросмотра" id="607">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="608"/>
+										<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="609"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТегиУправлениеПоиском" id="610">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="611"/>
+										<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="612"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ТегиНомерСтроки" id="613">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="614"/>
+											<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="615"/>
+										</LabelField>
+										<InputField name="ТегиТег" id="616">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТегиТегКонтекстноеМеню" id="617"/>
+											<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="618"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ВыгрузкаВМодули" id="521">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выгружать в модуль</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выгрузка в модули</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ВыгрузкаВМодулиРасширеннаяПодсказка" id="522"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПредопределенныйМодуль" id="557">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа предопределенный модуль</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа предопределенный модуль</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПредопределенныйМодульРасширеннаяПодсказка" id="558"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_Предопределенный" id="523">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Предопределенный</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">0</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_ПредопределенныйКонтекстноеМеню" id="524"/>
+											<ExtendedTooltip name="ВариантВыгрузки_ПредопределенныйРасширеннаяПодсказка" id="525"/>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ1" id="563">
+											<Width>7</Width>
+											<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="564"/>
+											<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="565"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДекорацияПредопределенныйМодуль" id="529">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>1</Height>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HorizontalStretch>true</HorizontalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация предопределенный модуль</v8:content>
+												</v8:item>
+											</Title>
+											<VerticalAlign>Bottom</VerticalAlign>
+											<ContextMenu name="ДекорацияПредопределенныйМодульКонтекстноеМеню" id="530"/>
+											<ExtendedTooltip name="ДекорацияПредопределенныйМодульРасширеннаяПодсказка" id="531"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПользовательскийМодуль" id="559">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа пользовательский модуль</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа пользовательский модуль</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПользовательскийМодульРасширеннаяПодсказка" id="560"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_Пользовательский" id="548">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Пользовательский</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_ПользовательскийКонтекстноеМеню" id="549"/>
+											<ExtendedTooltip name="ВариантВыгрузки_ПользовательскийРасширеннаяПодсказка" id="550"/>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ2" id="566">
+											<Width>8</Width>
+											<ContextMenu name="ДекорацияОтступ2КонтекстноеМеню" id="567"/>
+											<ExtendedTooltip name="ДекорацияОтступ2РасширеннаяПодсказка" id="568"/>
+										</LabelDecoration>
+										<InputField name="ДополнительныйМодуль" id="513">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пользовательский модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="ДополнительныйМодульКонтекстноеМеню" id="514"/>
+											<ExtendedTooltip name="ДополнительныйМодульРасширеннаяПодсказка" id="515"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМодульМенеджераПравило" id="561">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера правило</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера правило</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаМодульМенеджераПравилоРасширеннаяПодсказка" id="562"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_Менеджера" id="551">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Менеджера (объект правила)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_МенеджераКонтекстноеМеню" id="552"/>
+											<ExtendedTooltip name="ВариантВыгрузки_МенеджераРасширеннаяПодсказка" id="553"/>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ3" id="569">
+											<Width>1</Width>
+											<ContextMenu name="ДекорацияОтступ3КонтекстноеМеню" id="570"/>
+											<ExtendedTooltip name="ДекорацияОтступ3РасширеннаяПодсказка" id="571"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДекорацияМодульМенеджера" id="545">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HorizontalStretch>true</HorizontalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация модуль менеджера</v8:content>
+												</v8:item>
+											</Title>
+											<VerticalAlign>Center</VerticalAlign>
+											<ContextMenu name="ДекорацияМодульМенеджераКонтекстноеМеню" id="546"/>
+											<ExtendedTooltip name="ДекорацияМодульМенеджераРасширеннаяПодсказка" id="547"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМодульМенеджераОбъекта" id="537">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера объекта</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера объекта</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаМодульМенеджераОбъектаРасширеннаяПодсказка" id="538"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_МенеджераОбьекта" id="554">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Менеджера (с выбором объекта)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">3</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_МенеджераОбьектаКонтекстноеМеню" id="555"/>
+											<ExtendedTooltip name="ВариантВыгрузки_МенеджераОбьектаРасширеннаяПодсказка" id="556"/>
+										</RadioButtonField>
+										<InputField name="ОбъектКонфигурацииДляВыгрузкиМодуля" id="526">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Объект</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ContextMenu name="ОбъектКонфигурацииДляВыгрузкиМодуляКонтекстноеМеню" id="527"/>
+											<ExtendedTooltip name="ОбъектКонфигурацииДляВыгрузкиМодуляРасширеннаяПодсказка" id="528"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПрочее" id="329">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа прочее</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
+							<ChildItems>
+								<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
+								</CheckBoxField>
 								<CheckBoxField name="ОбъектСДвижениями" id="510">
 									<TitleLocation>Right</TitleLocation>
 									<ToolTip>
@@ -163,96 +650,22 @@
 								</CheckBoxField>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ОбластьПрименения" id="49">
-							<Title>
+						<CheckBoxField name="Отключить" id="161">
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Область применения</v8:content>
+									<v8:content>При установке флага правило не будет выгружаться в модуль менеджера обмена</v8:content>
 								</v8:item>
-							</Title>
-							<Group>Horizontal</Group>
-							<Behavior>Usual</Behavior>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ОбластьПримененияРасширеннаяПодсказка" id="50"/>
-							<ChildItems>
-								<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
-									<RadioButtonType>Tumbler</RadioButtonType>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Для отправки</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:decimal">0</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Для получения</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:decimal">1</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Для отправки и получения</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:decimal">2</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
-									<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
-								</RadioButtonField>
-								<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
-									<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
-								</CheckBoxField>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаПрочее" id="329">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа прочее</v8:content>
-								</v8:item>
-							</Title>
-							<Group>AlwaysHorizontal</Group>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
-							<ChildItems>
-								<CheckBoxField name="Отключить" id="161">
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
-									<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
-								</CheckBoxField>
-								<InputField name="Порядок" id="331">
-									<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
-									<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<VerticalAlign>Bottom</VerticalAlign>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
+							<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
+						</CheckBoxField>
 					</ChildItems>
 				</Page>
 				<Page name="Страница_ПравилаКонвертацииСвойств" id="176">
@@ -283,8 +696,6 @@
 									<v8:content>Правила конвертации свойств</v8:content>
 								</v8:item>
 							</Title>
-							<ViewMode>All</ViewMode>
-							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<AutoRefresh>false</AutoRefresh>
 							<AutoRefreshPeriod>60</AutoRefreshPeriod>
 							<Period>
@@ -298,6 +709,7 @@
 							<ShowRoot>true</ShowRoot>
 							<AllowRootChoice>false</AllowRootChoice>
 							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 							<ContextMenu name="ПравилаКонвертацииСвойствКонтекстноеМеню" id="406"/>
 							<AutoCommandBar name="ПравилаКонвертацииСвойствКоманднаяПанель" id="407">
 								<ChildItems>
@@ -306,15 +718,29 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="ПравилаКонвертацииСвойствНастройкаПКСРасширеннаяПодсказка" id="462"/>
 									</Button>
-									<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+									<ButtonGroup name="ПравилаКонвертацииСвойствГруппа1" id="574">
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="ПравилаКонвертацииСвойствГруппа1РасширеннаяПодсказка" id="575"/>
+										<ChildItems>
+											<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>0</CommandName>
+												<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
+											</Button>
+											<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>0</CommandName>
+												<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="ПравилаКонвертацииСвойствПометитьКакПроверено" id="572">
 										<Type>CommandBarButton</Type>
 										<CommandName>0</CommandName>
-										<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
-									</Button>
-									<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
-										<Type>CommandBarButton</Type>
-										<CommandName>0</CommandName>
-										<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+										<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+										<ExtendedTooltip name="ПравилаКонвертацииСвойствПометитьКакПровереноРасширеннаяПодсказка" id="573"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
@@ -376,6 +802,20 @@
 									<Group>Horizontal</Group>
 									<ExtendedTooltip name="ПравилаКонвертацииСвойствXMLРасширеннаяПодсказка" id="455"/>
 									<ChildItems>
+										<CheckBoxField name="ПравилаКонвертацииСвойствПоиск" id="634">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поле поиска</v8:content>
+												</v8:item>
+											</Title>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПравилаКонвертацииСвойствПоискКонтекстноеМеню" id="635"/>
+											<ExtendedTooltip name="ПравилаКонвертацииСвойствПоискРасширеннаяПодсказка" id="636">
+												<Visible>false</Visible>
+												<Enabled>false</Enabled>
+											</ExtendedTooltip>
+										</CheckBoxField>
 										<CheckBoxField name="ПравилаКонвертацииСвойствПолучитьИзВходящихДанных" id="448">
 											<Title>
 												<v8:item>
@@ -475,6 +915,9 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="ОбработчикиXDTOРасширеннаяПодсказка" id="260"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_ОбработчикиXDTOПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="Страница_ПриОтправке" id="35">
 									<Title>
@@ -677,8 +1120,10 @@
 														</v8:item>
 													</Title>
 													<ToolTipRepresentation>Button</ToolTipRepresentation>
-													<ChoiceButton>true</ChoiceButton>
+													<DropListButton>true</DropListButton>
+													<ChoiceButton>false</ChoiceButton>
 													<OpenButton>true</OpenButton>
+													<ListChoiceMode>true</ListChoiceMode>
 													<ContextMenu name="АлгоритмПослеЗагрузкиВсехДанныхКонтекстноеМеню" id="240"/>
 													<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="241">
 														<Title formatted="true">
@@ -709,6 +1154,9 @@
 															</v8:item>
 														</Title>
 													</ExtendedTooltip>
+													<Events>
+														<Event name="OnChange" callType="Override">КД3_АлгоритмПослеЗагрузкиВсехДанныхПриИзмененииВместо</Event>
+													</Events>
 												</InputField>
 												<Button name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанных" id="252">
 													<Type>Hyperlink</Type>
@@ -755,6 +1203,9 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="ОбработчикиXMLРасширеннаяПодсказка" id="264"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_ОбработчикиXMLПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="Страница_ПередВыгрузкой" id="265">
 									<Title>
@@ -1270,8 +1721,6 @@
 									<SearchStringLocation>None</SearchStringLocation>
 									<ViewStatusLocation>None</ViewStatusLocation>
 									<SearchControlLocation>None</SearchControlLocation>
-									<ViewMode>All</ViewMode>
-									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="ИдентификацияПоПолямПоискаКонтекстноеМеню" id="126"/>
 									<AutoCommandBar name="ИдентификацияПоПолямПоискаКоманднаяПанель" id="127">
@@ -1578,8 +2027,6 @@
 											<v8:content>Варианты настроек полей поиска</v8:content>
 										</v8:item>
 									</Title>
-									<ViewMode>All</ViewMode>
-									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="НастройкаВариантовПоискаОбъектовXMLКонтекстноеМеню" id="479"/>
 									<AutoCommandBar name="НастройкаВариантовПоискаОбъектовXMLКоманднаяПанель" id="480"/>
@@ -1662,8 +2109,9 @@
 			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
-	<BaseForm version="2.13">
+	<BaseForm version="2.19">
 		<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+		<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>
 				<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="229">
@@ -1704,18 +2152,25 @@
 						</Title>
 						<ExtendedTooltip name="ОсновныеСведенияРасширеннаяПодсказка" id="81"/>
 						<ChildItems>
-							<UsualGroup name="ГруппаВладельцы" id="74">
+							<UsualGroup name="ГруппаВерхнийРяд" id="519">
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Группа владельцы</v8:content>
+										<v8:content>Группа верхний ряд</v8:content>
 									</v8:item>
 								</Title>
-								<Group>Horizontal</Group>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа верхний ряд</v8:content>
+									</v8:item>
+								</ToolTip>
+								<HorizontalStretch>true</HorizontalStretch>
+								<Group>AlwaysHorizontal</Group>
 								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ГруппаВладельцыРасширеннаяПодсказка" id="75"/>
+								<ExtendedTooltip name="ГруппаВерхнийРядРасширеннаяПодсказка" id="520"/>
 								<ChildItems>
 									<InputField name="СписокКонвертаций" id="164">
 										<ReadOnly>true</ReadOnly>
@@ -1725,12 +2180,10 @@
 												<v8:content>Конвертации</v8:content>
 											</v8:item>
 										</Title>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<HorizontalStretch>true</HorizontalStretch>
 										<ContextMenu name="СписокКонвертацийКонтекстноеМеню" id="165"/>
 										<ExtendedTooltip name="СписокКонвертацийРасширеннаяПодсказка" id="166"/>
-									</InputField>
-									<InputField name="Группа" id="71">
-										<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
-										<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
 									</InputField>
 									<LabelDecoration name="ДекорацияЗахвачен" id="465">
 										<TextColor>style:SpecialTextColor</TextColor>
@@ -1740,11 +2193,19 @@
 												<v8:content>захвачен</v8:content>
 											</v8:item>
 										</Title>
+										<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+										<HorizontalAlign>Right</HorizontalAlign>
 										<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="466"/>
 										<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="467"/>
 									</LabelDecoration>
 								</ChildItems>
 							</UsualGroup>
+							<InputField name="Группа" id="71">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<HorizontalStretch>true</HorizontalStretch>
+								<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
+								<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
+							</InputField>
 							<UsualGroup name="ГруппаИдентификатор" id="503">
 								<Title>
 									<v8:item>
@@ -1752,6 +2213,7 @@
 										<v8:content>Группа идентификатор</v8:content>
 									</v8:item>
 								</Title>
+								<HorizontalStretch>true</HorizontalStretch>
 								<Group>AlwaysHorizontal</Group>
 								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
@@ -1760,11 +2222,13 @@
 								<ChildItems>
 									<InputField name="Код" id="51">
 										<AutoMaxWidth>false</AutoMaxWidth>
+										<HorizontalStretch>true</HorizontalStretch>
 										<ContextMenu name="КодКонтекстноеМеню" id="52"/>
 										<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
 									</InputField>
 									<Button name="ЗаполнитьИдентификатор" id="505">
 										<Type>UsualButton</Type>
+										<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 										<CommandName>0</CommandName>
 										<Title>
 											<v8:item>
@@ -1783,7 +2247,7 @@
 										<v8:content>Группа объекты</v8:content>
 									</v8:item>
 								</Title>
-								<Group>Horizontal</Group>
+								<Group>Vertical</Group>
 								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
@@ -1791,26 +2255,481 @@
 								<ChildItems>
 									<InputField name="ОбъектКонфигурации" id="10">
 										<EditMode>EnterOnInput</EditMode>
+										<AutoMaxWidth>false</AutoMaxWidth>
 										<Height>1</Height>
 										<DropListButton>false</DropListButton>
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ChoiceParameterLinks>
+											<xr:Link>
+												<xr:Name>Отбор.Владелец</xr:Name>
+												<xr:DataPath xsi:type="xs:string">31</xr:DataPath>
+												<xr:ValueChange>Clear</xr:ValueChange>
+											</xr:Link>
+										</ChoiceParameterLinks>
 										<ContextMenu name="ОбъектКонфигурацииКонтекстноеМеню" id="11"/>
 										<ExtendedTooltip name="ОбъектКонфигурацииРасширеннаяПодсказка" id="12"/>
 									</InputField>
 									<InputField name="ОбъектФормата" id="13">
 										<EditMode>EnterOnInput</EditMode>
+										<AutoMaxWidth>false</AutoMaxWidth>
 										<ChoiceButton>true</ChoiceButton>
 										<ContextMenu name="ОбъектФорматаКонтекстноеМеню" id="14"/>
 										<ExtendedTooltip name="ОбъектФорматаРасширеннаяПодсказка" id="15"/>
 									</InputField>
 									<InputField name="ОбъектКонфигурацииКорреспондент" id="254">
+										<AutoMaxWidth>false</AutoMaxWidth>
 										<DropListButton>false</DropListButton>
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ChoiceParameterLinks>
+											<xr:Link>
+												<xr:Name>Отбор.Владелец</xr:Name>
+												<xr:DataPath xsi:type="xs:string">42</xr:DataPath>
+												<xr:ValueChange>Clear</xr:ValueChange>
+											</xr:Link>
+										</ChoiceParameterLinks>
 										<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="255"/>
 										<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="256"/>
 									</InputField>
+								</ChildItems>
+							</UsualGroup>
+							<InputField name="Порядок" id="331">
+								<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
+								<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
+							</InputField>
+							<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
+								<TitleLocation>Left</TitleLocation>
+								<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+								<RadioButtonType>Tumbler</RadioButtonType>
+								<ChoiceList>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для отправки</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">0</Value>
+										</xr:Value>
+									</xr:Item>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для получения</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">1</Value>
+										</xr:Value>
+									</xr:Item>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для отправки и получения</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">2</Value>
+										</xr:Value>
+									</xr:Item>
+								</ChoiceList>
+								<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
+								<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
+							</RadioButtonField>
+							<UsualGroup name="ГруппаТеги" id="592">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Теги вырезки</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа теги</v8:content>
+									</v8:item>
+								</ToolTip>
+								<HorizontalStretch>false</HorizontalStretch>
+								<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+								<Group>AlwaysHorizontal</Group>
+								<HorizontalAlign>Left</HorizontalAlign>
+								<Behavior>Collapsible</Behavior>
+								<Collapsed>true</Collapsed>
+								<Representation>None</Representation>
+								<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="593"/>
+								<ChildItems>
+									<Table name="Теги" id="600">
+										<HeightInTableRows>3</HeightInTableRows>
+										<AutoInsertNewRow>true</AutoInsertNewRow>
+										<EnableStartDrag>true</EnableStartDrag>
+										<EnableDrag>true</EnableDrag>
+										<RowFilter xsi:nil="true"/>
+										<ContextMenu name="ТегиКонтекстноеМеню" id="601"/>
+										<AutoCommandBar name="ТегиКоманднаяПанель" id="602"/>
+										<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="603"/>
+										<SearchStringAddition name="ТегиСтрокаПоиска" id="604">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>SearchStringRepresentation</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="605"/>
+											<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="606"/>
+										</SearchStringAddition>
+										<ViewStatusAddition name="ТегиСостояниеПросмотра" id="607">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>ViewStatusRepresentation</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="608"/>
+											<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="609"/>
+										</ViewStatusAddition>
+										<SearchControlAddition name="ТегиУправлениеПоиском" id="610">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>SearchControl</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="611"/>
+											<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="612"/>
+										</SearchControlAddition>
+										<ChildItems>
+											<LabelField name="ТегиНомерСтроки" id="613">
+												<EditMode>EnterOnInput</EditMode>
+												<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="614"/>
+												<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="615"/>
+											</LabelField>
+											<InputField name="ТегиТег" id="616">
+												<EditMode>EnterOnInput</EditMode>
+												<ContextMenu name="ТегиТегКонтекстноеМеню" id="617"/>
+												<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="618"/>
+											</InputField>
+										</ChildItems>
+									</Table>
+								</ChildItems>
+							</UsualGroup>
+							<UsualGroup name="ВыгрузкаВМодули" id="521">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выгружать в модуль</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выгрузка в модули</v8:content>
+									</v8:item>
+								</ToolTip>
+								<Group>Vertical</Group>
+								<Behavior>Collapsible</Behavior>
+								<Collapsed>true</Collapsed>
+								<Representation>NormalSeparation</Representation>
+								<ExtendedTooltip name="ВыгрузкаВМодулиРасширеннаяПодсказка" id="522"/>
+								<ChildItems>
+									<UsualGroup name="ГруппаПредопределенныйМодуль" id="557">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа предопределенный модуль</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа предопределенный модуль</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаПредопределенныйМодульРасширеннаяПодсказка" id="558"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_Предопределенный" id="523">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Предопределенный</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">0</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_ПредопределенныйКонтекстноеМеню" id="524"/>
+												<ExtendedTooltip name="ВариантВыгрузки_ПредопределенныйРасширеннаяПодсказка" id="525"/>
+											</RadioButtonField>
+											<LabelDecoration name="ДекорацияОтступ1" id="563">
+												<Width>7</Width>
+												<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="564"/>
+												<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="565"/>
+											</LabelDecoration>
+											<LabelDecoration name="ДекорацияПредопределенныйМодуль" id="529">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<Height>1</Height>
+												<AutoMaxHeight>false</AutoMaxHeight>
+												<HorizontalStretch>true</HorizontalStretch>
+												<TextColor>style:ПоясняющийТекст</TextColor>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Декорация предопределенный модуль</v8:content>
+													</v8:item>
+												</Title>
+												<VerticalAlign>Bottom</VerticalAlign>
+												<ContextMenu name="ДекорацияПредопределенныйМодульКонтекстноеМеню" id="530"/>
+												<ExtendedTooltip name="ДекорацияПредопределенныйМодульРасширеннаяПодсказка" id="531"/>
+											</LabelDecoration>
+										</ChildItems>
+									</UsualGroup>
+									<UsualGroup name="ГруппаПользовательскийМодуль" id="559">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа пользовательский модуль</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа пользовательский модуль</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаПользовательскийМодульРасширеннаяПодсказка" id="560"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_Пользовательский" id="548">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Пользовательский</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">1</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_ПользовательскийКонтекстноеМеню" id="549"/>
+												<ExtendedTooltip name="ВариантВыгрузки_ПользовательскийРасширеннаяПодсказка" id="550"/>
+											</RadioButtonField>
+											<LabelDecoration name="ДекорацияОтступ2" id="566">
+												<Width>8</Width>
+												<ContextMenu name="ДекорацияОтступ2КонтекстноеМеню" id="567"/>
+												<ExtendedTooltip name="ДекорацияОтступ2РасширеннаяПодсказка" id="568"/>
+											</LabelDecoration>
+											<InputField name="ДополнительныйМодуль" id="513">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Пользовательский модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<DropListButton>false</DropListButton>
+												<ChoiceButton>true</ChoiceButton>
+												<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+												<ClearButton>true</ClearButton>
+												<OpenButton>true</OpenButton>
+												<ContextMenu name="ДополнительныйМодульКонтекстноеМеню" id="514"/>
+												<ExtendedTooltip name="ДополнительныйМодульРасширеннаяПодсказка" id="515"/>
+											</InputField>
+										</ChildItems>
+									</UsualGroup>
+									<UsualGroup name="ГруппаМодульМенеджераПравило" id="561">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера правило</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера правило</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаМодульМенеджераПравилоРасширеннаяПодсказка" id="562"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_Менеджера" id="551">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Менеджера (объект правила)</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">2</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_МенеджераКонтекстноеМеню" id="552"/>
+												<ExtendedTooltip name="ВариантВыгрузки_МенеджераРасширеннаяПодсказка" id="553"/>
+											</RadioButtonField>
+											<LabelDecoration name="ДекорацияОтступ3" id="569">
+												<Width>1</Width>
+												<ContextMenu name="ДекорацияОтступ3КонтекстноеМеню" id="570"/>
+												<ExtendedTooltip name="ДекорацияОтступ3РасширеннаяПодсказка" id="571"/>
+											</LabelDecoration>
+											<LabelDecoration name="ДекорацияМодульМенеджера" id="545">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<AutoMaxHeight>false</AutoMaxHeight>
+												<HorizontalStretch>true</HorizontalStretch>
+												<TextColor>style:ПоясняющийТекст</TextColor>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Декорация модуль менеджера</v8:content>
+													</v8:item>
+												</Title>
+												<VerticalAlign>Center</VerticalAlign>
+												<ContextMenu name="ДекорацияМодульМенеджераКонтекстноеМеню" id="546"/>
+												<ExtendedTooltip name="ДекорацияМодульМенеджераРасширеннаяПодсказка" id="547"/>
+											</LabelDecoration>
+										</ChildItems>
+									</UsualGroup>
+									<UsualGroup name="ГруппаМодульМенеджераОбъекта" id="537">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера объекта</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера объекта</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаМодульМенеджераОбъектаРасширеннаяПодсказка" id="538"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_МенеджераОбьекта" id="554">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Менеджера (с выбором объекта)</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">3</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_МенеджераОбьектаКонтекстноеМеню" id="555"/>
+												<ExtendedTooltip name="ВариантВыгрузки_МенеджераОбьектаРасширеннаяПодсказка" id="556"/>
+											</RadioButtonField>
+											<InputField name="ОбъектКонфигурацииДляВыгрузкиМодуля" id="526">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Объект</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<DropListButton>false</DropListButton>
+												<ChoiceButton>true</ChoiceButton>
+												<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+												<ContextMenu name="ОбъектКонфигурацииДляВыгрузкиМодуляКонтекстноеМеню" id="527"/>
+												<ExtendedTooltip name="ОбъектКонфигурацииДляВыгрузкиМодуляРасширеннаяПодсказка" id="528"/>
+											</InputField>
+										</ChildItems>
+									</UsualGroup>
+								</ChildItems>
+							</UsualGroup>
+							<UsualGroup name="ГруппаПрочее" id="329">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа прочее</v8:content>
+									</v8:item>
+								</Title>
+								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
+								<Representation>None</Representation>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
+								<ChildItems>
+									<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
+										<TitleLocation>Right</TitleLocation>
+										<CheckBoxType>Auto</CheckBoxType>
+										<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
+										<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
+									</CheckBoxField>
 									<CheckBoxField name="ОбъектСДвижениями" id="510">
 										<TitleLocation>Right</TitleLocation>
 										<ToolTip>
@@ -1826,96 +2745,22 @@
 									</CheckBoxField>
 								</ChildItems>
 							</UsualGroup>
-							<UsualGroup name="ОбластьПрименения" id="49">
-								<Title>
+							<CheckBoxField name="Отключить" id="161">
+								<TitleLocation>Right</TitleLocation>
+								<ToolTip>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Область применения</v8:content>
+										<v8:content>При установке флага правило не будет выгружаться в модуль менеджера обмена</v8:content>
 									</v8:item>
-								</Title>
-								<Group>Horizontal</Group>
-								<Behavior>Usual</Behavior>
-								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ОбластьПримененияРасширеннаяПодсказка" id="50"/>
-								<ChildItems>
-									<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
-										<RadioButtonType>Tumbler</RadioButtonType>
-										<ChoiceList>
-											<xr:Item>
-												<xr:Presentation/>
-												<xr:CheckState>0</xr:CheckState>
-												<xr:Value xsi:type="FormChoiceListDesTimeValue">
-													<Presentation>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Для отправки</v8:content>
-														</v8:item>
-													</Presentation>
-													<Value xsi:type="xs:decimal">0</Value>
-												</xr:Value>
-											</xr:Item>
-											<xr:Item>
-												<xr:Presentation/>
-												<xr:CheckState>0</xr:CheckState>
-												<xr:Value xsi:type="FormChoiceListDesTimeValue">
-													<Presentation>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Для получения</v8:content>
-														</v8:item>
-													</Presentation>
-													<Value xsi:type="xs:decimal">1</Value>
-												</xr:Value>
-											</xr:Item>
-											<xr:Item>
-												<xr:Presentation/>
-												<xr:CheckState>0</xr:CheckState>
-												<xr:Value xsi:type="FormChoiceListDesTimeValue">
-													<Presentation>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Для отправки и получения</v8:content>
-														</v8:item>
-													</Presentation>
-													<Value xsi:type="xs:decimal">2</Value>
-												</xr:Value>
-											</xr:Item>
-										</ChoiceList>
-										<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
-										<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
-									</RadioButtonField>
-									<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
-										<TitleLocation>Right</TitleLocation>
-										<CheckBoxType>Auto</CheckBoxType>
-										<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
-										<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
-									</CheckBoxField>
-								</ChildItems>
-							</UsualGroup>
-							<UsualGroup name="ГруппаПрочее" id="329">
-								<Title>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Группа прочее</v8:content>
-									</v8:item>
-								</Title>
-								<Group>AlwaysHorizontal</Group>
-								<Behavior>Usual</Behavior>
-								<Representation>None</Representation>
-								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
-								<ChildItems>
-									<CheckBoxField name="Отключить" id="161">
-										<CheckBoxType>Auto</CheckBoxType>
-										<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
-										<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
-									</CheckBoxField>
-									<InputField name="Порядок" id="331">
-										<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
-										<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
-									</InputField>
-								</ChildItems>
-							</UsualGroup>
+								</ToolTip>
+								<ToolTipRepresentation>Button</ToolTipRepresentation>
+								<VerticalAlign>Bottom</VerticalAlign>
+								<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+								<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+								<CheckBoxType>Auto</CheckBoxType>
+								<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
+								<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
+							</CheckBoxField>
 						</ChildItems>
 					</Page>
 					<Page name="Страница_ПравилаКонвертацииСвойств" id="176">
@@ -1959,6 +2804,7 @@
 								<ShowRoot>true</ShowRoot>
 								<AllowRootChoice>false</AllowRootChoice>
 								<UpdateOnDataChange>Auto</UpdateOnDataChange>
+								<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 								<ContextMenu name="ПравилаКонвертацииСвойствКонтекстноеМеню" id="406"/>
 								<AutoCommandBar name="ПравилаКонвертацииСвойствКоманднаяПанель" id="407">
 									<ChildItems>
@@ -1967,15 +2813,29 @@
 											<CommandName>0</CommandName>
 											<ExtendedTooltip name="ПравилаКонвертацииСвойствНастройкаПКСРасширеннаяПодсказка" id="462"/>
 										</Button>
-										<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+										<ButtonGroup name="ПравилаКонвертацииСвойствГруппа1" id="574">
+											<Representation>Compact</Representation>
+											<ExtendedTooltip name="ПравилаКонвертацииСвойствГруппа1РасширеннаяПодсказка" id="575"/>
+											<ChildItems>
+												<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+													<Type>CommandBarButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>0</CommandName>
+													<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
+												</Button>
+												<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
+													<Type>CommandBarButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>0</CommandName>
+													<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+										<Button name="ПравилаКонвертацииСвойствПометитьКакПроверено" id="572">
 											<Type>CommandBarButton</Type>
 											<CommandName>0</CommandName>
-											<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
-										</Button>
-										<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
-											<Type>CommandBarButton</Type>
-											<CommandName>0</CommandName>
-											<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+											<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+											<ExtendedTooltip name="ПравилаКонвертацииСвойствПометитьКакПровереноРасширеннаяПодсказка" id="573"/>
 										</Button>
 									</ChildItems>
 								</AutoCommandBar>
@@ -2037,6 +2897,20 @@
 										<Group>Horizontal</Group>
 										<ExtendedTooltip name="ПравилаКонвертацииСвойствXMLРасширеннаяПодсказка" id="455"/>
 										<ChildItems>
+											<CheckBoxField name="ПравилаКонвертацииСвойствПоиск" id="634">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Поле поиска</v8:content>
+													</v8:item>
+												</Title>
+												<CheckBoxType>Auto</CheckBoxType>
+												<ContextMenu name="ПравилаКонвертацииСвойствПоискКонтекстноеМеню" id="635"/>
+												<ExtendedTooltip name="ПравилаКонвертацииСвойствПоискРасширеннаяПодсказка" id="636">
+													<Visible>false</Visible>
+													<Enabled>false</Enabled>
+												</ExtendedTooltip>
+											</CheckBoxField>
 											<CheckBoxField name="ПравилаКонвертацииСвойствПолучитьИзВходящихДанных" id="448">
 												<Title>
 													<v8:item>
@@ -2338,8 +3212,10 @@
 															</v8:item>
 														</Title>
 														<ToolTipRepresentation>Button</ToolTipRepresentation>
-														<ChoiceButton>true</ChoiceButton>
+														<DropListButton>true</DropListButton>
+														<ChoiceButton>false</ChoiceButton>
 														<OpenButton>true</OpenButton>
+														<ListChoiceMode>true</ListChoiceMode>
 														<ContextMenu name="АлгоритмПослеЗагрузкиВсехДанныхКонтекстноеМеню" id="240"/>
 														<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="241">
 															<Title formatted="true">

@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+		<Event name="OnClose" callType="After">КД3_ПриЗакрытииПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="220">
 			<AutoMaxWidth>false</AutoMaxWidth>
@@ -65,7 +72,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Способ выбора свойств</v8:content>
+							<v8:content>Способ выбора свойств формата</v8:content>
 						</v8:item>
 					</Title>
 					<CheckBoxType>Tumbler</CheckBoxType>
@@ -153,18 +160,8 @@
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
 									<OpenButton>false</OpenButton>
-									<ChoiceParameterLinks>
-										<xr:Link>
-											<xr:Name>Отбор.Родитель</xr:Name>
-											<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
-											<xr:ValueChange>Clear</xr:ValueChange>
-										</xr:Link>
-										<xr:Link>
-											<xr:Name>Отбор.Владелец</xr:Name>
-											<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
-											<xr:ValueChange>Clear</xr:ValueChange>
-										</xr:Link>
-									</ChoiceParameterLinks>
+									<QuickChoice>false</QuickChoice>
+									<TextEdit>false</TextEdit>
 									<ContextMenu name="СвойствоКонфигурацииКонтекстноеМеню" id="86"/>
 									<ExtendedTooltip name="СвойствоКонфигурацииРасширеннаяПодсказка" id="87"/>
 								</InputField>
@@ -179,6 +176,8 @@
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
 									<OpenButton>false</OpenButton>
+									<QuickChoice>false</QuickChoice>
+									<TextEdit>false</TextEdit>
 									<ContextMenu name="СвойствоКонфигурацииКорреспондентаКонтекстноеМеню" id="232"/>
 									<ExtendedTooltip name="СвойствоКонфигурацииКорреспондентаРасширеннаяПодсказка" id="233"/>
 								</InputField>
@@ -200,6 +199,8 @@
 										</v8:item>
 									</Title>
 									<ChoiceButton>true</ChoiceButton>
+									<QuickChoice>false</QuickChoice>
+									<TextEdit>false</TextEdit>
 									<ContextMenu name="СвойствоФорматаКонтекстноеМеню" id="89"/>
 									<ExtendedTooltip name="СвойствоФорматаРасширеннаяПодсказка" id="90"/>
 								</InputField>
@@ -457,6 +458,9 @@
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="ГруппаXMLРасширеннаяПодсказка" id="169"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_ГруппаXMLПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="Обработчики" id="170">
 					<Title>
@@ -476,6 +480,9 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыОбработчикиРасширеннаяПодсказка" id="175"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыОбработчикиПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="ПередВыгрузкой" id="176">
 									<Title>
@@ -706,8 +713,9 @@
 		</InputField>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.13">
+	<BaseForm version="2.19">
 		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+		<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>
 			<LabelDecoration name="ДекорацияНуженЗахват" id="220">
@@ -772,7 +780,7 @@
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Способ выбора свойств</v8:content>
+								<v8:content>Способ выбора свойств формата</v8:content>
 							</v8:item>
 						</Title>
 						<CheckBoxType>Tumbler</CheckBoxType>
@@ -860,18 +868,8 @@
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
 										<OpenButton>false</OpenButton>
-										<ChoiceParameterLinks>
-											<xr:Link>
-												<xr:Name>Отбор.Родитель</xr:Name>
-												<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
-												<xr:ValueChange>Clear</xr:ValueChange>
-											</xr:Link>
-											<xr:Link>
-												<xr:Name>Отбор.Владелец</xr:Name>
-												<xr:DataPath xsi:type="xs:string">0</xr:DataPath>
-												<xr:ValueChange>Clear</xr:ValueChange>
-											</xr:Link>
-										</ChoiceParameterLinks>
+										<QuickChoice>false</QuickChoice>
+										<TextEdit>false</TextEdit>
 										<ContextMenu name="СвойствоКонфигурацииКонтекстноеМеню" id="86"/>
 										<ExtendedTooltip name="СвойствоКонфигурацииРасширеннаяПодсказка" id="87"/>
 									</InputField>
@@ -886,6 +884,8 @@
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
 										<OpenButton>false</OpenButton>
+										<QuickChoice>false</QuickChoice>
+										<TextEdit>false</TextEdit>
 										<ContextMenu name="СвойствоКонфигурацииКорреспондентаКонтекстноеМеню" id="232"/>
 										<ExtendedTooltip name="СвойствоКонфигурацииКорреспондентаРасширеннаяПодсказка" id="233"/>
 									</InputField>
@@ -907,6 +907,8 @@
 											</v8:item>
 										</Title>
 										<ChoiceButton>true</ChoiceButton>
+										<QuickChoice>false</QuickChoice>
+										<TextEdit>false</TextEdit>
 										<ContextMenu name="СвойствоФорматаКонтекстноеМеню" id="89"/>
 										<ExtendedTooltip name="СвойствоФорматаРасширеннаяПодсказка" id="90"/>
 									</InputField>
@@ -988,15 +990,16 @@
 								<ShowTitle>false</ShowTitle>
 								<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="102"/>
 								<ChildItems>
-									<InputField name="СвойствоКонфигурацииСтрокой" id="103">
+									<InputField name="СвойствоКонфигурацииСтрокой" id="234">
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
 												<v8:content>Свойство конфигурации</v8:content>
 											</v8:item>
 										</Title>
-										<ContextMenu name="СвойствоКонфигурацииСтрокойКонтекстноеМеню" id="104"/>
-										<ExtendedTooltip name="СвойствоКонфигурацииСтрокойРасширеннаяПодсказка" id="105"/>
+										<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+										<ContextMenu name="СвойствоКонфигурацииСтрокойКонтекстноеМеню" id="235"/>
+										<ExtendedTooltip name="СвойствоКонфигурацииСтрокойРасширеннаяПодсказка" id="236"/>
 									</InputField>
 									<InputField name="СвойствоФорматаСтрокой" id="106">
 										<ContextMenu name="СвойствоФорматаСтрокойКонтекстноеМеню" id="107"/>

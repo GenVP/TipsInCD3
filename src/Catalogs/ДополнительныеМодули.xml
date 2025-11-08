@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Catalog uuid="d62c5380-685c-41a6-abf7-66706f2ec44a">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.ДополнительныеМодули" category="Object">
+				<xr:TypeId>162a6a80-b90a-4b4e-a2fc-0431db62ae13</xr:TypeId>
+				<xr:ValueId>cda84474-0b87-4713-a04a-b090662ada90</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.ДополнительныеМодули" category="Ref">
+				<xr:TypeId>e9f79915-7982-41f2-8a66-9912424aca7a</xr:TypeId>
+				<xr:ValueId>db4fcf59-f2b3-4f58-9c28-6cabbf78b041</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.ДополнительныеМодули" category="Selection">
+				<xr:TypeId>b207be12-b88a-43f0-849a-b23567b9e254</xr:TypeId>
+				<xr:ValueId>6ea7fbb7-8702-4ba8-afc5-3213f25a4695</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.ДополнительныеМодули" category="List">
+				<xr:TypeId>9cd055e0-5c27-4379-943b-52e78cdbe547</xr:TypeId>
+				<xr:ValueId>a9c1c769-2060-4a3b-9041-ffc186424a2f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.ДополнительныеМодули" category="Manager">
+				<xr:TypeId>c52d84e1-bc5b-4504-8640-5be476ddb2e7</xr:TypeId>
+				<xr:ValueId>5afb4c1b-5ba5-4397-ae6c-1b8927581b42</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ДополнительныеМодули</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>9277e377-fc68-4abf-95f2-856b2ad29e8e</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="4c395b59-2caf-4f23-b65c-0295f29e78fa">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Комментарий</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>6a4145cd-9e3d-41d9-8bca-c81f97285cff</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="df41b592-3ec5-4813-b37f-5876a077fedc">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Раздел</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>d1d8bc23-d59a-40e5-b008-c851035817a3</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.РазделыДополнительныхМодулей</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

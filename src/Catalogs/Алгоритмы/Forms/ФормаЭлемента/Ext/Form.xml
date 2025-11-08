@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="32">
@@ -9,6 +10,13 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing" callType="After">КД3_ОбработкаВыбораПосле</Event>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+		<Event name="OnClose" callType="After">КД3_ПриЗакрытииПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="43">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -48,6 +56,22 @@
 				<InputField name="Группа" id="23">
 					<ContextMenu name="ГруппаКонтекстноеМеню" id="24"/>
 					<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ДополнительныйМодуль" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользовательский модуль</v8:content>
+						</v8:item>
+					</Title>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ДополнительныйМодульКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ДополнительныйМодульРасширеннаяПодсказка" id="56"/>
 				</InputField>
 				<LabelDecoration name="ДекорацияЗахвачен" id="40">
 					<TextColor>style:SpecialTextColor</TextColor>
@@ -90,6 +114,9 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПараметрыКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ПараметрыРасширеннаяПодсказка" id="18"/>
+					<Events>
+						<Event name="OnChange" callType="After">КД3_ПараметрыПриИзмененииПосле</Event>
+					</Events>
 				</InputField>
 				<CheckBoxField name="ЭтоФункция" id="26">
 					<Title>
@@ -114,11 +141,10 @@
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ИспользуетсяПриЗагрузкеКонтекстноеМеню" id="38"/>
 					<ExtendedTooltip name="ИспользуетсяПриЗагрузкеРасширеннаяПодсказка" id="39"/>
+					<Events>
+						<Event name="OnChange" callType="After">КД3_ИспользуетсяПриЗагрузкеПриИзмененииПосле</Event>
+					</Events>
 				</CheckBoxField>
-				<InputField name="ТегВырезки" id="46">
-					<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="47"/>
-					<ExtendedTooltip name="ТегВырезкиРасширеннаяПодсказка" id="48"/>
-				</InputField>
 			</ChildItems>
 		</UsualGroup>
 		<TextDocumentField name="Алгоритм" id="10">
@@ -127,6 +153,76 @@
 			<ContextMenu name="АлгоритмКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="АлгоритмРасширеннаяПодсказка" id="12"/>
 		</TextDocumentField>
+		<UsualGroup name="ГруппаТеги" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Теги вырезки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа теги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<HorizontalAlign>Left</HorizontalAlign>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<Table name="Теги" id="59">
+					<HeightInTableRows>3</HeightInTableRows>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТегиКонтекстноеМеню" id="60"/>
+					<AutoCommandBar name="ТегиКоманднаяПанель" id="61"/>
+					<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="62"/>
+					<SearchStringAddition name="ТегиСтрокаПоиска" id="63">
+						<AdditionSource>
+							<Item>Теги</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="64"/>
+						<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="65"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТегиСостояниеПросмотра" id="66">
+						<AdditionSource>
+							<Item>Теги</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="67"/>
+						<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="68"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТегиУправлениеПоиском" id="69">
+						<AdditionSource>
+							<Item>Теги</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="70"/>
+						<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="71"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ТегиНомерСтроки" id="72">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="74"/>
+						</LabelField>
+						<InputField name="ТегиТег" id="75">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТегиТегКонтекстноеМеню" id="76"/>
+							<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="77"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаКомментарий" id="52">
 			<Title>
 				<v8:item>
@@ -167,7 +263,8 @@
 		</UsualGroup>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.13">
+	<BaseForm version="2.19">
+		<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 			<ChildItems>
 				<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="32">
@@ -216,6 +313,22 @@
 					<InputField name="Группа" id="23">
 						<ContextMenu name="ГруппаКонтекстноеМеню" id="24"/>
 						<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="25"/>
+					</InputField>
+					<InputField name="ДополнительныйМодуль" id="54">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Пользовательский модуль</v8:content>
+							</v8:item>
+						</Title>
+						<DropListButton>false</DropListButton>
+						<ChoiceButton>true</ChoiceButton>
+						<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+						<ClearButton>true</ClearButton>
+						<SpinButton>false</SpinButton>
+						<OpenButton>true</OpenButton>
+						<ContextMenu name="ДополнительныйМодульКонтекстноеМеню" id="55"/>
+						<ExtendedTooltip name="ДополнительныйМодульРасширеннаяПодсказка" id="56"/>
 					</InputField>
 					<LabelDecoration name="ДекорацияЗахвачен" id="40">
 						<TextColor>style:SpecialTextColor</TextColor>
@@ -283,10 +396,6 @@
 						<ContextMenu name="ИспользуетсяПриЗагрузкеКонтекстноеМеню" id="38"/>
 						<ExtendedTooltip name="ИспользуетсяПриЗагрузкеРасширеннаяПодсказка" id="39"/>
 					</CheckBoxField>
-					<InputField name="ТегВырезки" id="46">
-						<ContextMenu name="ТегВырезкиКонтекстноеМеню" id="47"/>
-						<ExtendedTooltip name="ТегВырезкиРасширеннаяПодсказка" id="48"/>
-					</InputField>
 				</ChildItems>
 			</UsualGroup>
 			<TextDocumentField name="Алгоритм" id="10">
@@ -295,6 +404,76 @@
 				<ContextMenu name="АлгоритмКонтекстноеМеню" id="11"/>
 				<ExtendedTooltip name="АлгоритмРасширеннаяПодсказка" id="12"/>
 			</TextDocumentField>
+			<UsualGroup name="ГруппаТеги" id="57">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Теги вырезки</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа теги</v8:content>
+					</v8:item>
+				</ToolTip>
+				<HorizontalStretch>false</HorizontalStretch>
+				<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+				<Group>AlwaysHorizontal</Group>
+				<HorizontalAlign>Left</HorizontalAlign>
+				<Behavior>Collapsible</Behavior>
+				<Collapsed>true</Collapsed>
+				<Representation>None</Representation>
+				<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="58"/>
+				<ChildItems>
+					<Table name="Теги" id="59">
+						<HeightInTableRows>3</HeightInTableRows>
+						<AutoInsertNewRow>true</AutoInsertNewRow>
+						<EnableStartDrag>true</EnableStartDrag>
+						<EnableDrag>true</EnableDrag>
+						<RowFilter xsi:nil="true"/>
+						<ContextMenu name="ТегиКонтекстноеМеню" id="60"/>
+						<AutoCommandBar name="ТегиКоманднаяПанель" id="61"/>
+						<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="62"/>
+						<SearchStringAddition name="ТегиСтрокаПоиска" id="63">
+							<AdditionSource>
+								<Item>Теги</Item>
+								<Type>SearchStringRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="65"/>
+						</SearchStringAddition>
+						<ViewStatusAddition name="ТегиСостояниеПросмотра" id="66">
+							<AdditionSource>
+								<Item>Теги</Item>
+								<Type>ViewStatusRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="68"/>
+						</ViewStatusAddition>
+						<SearchControlAddition name="ТегиУправлениеПоиском" id="69">
+							<AdditionSource>
+								<Item>Теги</Item>
+								<Type>SearchControl</Type>
+							</AdditionSource>
+							<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="71"/>
+						</SearchControlAddition>
+						<ChildItems>
+							<LabelField name="ТегиНомерСтроки" id="72">
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="73"/>
+								<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="74"/>
+							</LabelField>
+							<InputField name="ТегиТег" id="75">
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ТегиТегКонтекстноеМеню" id="76"/>
+								<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="77"/>
+							</InputField>
+						</ChildItems>
+					</Table>
+				</ChildItems>
+			</UsualGroup>
 			<UsualGroup name="ГруппаКомментарий" id="52">
 				<Title>
 					<v8:item>

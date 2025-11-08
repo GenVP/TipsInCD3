@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<Configuration uuid="5eb777bb-76b2-4cee-ae7f-90a1f974d299">
 		<InternalInfo>
 			<xr:ContainedObject>
@@ -32,6 +32,7 @@
 			</xr:ContainedObject>
 		</InternalInfo>
 		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
 			<Name>КД3_КонтекстнаяПодсказка</Name>
 			<Synonym>
 				<v8:item>
@@ -41,7 +42,6 @@
 			</Synonym>
 			<Comment/>
 			<ConfigurationExtensionPurpose>Customization</ConfigurationExtensionPurpose>
-			<ObjectBelonging>Adopted</ObjectBelonging>
 			<KeepMappingToExtendedConfigurationObjectsByIDs>true</KeepMappingToExtendedConfigurationObjectsByIDs>
 			<NamePrefix>КД3_</NamePrefix>
 			<ConfigurationExtensionCompatibilityMode>Version8_3_14</ConfigurationExtensionCompatibilityMode>
@@ -51,7 +51,7 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>https://github.com/GenVP/TipsInCD3_EDT</Vendor>
-			<Version>1.2.8</Version>
+			<Version>1.2.10</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -65,6 +65,8 @@
 			<Subsystem>Администрирование</Subsystem>
 			<Subsystem>Конфигурации</Subsystem>
 			<StyleItem>ГиперссылкаЦвет</StyleItem>
+			<StyleItem>ПоясняющийТекст</StyleItem>
+			<StyleItem>ВажнаяНадписьШрифт</StyleItem>
 			<CommonPicture>Папка</CommonPicture>
 			<CommonPicture>Успешно</CommonPicture>
 			<CommonPicture>ДлительнаяОперация48</CommonPicture>
@@ -73,6 +75,7 @@
 			<CommonPicture>КД3_ДобавитьПереносСтроки</CommonPicture>
 			<CommonPicture>КД3_УдалитьПереносСтроки</CommonPicture>
 			<CommonPicture>КД3_Форматировать</CommonPicture>
+			<CommonPicture>ПиктограммыЭлементов</CommonPicture>
 			<CommonTemplate>КД3_src</CommonTemplate>
 			<CommonTemplate>КД3_RegExWin32</CommonTemplate>
 			<CommonTemplate>КД3_RegExWin64</CommonTemplate>
@@ -86,7 +89,6 @@
 			<CommonModule>КД3_МетаданныеКлиент</CommonModule>
 			<CommonModule>КД3_МетаданныеПовтИсп</CommonModule>
 			<CommonModule>КД3_ЗагрузкаМетаданных</CommonModule>
-			<CommonModule>КД3_ЗагрузкаМетаданныхКлиентСервер</CommonModule>
 			<CommonModule>КД3_УправлениеФормой</CommonModule>
 			<CommonModule>КД3_УправлениеФормойКлиент</CommonModule>
 			<CommonModule>КД3_РедакторКодаКлиент</CommonModule>
@@ -96,13 +98,14 @@
 			<CommonModule>КД3_УправлениеФормойКлиентСервер</CommonModule>
 			<CommonModule>КД3_ПарсерМодулей1С</CommonModule>
 			<CommonModule>КД3_ПарсерМодулейRegExp</CommonModule>
-			<CommonModule>КонвертацияДанныхXDTOСервер</CommonModule>
 			<CommonModule>СтандартныеПодсистемыКлиент</CommonModule>
+			<CommonModule>КонвертацияДанныхXDTOСервер</CommonModule>
 			<CommonCommand>КД3_Настройки</CommonCommand>
 			<CommonCommand>ИсторияИзменений</CommonCommand>
 			<CommonForm>КД3_Настройки</CommonForm>
 			<Catalog>Алгоритмы</Catalog>
 			<Catalog>Запросы</Catalog>
+			<Catalog>Конвертации</Catalog>
 			<Catalog>ПравилаКонвертацииОбъектов</Catalog>
 			<Catalog>ПравилаКонвертацииПредопределенныхДанных</Catalog>
 			<Catalog>ПравилаКонвертацииСвойств</Catalog>
@@ -110,8 +113,11 @@
 			<Catalog>ПравилаРегистрацииОбъектов</Catalog>
 			<Catalog>Релизы</Catalog>
 			<Catalog>Конфигурации</Catalog>
-			<Catalog>Конвертации</Catalog>
+			<Catalog>ДополнительныеМодули</Catalog>
+			<Catalog>Свойства</Catalog>
 			<Enum>ВариантыИдентификацииОбъектов</Enum>
+			<Enum>ВидыОбработчиков</Enum>
+			<Enum>РазделыДополнительныхМодулей</Enum>
 			<DataProcessor>КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXMLМногопоточно</DataProcessor>
 			<InformationRegister>КомментарииКОбработчикам</InformationRegister>
 		</ChildObjects>

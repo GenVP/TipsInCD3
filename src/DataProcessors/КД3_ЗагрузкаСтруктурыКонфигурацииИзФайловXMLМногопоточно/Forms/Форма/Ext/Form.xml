@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаВыполнитьЗагрузку" id="22">
@@ -18,7 +18,8 @@
 				<ToolTip>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>Режим работы</v8:content>
+						<v8:content>- На клиенте: При при загрузке файлы  будут скопированы во временный каталог на клиенте.
+- На сервере: При при загрузке файлы  будут скопированы во временный каталог на сервере.</v8:content>
 					</v8:item>
 				</ToolTip>
 				<ExtendedTooltip name="КД3_РежимРаботыРасширеннаяПодсказка" id="61"/>
@@ -35,11 +36,17 @@
 					</Button>
 				</ChildItems>
 			</Popup>
+			<Button name="КД3_ФормаОтменитьЗагрузку" id="135">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КД3_ОтменитьЗагрузку</CommandName>
+				<ExtendedTooltip name="КД3_ФормаОтменитьЗагрузкуРасширеннаяПодсказка" id="136"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
 	<ChildItems>
 		<Pages name="ГруппаСтраницы" id="7">
@@ -61,6 +68,114 @@
 					</Title>
 					<ExtendedTooltip name="ОсновнаяРасширеннаяПодсказка" id="10"/>
 					<ChildItems>
+						<UsualGroup name="ГруппаКонфигурация" id="146">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа конфигурация</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа конфигурация</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКонфигурацияРасширеннаяПодсказка" id="147"/>
+							<ChildItems>
+								<RadioButtonField name="СпособЗагрузки" id="11">
+									<DataPath>СпособЗагрузки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Способ загрузки</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>В новую версию конфигурации</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>В существующую версию конфигурации</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СпособЗагрузкиКонтекстноеМеню" id="12"/>
+									<ExtendedTooltip name="СпособЗагрузкиРасширеннаяПодсказка" id="13"/>
+									<Events>
+										<Event name="OnChange">СпособЗагрузкиПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+								<InputField name="Конфигурация" id="1">
+									<DataPath>Объект.Конфигурация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="КонфигурацияКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="КонфигурацияРасширеннаяПодсказка" id="3"/>
+									<Events>
+										<Event name="OnChange">КД3_КонфигурацияПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<RadioButtonField name="ИсточникДанных" id="24">
+							<DataPath>Объект.ИсточникДанных</DataPath>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Файлы XML</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Файлы EDT</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ИсточникДанныхКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ИсточникДанныхРасширеннаяПодсказка" id="26"/>
+						</RadioButtonField>
 						<UsualGroup name="ГруппаКаталогЗагрузки" id="33">
 							<Title>
 								<v8:item>
@@ -176,40 +291,6 @@
 								</Table>
 							</ChildItems>
 						</UsualGroup>
-						<RadioButtonField name="ИсточникДанных" id="24">
-							<DataPath>Объект.ИсточникДанных</DataPath>
-							<RadioButtonType>Auto</RadioButtonType>
-							<ChoiceList>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Файлы XML</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:decimal">0</Value>
-									</xr:Value>
-								</xr:Item>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Файлы EDT</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:decimal">1</Value>
-									</xr:Value>
-								</xr:Item>
-							</ChoiceList>
-							<ContextMenu name="ИсточникДанныхКонтекстноеМеню" id="25"/>
-							<ExtendedTooltip name="ИсточникДанныхРасширеннаяПодсказка" id="26"/>
-						</RadioButtonField>
 						<RadioButtonField name="ВариантЗагрузкиДвижений" id="27">
 							<DataPath>Объект.ВариантЗагрузкиДвижений</DataPath>
 							<Title>
@@ -263,60 +344,6 @@
 							<ContextMenu name="ВариантЗагрузкиДвиженийКонтекстноеМеню" id="28"/>
 							<ExtendedTooltip name="ВариантЗагрузкиДвиженийРасширеннаяПодсказка" id="29"/>
 						</RadioButtonField>
-						<RadioButtonField name="СпособЗагрузки" id="11">
-							<DataPath>СпособЗагрузки</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Способ загрузки</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Top</TitleLocation>
-							<RadioButtonType>Auto</RadioButtonType>
-							<ChoiceList>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>В новую версию конфигурации</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:decimal">0</Value>
-									</xr:Value>
-								</xr:Item>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>В существующую версию конфигурации</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:decimal">1</Value>
-									</xr:Value>
-								</xr:Item>
-							</ChoiceList>
-							<ContextMenu name="СпособЗагрузкиКонтекстноеМеню" id="12"/>
-							<ExtendedTooltip name="СпособЗагрузкиРасширеннаяПодсказка" id="13"/>
-							<Events>
-								<Event name="OnChange">СпособЗагрузкиПриИзменении</Event>
-							</Events>
-						</RadioButtonField>
-						<InputField name="Конфигурация" id="1">
-							<DataPath>Объект.Конфигурация</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ContextMenu name="КонфигурацияКонтекстноеМеню" id="2"/>
-							<ExtendedTooltip name="КонфигурацияРасширеннаяПодсказка" id="3"/>
-							<Events>
-								<Event name="OnChange">КД3_КонфигурацияПриИзменении</Event>
-							</Events>
-						</InputField>
 						<CheckBoxField name="ТолькоДобавлятьНовые" id="30">
 							<DataPath>Объект.ТолькоДобавлятьНовые</DataPath>
 							<Title>
@@ -337,104 +364,136 @@
 							<ContextMenu name="ТолькоОбновитьПланыОбменаКонтекстноеМеню" id="58"/>
 							<ExtendedTooltip name="ТолькоОбновитьПланыОбменаРасширеннаяПодсказка" id="59"/>
 						</CheckBoxField>
-						<InputField name="КД3_КоличествоПотоков" id="127">
-							<DataPath>КД3_КоличествоПотоков</DataPath>
-							<SpinButton>true</SpinButton>
-							<MinValue xsi:type="xs:decimal">1</MinValue>
-							<MaxValue xsi:type="xs:decimal">8</MaxValue>
-							<ContextMenu name="КД3_КоличествоПотоковКонтекстноеМеню" id="128"/>
-							<ExtendedTooltip name="КД3_КоличествоПотоковРасширеннаяПодсказка" id="129"/>
-						</InputField>
-						<UsualGroup name="КД3_ГруппаКонтекстнаяПодсказка" id="83">
+						<UsualGroup name="КД3_ГруппаНастройки" id="139">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Контекстная подсказка (КД3)</v8:content>
+									<v8:content>К д3 группа настройки</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>К д3 группа контекстная подсказка</v8:content>
+									<v8:content>К д3 группа настройки</v8:content>
 								</v8:item>
 							</ToolTip>
 							<Group>Vertical</Group>
-							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
-							<ExtendedTooltip name="КД3_ГруппаКонтекстнаяПодсказкаРасширеннаяПодсказка" id="84"/>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КД3_ГруппаНастройкиРасширеннаяПодсказка" id="140"/>
 							<ChildItems>
-								<RadioButtonField name="КД3_МестоХраненияИндексов" id="77">
-									<DataPath>КД3_МестоХраненияИндексов</DataPath>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Место хранения дополнительных метаданных (методов модулей):
-В каталоге - сохраняются в выбранном каталоге
-В информационной базе - сохраняются в РС "Хранилище безопасных данных"
-Не хранить - метаданные подсказки получаются в момент вызова</v8:content>
-										</v8:item>
-									</ToolTip>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<RadioButtonType>Tumbler</RadioButtonType>
-									<ContextMenu name="КД3_МестоХраненияИндексовКонтекстноеМеню" id="78"/>
-									<ExtendedTooltip name="КД3_МестоХраненияИндексовРасширеннаяПодсказка" id="79"/>
-									<Events>
-										<Event name="OnChange">КД3_МестоХранениеИндексовПриИзменении</Event>
-									</Events>
-								</RadioButtonField>
-								<InputField name="КД3_КаталогИндексов" id="80">
-									<DataPath>КД3_КаталогИндексов</DataPath>
-									<ChoiceButton>true</ChoiceButton>
-									<OpenButton>true</OpenButton>
-									<ContextMenu name="КД3_КаталогИндексовКонтекстноеМеню" id="81"/>
-									<ExtendedTooltip name="КД3_КаталогИндексовРасширеннаяПодсказка" id="82"/>
-									<Events>
-										<Event name="StartChoice">КД3_КаталогИндексовНачалоВыбора</Event>
-										<Event name="Opening">КД3_КаталогИндексовОткрытие</Event>
-									</Events>
-								</InputField>
-								<UsualGroup name="Группа1" id="130">
-									<Group>AlwaysHorizontal</Group>
-									<Behavior>Usual</Behavior>
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="131"/>
+								<UsualGroup name="Группа2" id="141">
+									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="142"/>
 									<ChildItems>
-										<CheckBoxField name="КД3_ЗагружатьМетодыМодулей" id="66">
-											<DataPath>КД3_ЗагружатьМетодыМодулей</DataPath>
-											<TitleLocation>Right</TitleLocation>
-											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="КД3_ЗагружатьМетодыМодулейКонтекстноеМеню" id="67"/>
-											<ExtendedTooltip name="КД3_ЗагружатьМетодыМодулейРасширеннаяПодсказка" id="68"/>
+										<InputField name="КД3_КоличествоПотоков" id="127">
+											<DataPath>КД3_КоличествоПотоков</DataPath>
+											<SpinButton>true</SpinButton>
+											<MinValue xsi:type="xs:decimal">1</MinValue>
+											<MaxValue xsi:type="xs:decimal">8</MaxValue>
+											<ContextMenu name="КД3_КоличествоПотоковКонтекстноеМеню" id="128"/>
+											<ExtendedTooltip name="КД3_КоличествоПотоковРасширеннаяПодсказка" id="129"/>
 											<Events>
-												<Event name="OnChange">КД3_ЗагружатьМетодыМодулейПриИзменении</Event>
+												<Event name="OnChange">КД3_КоличествоПотоковПриИзменении</Event>
 											</Events>
-										</CheckBoxField>
-										<CheckBoxField name="КД3_СохранитьКаталогДляКонфигурации" id="132">
-											<DataPath>КД3_СохранитьКаталогДляКонфигурации</DataPath>
+										</InputField>
+										<CheckBoxField name="КД3_ТиповаяЗагрузка" id="143">
+											<DataPath>КД3_ТиповаяЗагрузка</DataPath>
 											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доп. настройки не указаны. Будет использована типовая загрузка из обработки ЗагрузкаСтруктурыКонфигурацииИзФайловXML</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
 											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="КД3_СохранитьКаталогДляКонфигурацииКонтекстноеМеню" id="133"/>
-											<ExtendedTooltip name="КД3_СохранитьКаталогДляКонфигурацииРасширеннаяПодсказка" id="134"/>
-											<Events>
-												<Event name="OnChange">КД3_УказатьКаталогФайловВКонфигурацииПриИзменении</Event>
-											</Events>
+											<ContextMenu name="КД3_ТиповаяЗагрузкаКонтекстноеМеню" id="144"/>
+											<ExtendedTooltip name="КД3_ТиповаяЗагрузкаРасширеннаяПодсказка" id="145"/>
 										</CheckBoxField>
 									</ChildItems>
 								</UsualGroup>
-								<LabelDecoration name="КД3_ИнфоЗагружаемыеМодули" id="85">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<TextColor>style:SpecialTextColor</TextColor>
-									<Title formatted="false">
+								<UsualGroup name="КД3_ГруппаКонтекстнаяПодсказка" id="83">
+									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>В конфигурации указан каталог исходных кодов.
-Будет загружен только глобальный контекст.</v8:content>
+											<v8:content>Контекстная подсказка (КД3)</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="КД3_ИнфоЗагружаемыеМодулиКонтекстноеМеню" id="86"/>
-									<ExtendedTooltip name="КД3_ИнфоЗагружаемыеМодулиРасширеннаяПодсказка" id="87"/>
-								</LabelDecoration>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>К д3 группа контекстная подсказка</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="КД3_ГруппаКонтекстнаяПодсказкаРасширеннаяПодсказка" id="84"/>
+									<ChildItems>
+										<RadioButtonField name="КД3_МестоХраненияИндексов" id="77">
+											<DataPath>КД3_МестоХраненияИндексов</DataPath>
+											<RadioButtonType>Tumbler</RadioButtonType>
+											<ContextMenu name="КД3_МестоХраненияИндексовКонтекстноеМеню" id="78"/>
+											<ExtendedTooltip name="КД3_МестоХраненияИндексовРасширеннаяПодсказка" id="79"/>
+											<Events>
+												<Event name="OnChange">КД3_МестоХранениеИндексовПриИзменении</Event>
+											</Events>
+										</RadioButtonField>
+										<InputField name="КД3_КаталогИндексов" id="80">
+											<DataPath>КД3_КаталогИндексов</DataPath>
+											<ChoiceButton>true</ChoiceButton>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="КД3_КаталогИндексовКонтекстноеМеню" id="81"/>
+											<ExtendedTooltip name="КД3_КаталогИндексовРасширеннаяПодсказка" id="82"/>
+											<Events>
+												<Event name="StartChoice">КД3_КаталогИндексовНачалоВыбора</Event>
+												<Event name="Opening">КД3_КаталогИндексовОткрытие</Event>
+											</Events>
+										</InputField>
+										<UsualGroup name="Группа1" id="130">
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="131"/>
+											<ChildItems>
+												<CheckBoxField name="КД3_ЗагружатьМетодыМодулей" id="66">
+													<DataPath>КД3_ЗагружатьМетодыМодулей</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="КД3_ЗагружатьМетодыМодулейКонтекстноеМеню" id="67"/>
+													<ExtendedTooltip name="КД3_ЗагружатьМетодыМодулейРасширеннаяПодсказка" id="68"/>
+													<Events>
+														<Event name="OnChange">КД3_ЗагружатьМетодыМодулейПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="КД3_СохранитьКаталогДляКонфигурации" id="132">
+													<DataPath>КД3_СохранитьКаталогДляКонфигурации</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="КД3_СохранитьКаталогДляКонфигурацииКонтекстноеМеню" id="133"/>
+													<ExtendedTooltip name="КД3_СохранитьКаталогДляКонфигурацииРасширеннаяПодсказка" id="134"/>
+													<Events>
+														<Event name="OnChange">КД3_УказатьКаталогФайловВКонфигурацииПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="КД3_ИнфоЗагружаемыеМодули" id="85">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<TextColor>style:SpecialTextColor</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>В конфигурации указан каталог исходных кодов.
+Будет загружен только глобальный контекст.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="КД3_ИнфоЗагружаемыеМодулиКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="КД3_ИнфоЗагружаемыеМодулиРасширеннаяПодсказка" id="87"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -481,161 +540,56 @@
 									<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="17"/>
 									<ExtendedTooltip name="КартинкаОжиданиеРасширеннаяПодсказка" id="18"/>
 								</PictureDecoration>
-								<LabelDecoration name="НадписьОжидание" id="19">
-									<Height>4</Height>
-									<Title formatted="false">
+								<UsualGroup name="ГруппаПрогресс" id="137">
+									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Выполняется загрузка структуры конфигурации. Пожалуйста, подождите...</v8:content>
+											<v8:content>Группа прогресс</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="НадписьОжиданиеКонтекстноеМеню" id="20"/>
-									<ExtendedTooltip name="НадписьОжиданиеРасширеннаяПодсказка" id="21"/>
-								</LabelDecoration>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прогресс</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПрогрессРасширеннаяПодсказка" id="138"/>
+									<ChildItems>
+										<LabelDecoration name="НадписьОжидание" id="19">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выполняется загрузка структуры конфигурации. Пожалуйста, подождите...</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НадписьОжиданиеКонтекстноеМеню" id="20"/>
+											<ExtendedTooltip name="НадписьОжиданиеРасширеннаяПодсказка" id="21"/>
+										</LabelDecoration>
+										<ProgressBarField name="КД3_ПрогрессПроцент" id="69">
+											<DataPath>КД3_ПрогрессПроцент</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ShowPercent>true</ShowPercent>
+											<ContextMenu name="КД3_ПрогрессПроцентКонтекстноеМеню" id="70"/>
+											<ExtendedTooltip name="КД3_ПрогрессПроцентРасширеннаяПодсказка" id="71"/>
+										</ProgressBarField>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
-						<LabelField name="КД3_ПрогрессТекст0" id="74">
-							<DataPath>КД3_ПрогрессТекст0</DataPath>
+						<LabelField name="КД3_ПрогрессТекст" id="74">
+							<DataPath>КД3_ПрогрессТекст</DataPath>
 							<TitleLocation>None</TitleLocation>
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<ContextMenu name="КД3_ПрогрессТекст0КонтекстноеМеню" id="75"/>
-							<ExtendedTooltip name="КД3_ПрогрессТекст0РасширеннаяПодсказка" id="76"/>
+							<Height>10</Height>
+							<ContextMenu name="КД3_ПрогрессТекстКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="КД3_ПрогрессТекстРасширеннаяПодсказка" id="76"/>
 						</LabelField>
-						<ProgressBarField name="КД3_Прогресс0" id="69">
-							<DataPath>КД3_Прогресс0</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс0</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>None</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс0КонтекстноеМеню" id="70"/>
-							<ExtendedTooltip name="КД3_Прогресс0РасширеннаяПодсказка" id="71"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс1" id="103">
-							<DataPath>КД3_Прогресс1</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс1</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс1КонтекстноеМеню" id="104"/>
-							<ExtendedTooltip name="КД3_Прогресс1РасширеннаяПодсказка" id="105"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс2" id="106">
-							<DataPath>КД3_Прогресс2</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс2</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс2КонтекстноеМеню" id="107"/>
-							<ExtendedTooltip name="КД3_Прогресс2РасширеннаяПодсказка" id="108"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс3" id="109">
-							<DataPath>КД3_Прогресс3</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс3</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс3КонтекстноеМеню" id="110"/>
-							<ExtendedTooltip name="КД3_Прогресс3РасширеннаяПодсказка" id="111"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс4" id="112">
-							<DataPath>КД3_Прогресс4</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс4</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс4КонтекстноеМеню" id="113"/>
-							<ExtendedTooltip name="КД3_Прогресс4РасширеннаяПодсказка" id="114"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс5" id="115">
-							<DataPath>КД3_Прогресс5</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс5</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс5КонтекстноеМеню" id="116"/>
-							<ExtendedTooltip name="КД3_Прогресс5РасширеннаяПодсказка" id="117"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс6" id="118">
-							<DataPath>КД3_Прогресс6</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс6</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс6КонтекстноеМеню" id="119"/>
-							<ExtendedTooltip name="КД3_Прогресс6РасширеннаяПодсказка" id="120"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс7" id="121">
-							<DataPath>КД3_Прогресс7</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс7</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс7КонтекстноеМеню" id="122"/>
-							<ExtendedTooltip name="КД3_Прогресс7РасширеннаяПодсказка" id="123"/>
-						</ProgressBarField>
-						<ProgressBarField name="КД3_Прогресс8" id="124">
-							<DataPath>КД3_Прогресс8</DataPath>
-							<Visible>false</Visible>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Прогресс8</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ShowPercent>true</ShowPercent>
-							<ContextMenu name="КД3_Прогресс8КонтекстноеМеню" id="125"/>
-							<ExtendedTooltip name="КД3_Прогресс8РасширеннаяПодсказка" id="126"/>
-						</ProgressBarField>
 					</ChildItems>
 				</Page>
 			</ChildItems>
@@ -647,56 +601,6 @@
 				<v8:Type>cfg:DataProcessorObject.КД3_ЗагрузкаСтруктурыКонфигурацииИзФайловXMLМногопоточно</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
-		</Attribute>
-		<Attribute name="АдресФайлаЗагрузки" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Адрес файла загрузки</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="АдресХранилищаРезультата" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Адрес хранилища результата</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ДлительнаяОперация" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Длительная операция</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ИдентификаторЗадания" id="5">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Идентификатор задания</v8:content>
-				</v8:item>
-			</Title>
-			<Type/>
 		</Attribute>
 		<Attribute name="СпособЗагрузки" id="6">
 			<Title>
@@ -713,15 +617,6 @@
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
-		</Attribute>
-		<Attribute name="ИдентификаторХраненияФайлов" id="7">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Идентификатор хранения файлов</v8:content>
-				</v8:item>
-			</Title>
-			<Type/>
 		</Attribute>
 		<Attribute name="КД3_ЭтоСервер" id="9">
 			<Title>
@@ -745,7 +640,13 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="КД3_Прогресс0" id="11">
+		<Attribute name="КД3_ПрогрессПроцент" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прогресс процент (КД3)</v8:content>
+				</v8:item>
+			</Title>
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
@@ -755,7 +656,7 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="КД3_ПрогрессТекст0" id="12">
+		<Attribute name="КД3_ПрогрессТекст" id="12">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -801,86 +702,6 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="КД3_Прогресс1" id="8">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс2" id="16">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс3" id="15">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс4" id="17">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс5" id="18">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс6" id="19">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс7" id="20">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КД3_Прогресс8" id="21">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Any</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="КД3_КоличествоПотоков" id="22">
 			<Title>
 				<v8:item>
@@ -902,6 +723,65 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сохранить каталог файлов для конфигурации (КД3)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_ИдентификаторЗадания" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 идентификатор задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_КаталогВременныхФайлов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 каталог временных файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_ЗагрузкаПрервана" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 загрузка прервана</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_ТиповаяЗагрузка" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать типовую загрузку</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КД3_ИспользоватьКонтекстнуюПодсказку" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К д3 использовать контекстную подсказку</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -932,12 +812,6 @@
 					<v8:content>На клиенте</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 на клиенте</v8:content>
-				</v8:item>
-			</ToolTip>
 			<Action>КД3_НаКлиенте</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
@@ -948,14 +822,23 @@
 					<v8:content>На сервере</v8:content>
 				</v8:item>
 			</Title>
+			<Action>КД3_НаСервере</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КД3_ОтменитьЗагрузку" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить загрузку</v8:content>
+				</v8:item>
+			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>К д3 на сервере</v8:content>
+					<v8:content>К д3 отменить загрузку</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>КД3_НаСервере</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
+			<Action>КД3_ОтменитьЗагрузку</Action>
 		</Command>
 	</Commands>
 </Form>
