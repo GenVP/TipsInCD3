@@ -12,6 +12,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
 		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
 		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
 		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>

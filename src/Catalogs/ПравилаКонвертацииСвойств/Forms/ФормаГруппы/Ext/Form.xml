@@ -9,6 +9,13 @@
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<UseForFoldersAndItems>Folders</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing" callType="After">КД3_ОбработкаОповещенияПосле</Event>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+		<Event name="OnClose" callType="After">КД3_ПриЗакрытииПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="148">
 			<AutoMaxWidth>false</AutoMaxWidth>
@@ -276,6 +283,9 @@
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="ГруппаXMLРасширеннаяПодсказка" id="82"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_ГруппаXMLПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="Обработчики" id="83">
 					<Title>
@@ -295,6 +305,9 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыОбработчикиРасширеннаяПодсказка" id="88"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыОбработчикиПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="ПередОбработкой" id="89">
 									<Title>
