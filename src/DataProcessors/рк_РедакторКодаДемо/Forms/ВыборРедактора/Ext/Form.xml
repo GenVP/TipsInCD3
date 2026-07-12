@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаНастройкиРедактора" id="13">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.НастройкиРедактора</CommandName>
+				<ExtendedTooltip name="ФормаНастройкиРедактораРасширеннаяПодсказка" id="14"/>
+			</Button>
+			<Popup name="ФормаВыборРедактора" id="15">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Редактор кода</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выбор редактора</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаВыборРедактораРасширеннаяПодсказка" id="16"/>
+				<ChildItems>
+					<Button name="ФормаПереключитьРедакторHTML" id="17">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПереключитьРедакторHTML</CommandName>
+						<ExtendedTooltip name="ФормаПереключитьРедакторHTMLРасширеннаяПодсказка" id="18"/>
+					</Button>
+					<Button name="ФормаПереключитьРедакторТекст" id="19">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПереключитьРедакторТекст</CommandName>
+						<ExtendedTooltip name="ФормаПереключитьРедакторТекстРасширеннаяПодсказка" id="20"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<TextDocumentField name="ПолеТекст" id="1">
+			<DataPath>РеквизитТекст</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле ТЕКСТ</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПолеТекстКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПолеТекстРасширеннаяПодсказка" id="3"/>
+		</TextDocumentField>
+		<HTMLDocumentField name="ПолеHTML" id="4">
+			<DataPath>РеквизитHTML</DataPath>
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле HTML</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПолеHTMLКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ПолеHTMLРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="DocumentComplete">ПолеHTMLДокументСформирован</Event>
+				<Event name="OnClick">ПолеHTMLПриНажатии</Event>
+			</Events>
+		</HTMLDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.рк_РедакторКодаДемо</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="РеквизитТекст" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизит текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РеквизитHTML" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизит HTML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НастройкиРедактора" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактор кода</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки редактора кода</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Setting</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НастройкиРедактора</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ПереключитьРедакторТекст" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактор кода ТЕКСТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключить редактор текст</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПереключитьРедакторТекст</Action>
+		</Command>
+		<Command name="ПереключитьРедакторHTML" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактор кода HTML</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключить редактор HTML</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПереключитьРедакторHTML</Action>
+		</Command>
+	</Commands>
+</Form>

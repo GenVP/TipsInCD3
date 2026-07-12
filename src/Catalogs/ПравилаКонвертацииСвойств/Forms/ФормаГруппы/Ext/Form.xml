@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -7,7 +7,15 @@
 		</v8:item>
 	</Title>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Folders</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing" callType="After">КД3_ОбработчикОбработкаОповещенияПосле</Event>
+		<Event name="OnReadAtServer" callType="After">КД3_ПриЧтенииНаСервереПосле</Event>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="148">
 			<AutoMaxWidth>false</AutoMaxWidth>
@@ -22,239 +30,306 @@
 			<ContextMenu name="ДекорацияНуженЗахватКонтекстноеМеню" id="149"/>
 			<ExtendedTooltip name="ДекорацияНуженЗахватРасширеннаяПодсказка" id="150"/>
 		</LabelDecoration>
-		<UsualGroup name="ГруппаВладелец" id="146">
+		<UsualGroup name="ГруппаДвеКолонки" id="160">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа владелец</v8:content>
+					<v8:content>Группа две колонки</v8:content>
 				</v8:item>
 			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа две колонки</v8:content>
+				</v8:item>
+			</ToolTip>
 			<Group>AlwaysHorizontal</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаВладелецРасширеннаяПодсказка" id="147"/>
+			<ExtendedTooltip name="ГруппаДвеКолонкиРасширеннаяПодсказка" id="161"/>
 			<ChildItems>
-				<InputField name="Владелец" id="7">
-					<ReadOnly>true</ReadOnly>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
-					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
-				</InputField>
-				<LabelDecoration name="ДекорацияЗахвачен" id="143">
-					<TextColor>style:SpecialTextColor</TextColor>
-					<Title formatted="false">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>захвачен</v8:content>
-						</v8:item>
-					</Title>
-					<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="144"/>
-					<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="145"/>
-				</LabelDecoration>
-			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ШапкаГоризонтальная" id="64">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Шапка горизонтальная</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Horizontal</Group>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ШапкаГоризонтальнаяРасширеннаяПодсказка" id="65"/>
-			<ChildItems>
-				<CheckBoxField name="УказыватьСвойстваСтрокой" id="28">
+				<UsualGroup name="ГруппаЛево" id="162">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Способ выбора свойств</v8:content>
+							<v8:content>Группа лево</v8:content>
 						</v8:item>
 					</Title>
-					<CheckBoxType>Tumbler</CheckBoxType>
-					<EditFormat>
+					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>БЛ='Выбор из списка'; БИ='Ввод вручную'</v8:content>
+							<v8:content>Группа лево</v8:content>
 						</v8:item>
-					</EditFormat>
-					<ContextMenu name="УказыватьСвойстваСтрокойКонтекстноеМеню" id="29"/>
-					<ExtendedTooltip name="УказыватьСвойстваСтрокойРасширеннаяПодсказка" id="30"/>
-				</CheckBoxField>
-				<CheckBoxField name="ПолучитьИзВходящихДанных" id="78">
-					<TitleLocation>Right</TitleLocation>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ПолучитьИзВходящихДанныхКонтекстноеМеню" id="79"/>
-					<ExtendedTooltip name="ПолучитьИзВходящихДанныхРасширеннаяПодсказка" id="80"/>
-				</CheckBoxField>
-				<CheckBoxField name="Отключить" id="69">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Отключить правило</v8:content>
-						</v8:item>
-					</Title>
-					<TitleLocation>Right</TitleLocation>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ОтключитьКонтекстноеМеню" id="70"/>
-					<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="71"/>
-				</CheckBoxField>
-			</ChildItems>
-		</UsualGroup>
-		<Pages name="СтраницыСопоставлениеСвойств" id="31">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Страницы сопоставление свойств</v8:content>
-				</v8:item>
-			</Title>
-			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="СтраницыСопоставлениеСвойствРасширеннаяПодсказка" id="32"/>
-			<ChildItems>
-				<Page name="СтраницаСопоставлениеСвойствВыбор" id="33">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Страница сопоставление свойств выбор</v8:content>
-						</v8:item>
-					</Title>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="СтраницаСопоставлениеСвойствВыборРасширеннаяПодсказка" id="34"/>
+					<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="163"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаСопоставлениеСвойств" id="35">
+						<UsualGroup name="ГруппаВладелец" id="146">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа сопоставление свойств</v8:content>
+									<v8:content>Группа владелец</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСопоставлениеСвойствРасширеннаяПодсказка" id="36"/>
+							<ExtendedTooltip name="ГруппаВладелецРасширеннаяПодсказка" id="147"/>
 							<ChildItems>
-								<InputField name="СвойствоКонфигурации" id="37">
+								<InputField name="Владелец" id="7">
+									<ReadOnly>true</ReadOnly>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Свойство конфигурации</v8:content>
+											<v8:content>Правило владелец объекта</v8:content>
 										</v8:item>
 									</Title>
-									<DropListButton>false</DropListButton>
-									<ChoiceButton>true</ChoiceButton>
-									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
-									<OpenButton>false</OpenButton>
-									<ContextMenu name="СвойствоКонфигурацииКонтекстноеМеню" id="38"/>
-									<ExtendedTooltip name="СвойствоКонфигурацииРасширеннаяПодсказка" id="39"/>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
 								</InputField>
-								<InputField name="СвойствоКонфигурацииКорреспондента" id="72">
-									<Title>
+								<LabelDecoration name="ДекорацияЗахвачен" id="143">
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Получатель</v8:content>
+											<v8:content>захвачен</v8:content>
 										</v8:item>
 									</Title>
-									<DropListButton>false</DropListButton>
-									<ChoiceButton>true</ChoiceButton>
-									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
-									<OpenButton>false</OpenButton>
-									<ContextMenu name="СвойствоКонфигурацииКорреспондентаКонтекстноеМеню" id="73"/>
-									<ExtendedTooltip name="СвойствоКонфигурацииКорреспондентаРасширеннаяПодсказка" id="74"/>
-								</InputField>
-								<InputField name="СвойствоФормата" id="40">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Свойство формата</v8:content>
-										</v8:item>
-									</Title>
-									<ChoiceButton>true</ChoiceButton>
-									<ContextMenu name="СвойствоФорматаКонтекстноеМеню" id="41"/>
-									<ExtendedTooltip name="СвойствоФорматаРасширеннаяПодсказка" id="42"/>
-								</InputField>
+									<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="144"/>
+									<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="145"/>
+								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаТипыСвойств" id="43">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа типы свойств</v8:content>
-								</v8:item>
-							</Title>
-							<Group>Horizontal</Group>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаТипыСвойствРасширеннаяПодсказка" id="44"/>
-							<ChildItems>
-								<InputField name="ТипСвойстваКонфигурации" id="45">
-									<ReadOnly>true</ReadOnly>
-									<OpenButton>false</OpenButton>
-									<ContextMenu name="ТипСвойстваКонфигурацииКонтекстноеМеню" id="46"/>
-									<ExtendedTooltip name="ТипСвойстваКонфигурацииРасширеннаяПодсказка" id="47"/>
-								</InputField>
-								<InputField name="ТипСвойстваКонфигурацииКорреспондента" id="75">
-									<ReadOnly>true</ReadOnly>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Тип получателя</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ТипСвойстваКонфигурацииКорреспондентаКонтекстноеМеню" id="76"/>
-									<ExtendedTooltip name="ТипСвойстваКонфигурацииКорреспондентаРасширеннаяПодсказка" id="77"/>
-								</InputField>
-								<InputField name="ТипСвойстваФормата" id="48">
-									<ReadOnly>true</ReadOnly>
-									<OpenButton>false</OpenButton>
-									<ContextMenu name="ТипСвойстваФорматаКонтекстноеМеню" id="49"/>
-									<ExtendedTooltip name="ТипСвойстваФорматаРасширеннаяПодсказка" id="50"/>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
-						<CheckBoxField name="ИспользуетсяАлгоритмКонвертации" id="154">
+						<CheckBoxField name="ПолучитьИзВходящихДанных" id="78">
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ИспользуетсяАлгоритмКонвертацииКонтекстноеМеню" id="155"/>
-							<ExtendedTooltip name="ИспользуетсяАлгоритмКонвертацииРасширеннаяПодсказка" id="156"/>
+							<ContextMenu name="ПолучитьИзВходящихДанныхКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ПолучитьИзВходящихДанныхРасширеннаяПодсказка" id="80"/>
 						</CheckBoxField>
-					</ChildItems>
-				</Page>
-				<Page name="СтраницаСопоставлениеСвойствВручную" id="51">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Страница сопоставление свойств вручную</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="СтраницаСопоставлениеСвойствВручнуюРасширеннаяПодсказка" id="52"/>
-					<ChildItems>
-						<UsualGroup name="Свойства" id="53">
+						<Pages name="СтраницыСопоставлениеСвойствЛево" id="169">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Свойства</v8:content>
+									<v8:content>Страницы сопоставление свойств лево</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="54"/>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="СтраницыСопоставлениеСвойствЛевоРасширеннаяПодсказка" id="170"/>
 							<ChildItems>
-								<InputField name="СвойствоКонфигурацииСтрокой" id="55">
-									<ContextMenu name="СвойствоКонфигурацииСтрокойКонтекстноеМеню" id="56"/>
-									<ExtendedTooltip name="СвойствоКонфигурацииСтрокойРасширеннаяПодсказка" id="57"/>
-								</InputField>
-								<InputField name="СвойствоФорматаСтрокой" id="58">
-									<ContextMenu name="СвойствоФорматаСтрокойКонтекстноеМеню" id="59"/>
-									<ExtendedTooltip name="СвойствоФорматаСтрокойРасширеннаяПодсказка" id="60"/>
-								</InputField>
+								<Page name="СтраницаСопоставлениеСвойствВыборЛево" id="173">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств выбор лево</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств выбор лево</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтраницаСопоставлениеСвойствВыборЛевоРасширеннаяПодсказка" id="174"/>
+									<ChildItems>
+										<InputField name="СвойствоКонфигурации" id="37">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Свойство конфигурации</v8:content>
+												</v8:item>
+											</Title>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="СвойствоКонфигурацииКонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="СвойствоКонфигурацииРасширеннаяПодсказка" id="39"/>
+										</InputField>
+										<InputField name="ТипСвойстваКонфигурации" id="45">
+											<ReadOnly>true</ReadOnly>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="ТипСвойстваКонфигурацииКонтекстноеМеню" id="46"/>
+											<ExtendedTooltip name="ТипСвойстваКонфигурацииРасширеннаяПодсказка" id="47"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаСопоставлениеСвойствВручнуюЛево" id="177">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств вручную лево</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств вручную лево</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтраницаСопоставлениеСвойствВручнуюЛевоРасширеннаяПодсказка" id="178"/>
+									<ChildItems>
+										<InputField name="СвойствоКонфигурацииСтрокой" id="55">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Свойство конфигурации</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СвойствоКонфигурацииСтрокойКонтекстноеМеню" id="56"/>
+											<ExtendedTooltip name="СвойствоКонфигурацииСтрокойРасширеннаяПодсказка" id="57"/>
+										</InputField>
+									</ChildItems>
+								</Page>
 							</ChildItems>
-						</UsualGroup>
+						</Pages>
 					</ChildItems>
-				</Page>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПраво" id="164">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="165"/>
+					<ChildItems>
+						<CheckBoxField name="УказыватьСвойстваСтрокой" id="28">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способ выбора свойств</v8:content>
+								</v8:item>
+							</Title>
+							<CheckBoxType>Tumbler</CheckBoxType>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>БЛ='Выбор из списка'; БИ='Ввод вручную'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="УказыватьСвойстваСтрокойКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="УказыватьСвойстваСтрокойРасширеннаяПодсказка" id="30"/>
+						</CheckBoxField>
+						<LabelDecoration name="УказыватьСвойстваСтрокойПустышка" id="166">
+							<Height>1</Height>
+							<ContextMenu name="УказыватьСвойстваСтрокойПустышкаКонтекстноеМеню" id="167"/>
+							<ExtendedTooltip name="УказыватьСвойстваСтрокойПустышкаРасширеннаяПодсказка" id="168"/>
+						</LabelDecoration>
+						<CheckBoxField name="ОтключитьXML" id="181">
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтключитьXMLКонтекстноеМеню" id="182"/>
+							<ExtendedTooltip name="ОтключитьXMLРасширеннаяПодсказка" id="183"/>
+						</CheckBoxField>
+						<Pages name="СтраницыСопоставлениеСвойствПраво" id="171">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страницы сопоставление свойств право</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="СтраницыСопоставлениеСвойствПравоРасширеннаяПодсказка" id="172"/>
+							<ChildItems>
+								<Page name="СтраницаСопоставлениеСвойствВыборПраво" id="175">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств выбор право</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств выбор право</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтраницаСопоставлениеСвойствВыборПравоРасширеннаяПодсказка" id="176"/>
+									<ChildItems>
+										<InputField name="СвойствоКонфигурацииКорреспондента" id="72">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Получатель</v8:content>
+												</v8:item>
+											</Title>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="СвойствоКонфигурацииКорреспондентаКонтекстноеМеню" id="73"/>
+											<ExtendedTooltip name="СвойствоКонфигурацииКорреспондентаРасширеннаяПодсказка" id="74"/>
+										</InputField>
+										<InputField name="СвойствоФормата" id="40">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Свойство формата</v8:content>
+												</v8:item>
+											</Title>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="СвойствоФорматаКонтекстноеМеню" id="41"/>
+											<ExtendedTooltip name="СвойствоФорматаРасширеннаяПодсказка" id="42"/>
+										</InputField>
+										<InputField name="ТипСвойстваКонфигурацииКорреспондента" id="75">
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип получателя</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ТипСвойстваКонфигурацииКорреспондентаКонтекстноеМеню" id="76"/>
+											<ExtendedTooltip name="ТипСвойстваКонфигурацииКорреспондентаРасширеннаяПодсказка" id="77"/>
+										</InputField>
+										<InputField name="ТипСвойстваФормата" id="48">
+											<ReadOnly>true</ReadOnly>
+											<OpenButton>false</OpenButton>
+											<ContextMenu name="ТипСвойстваФорматаКонтекстноеМеню" id="49"/>
+											<ExtendedTooltip name="ТипСвойстваФорматаРасширеннаяПодсказка" id="50"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаСопоставлениеСвойствВручнуюПраво" id="179">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств вручную право</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница сопоставление свойств вручную право</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СтраницаСопоставлениеСвойствВручнуюПравоРасширеннаяПодсказка" id="180"/>
+									<ChildItems>
+										<InputField name="СвойствоФорматаСтрокой" id="58">
+											<ContextMenu name="СвойствоФорматаСтрокойКонтекстноеМеню" id="59"/>
+											<ExtendedTooltip name="СвойствоФорматаСтрокойРасширеннаяПодсказка" id="60"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
-		</Pages>
+		</UsualGroup>
 		<Pages name="ГруппаXML" id="81">
 			<Title>
 				<v8:item>
@@ -262,6 +337,7 @@
 					<v8:content>Группа XML</v8:content>
 				</v8:item>
 			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="ГруппаXMLРасширеннаяПодсказка" id="82"/>
 			<ChildItems>
 				<Page name="Обработчики" id="83">
@@ -282,6 +358,9 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыОбработчикиРасширеннаяПодсказка" id="88"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыОбработчикиПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="ПередОбработкой" id="89">
 									<Title>
@@ -528,6 +607,7 @@
 									<v8:content>Группа код имя</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаКодИмяРасширеннаяПодсказка" id="142"/>
@@ -576,14 +656,38 @@
 				</Page>
 			</ChildItems>
 		</Pages>
+		<InputField name="УсловиеПрименения" id="157">
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="УсловиеПримененияКонтекстноеМеню" id="158"/>
+			<ExtendedTooltip name="УсловиеПримененияРасширеннаяПодсказка" id="159"/>
+		</InputField>
+		<CheckBoxField name="ИспользуетсяАлгоритмКонвертации" id="154">
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ИспользуетсяАлгоритмКонвертацииКонтекстноеМеню" id="155"/>
+			<ExtendedTooltip name="ИспользуетсяАлгоритмКонвертацииРасширеннаяПодсказка" id="156"/>
+		</CheckBoxField>
+		<CheckBoxField name="Отключить" id="69">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить правило</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтключитьКонтекстноеМеню" id="70"/>
+			<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="71"/>
+		</CheckBoxField>
 		<InputField name="Комментарий" id="61">
+			<TitleLocation>Top</TitleLocation>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<ContextMenu name="КомментарийКонтекстноеМеню" id="62"/>
 			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="63"/>
 		</InputField>
 	</ChildItems>
 	<Attributes/>
-	<BaseForm version="2.11">
+	<BaseForm version="2.20">
 		<Title>
 			<v8:item>
 				<v8:lang>ru</v8:lang>
@@ -591,6 +695,7 @@
 			</v8:item>
 		</Title>
 		<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+		<UseForFoldersAndItems>Folders</UseForFoldersAndItems>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>
 			<LabelDecoration name="ДекорацияНуженЗахват" id="148">
@@ -606,239 +711,306 @@
 				<ContextMenu name="ДекорацияНуженЗахватКонтекстноеМеню" id="149"/>
 				<ExtendedTooltip name="ДекорацияНуженЗахватРасширеннаяПодсказка" id="150"/>
 			</LabelDecoration>
-			<UsualGroup name="ГруппаВладелец" id="146">
+			<UsualGroup name="ГруппаДвеКолонки" id="160">
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
-						<v8:content>Группа владелец</v8:content>
+						<v8:content>Группа две колонки</v8:content>
 					</v8:item>
 				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа две колонки</v8:content>
+					</v8:item>
+				</ToolTip>
 				<Group>AlwaysHorizontal</Group>
 				<Representation>None</Representation>
 				<ShowTitle>false</ShowTitle>
-				<ExtendedTooltip name="ГруппаВладелецРасширеннаяПодсказка" id="147"/>
+				<ExtendedTooltip name="ГруппаДвеКолонкиРасширеннаяПодсказка" id="161"/>
 				<ChildItems>
-					<InputField name="Владелец" id="7">
-						<ReadOnly>true</ReadOnly>
-						<EditMode>EnterOnInput</EditMode>
-						<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
-						<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
-					</InputField>
-					<LabelDecoration name="ДекорацияЗахвачен" id="143">
-						<TextColor>style:SpecialTextColor</TextColor>
-						<Title formatted="false">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>захвачен</v8:content>
-							</v8:item>
-						</Title>
-						<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="144"/>
-						<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="145"/>
-					</LabelDecoration>
-				</ChildItems>
-			</UsualGroup>
-			<UsualGroup name="ШапкаГоризонтальная" id="64">
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Шапка горизонтальная</v8:content>
-					</v8:item>
-				</Title>
-				<Group>Horizontal</Group>
-				<Representation>None</Representation>
-				<ShowTitle>false</ShowTitle>
-				<ExtendedTooltip name="ШапкаГоризонтальнаяРасширеннаяПодсказка" id="65"/>
-				<ChildItems>
-					<CheckBoxField name="УказыватьСвойстваСтрокой" id="28">
+					<UsualGroup name="ГруппаЛево" id="162">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Способ выбора свойств</v8:content>
+								<v8:content>Группа лево</v8:content>
 							</v8:item>
 						</Title>
-						<CheckBoxType>Tumbler</CheckBoxType>
-						<EditFormat>
+						<ToolTip>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>БЛ='Выбор из списка'; БИ='Ввод вручную'</v8:content>
+								<v8:content>Группа лево</v8:content>
 							</v8:item>
-						</EditFormat>
-						<ContextMenu name="УказыватьСвойстваСтрокойКонтекстноеМеню" id="29"/>
-						<ExtendedTooltip name="УказыватьСвойстваСтрокойРасширеннаяПодсказка" id="30"/>
-					</CheckBoxField>
-					<CheckBoxField name="ПолучитьИзВходящихДанных" id="78">
-						<TitleLocation>Right</TitleLocation>
-						<CheckBoxType>Auto</CheckBoxType>
-						<ContextMenu name="ПолучитьИзВходящихДанныхКонтекстноеМеню" id="79"/>
-						<ExtendedTooltip name="ПолучитьИзВходящихДанныхРасширеннаяПодсказка" id="80"/>
-					</CheckBoxField>
-					<CheckBoxField name="Отключить" id="69">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Отключить правило</v8:content>
-							</v8:item>
-						</Title>
-						<TitleLocation>Right</TitleLocation>
-						<CheckBoxType>Auto</CheckBoxType>
-						<ContextMenu name="ОтключитьКонтекстноеМеню" id="70"/>
-						<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="71"/>
-					</CheckBoxField>
-				</ChildItems>
-			</UsualGroup>
-			<Pages name="СтраницыСопоставлениеСвойств" id="31">
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Страницы сопоставление свойств</v8:content>
-					</v8:item>
-				</Title>
-				<PagesRepresentation>None</PagesRepresentation>
-				<ExtendedTooltip name="СтраницыСопоставлениеСвойствРасширеннаяПодсказка" id="32"/>
-				<ChildItems>
-					<Page name="СтраницаСопоставлениеСвойствВыбор" id="33">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Страница сопоставление свойств выбор</v8:content>
-							</v8:item>
-						</Title>
+						</ToolTip>
+						<Group>Vertical</Group>
+						<Representation>None</Representation>
 						<ShowTitle>false</ShowTitle>
-						<ExtendedTooltip name="СтраницаСопоставлениеСвойствВыборРасширеннаяПодсказка" id="34"/>
+						<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="163"/>
 						<ChildItems>
-							<UsualGroup name="ГруппаСопоставлениеСвойств" id="35">
+							<UsualGroup name="ГруппаВладелец" id="146">
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Группа сопоставление свойств</v8:content>
+										<v8:content>Группа владелец</v8:content>
 									</v8:item>
 								</Title>
-								<Group>Horizontal</Group>
+								<Group>AlwaysHorizontal</Group>
+								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ГруппаСопоставлениеСвойствРасширеннаяПодсказка" id="36"/>
+								<ExtendedTooltip name="ГруппаВладелецРасширеннаяПодсказка" id="147"/>
 								<ChildItems>
-									<InputField name="СвойствоКонфигурации" id="37">
+									<InputField name="Владелец" id="7">
+										<ReadOnly>true</ReadOnly>
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Свойство конфигурации</v8:content>
+												<v8:content>Правило владелец объекта</v8:content>
 											</v8:item>
 										</Title>
-										<DropListButton>false</DropListButton>
-										<ChoiceButton>true</ChoiceButton>
-										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
-										<OpenButton>false</OpenButton>
-										<ContextMenu name="СвойствоКонфигурацииКонтекстноеМеню" id="38"/>
-										<ExtendedTooltip name="СвойствоКонфигурацииРасширеннаяПодсказка" id="39"/>
+										<EditMode>EnterOnInput</EditMode>
+										<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
+										<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
 									</InputField>
-									<InputField name="СвойствоКонфигурацииКорреспондента" id="72">
-										<Title>
+									<LabelDecoration name="ДекорацияЗахвачен" id="143">
+										<TextColor>style:SpecialTextColor</TextColor>
+										<Title formatted="false">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Получатель</v8:content>
+												<v8:content>захвачен</v8:content>
 											</v8:item>
 										</Title>
-										<DropListButton>false</DropListButton>
-										<ChoiceButton>true</ChoiceButton>
-										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
-										<OpenButton>false</OpenButton>
-										<ContextMenu name="СвойствоКонфигурацииКорреспондентаКонтекстноеМеню" id="73"/>
-										<ExtendedTooltip name="СвойствоКонфигурацииКорреспондентаРасширеннаяПодсказка" id="74"/>
-									</InputField>
-									<InputField name="СвойствоФормата" id="40">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Свойство формата</v8:content>
-											</v8:item>
-										</Title>
-										<ChoiceButton>true</ChoiceButton>
-										<ContextMenu name="СвойствоФорматаКонтекстноеМеню" id="41"/>
-										<ExtendedTooltip name="СвойствоФорматаРасширеннаяПодсказка" id="42"/>
-									</InputField>
+										<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="144"/>
+										<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="145"/>
+									</LabelDecoration>
 								</ChildItems>
 							</UsualGroup>
-							<UsualGroup name="ГруппаТипыСвойств" id="43">
-								<Title>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Группа типы свойств</v8:content>
-									</v8:item>
-								</Title>
-								<Group>Horizontal</Group>
-								<Representation>None</Representation>
-								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ГруппаТипыСвойствРасширеннаяПодсказка" id="44"/>
-								<ChildItems>
-									<InputField name="ТипСвойстваКонфигурации" id="45">
-										<ReadOnly>true</ReadOnly>
-										<OpenButton>false</OpenButton>
-										<ContextMenu name="ТипСвойстваКонфигурацииКонтекстноеМеню" id="46"/>
-										<ExtendedTooltip name="ТипСвойстваКонфигурацииРасширеннаяПодсказка" id="47"/>
-									</InputField>
-									<InputField name="ТипСвойстваКонфигурацииКорреспондента" id="75">
-										<ReadOnly>true</ReadOnly>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Тип получателя</v8:content>
-											</v8:item>
-										</Title>
-										<ContextMenu name="ТипСвойстваКонфигурацииКорреспондентаКонтекстноеМеню" id="76"/>
-										<ExtendedTooltip name="ТипСвойстваКонфигурацииКорреспондентаРасширеннаяПодсказка" id="77"/>
-									</InputField>
-									<InputField name="ТипСвойстваФормата" id="48">
-										<ReadOnly>true</ReadOnly>
-										<OpenButton>false</OpenButton>
-										<ContextMenu name="ТипСвойстваФорматаКонтекстноеМеню" id="49"/>
-										<ExtendedTooltip name="ТипСвойстваФорматаРасширеннаяПодсказка" id="50"/>
-									</InputField>
-								</ChildItems>
-							</UsualGroup>
-							<CheckBoxField name="ИспользуетсяАлгоритмКонвертации" id="154">
+							<CheckBoxField name="ПолучитьИзВходящихДанных" id="78">
 								<TitleLocation>Right</TitleLocation>
 								<CheckBoxType>Auto</CheckBoxType>
-								<ContextMenu name="ИспользуетсяАлгоритмКонвертацииКонтекстноеМеню" id="155"/>
-								<ExtendedTooltip name="ИспользуетсяАлгоритмКонвертацииРасширеннаяПодсказка" id="156"/>
+								<ContextMenu name="ПолучитьИзВходящихДанныхКонтекстноеМеню" id="79"/>
+								<ExtendedTooltip name="ПолучитьИзВходящихДанныхРасширеннаяПодсказка" id="80"/>
 							</CheckBoxField>
-						</ChildItems>
-					</Page>
-					<Page name="СтраницаСопоставлениеСвойствВручную" id="51">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Страница сопоставление свойств вручную</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="СтраницаСопоставлениеСвойствВручнуюРасширеннаяПодсказка" id="52"/>
-						<ChildItems>
-							<UsualGroup name="Свойства" id="53">
+							<Pages name="СтраницыСопоставлениеСвойствЛево" id="169">
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Свойства</v8:content>
+										<v8:content>Страницы сопоставление свойств лево</v8:content>
 									</v8:item>
 								</Title>
-								<Group>Horizontal</Group>
-								<Representation>None</Representation>
-								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="54"/>
+								<PagesRepresentation>None</PagesRepresentation>
+								<ExtendedTooltip name="СтраницыСопоставлениеСвойствЛевоРасширеннаяПодсказка" id="170"/>
 								<ChildItems>
-									<InputField name="СвойствоКонфигурацииСтрокой" id="55">
-										<ContextMenu name="СвойствоКонфигурацииСтрокойКонтекстноеМеню" id="56"/>
-										<ExtendedTooltip name="СвойствоКонфигурацииСтрокойРасширеннаяПодсказка" id="57"/>
-									</InputField>
-									<InputField name="СвойствоФорматаСтрокой" id="58">
-										<ContextMenu name="СвойствоФорматаСтрокойКонтекстноеМеню" id="59"/>
-										<ExtendedTooltip name="СвойствоФорматаСтрокойРасширеннаяПодсказка" id="60"/>
-									</InputField>
+									<Page name="СтраницаСопоставлениеСвойствВыборЛево" id="173">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств выбор лево</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств выбор лево</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СтраницаСопоставлениеСвойствВыборЛевоРасширеннаяПодсказка" id="174"/>
+										<ChildItems>
+											<InputField name="СвойствоКонфигурации" id="37">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Свойство конфигурации</v8:content>
+													</v8:item>
+												</Title>
+												<DropListButton>false</DropListButton>
+												<ChoiceButton>true</ChoiceButton>
+												<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+												<OpenButton>false</OpenButton>
+												<ContextMenu name="СвойствоКонфигурацииКонтекстноеМеню" id="38"/>
+												<ExtendedTooltip name="СвойствоКонфигурацииРасширеннаяПодсказка" id="39"/>
+											</InputField>
+											<InputField name="ТипСвойстваКонфигурации" id="45">
+												<ReadOnly>true</ReadOnly>
+												<OpenButton>false</OpenButton>
+												<ContextMenu name="ТипСвойстваКонфигурацииКонтекстноеМеню" id="46"/>
+												<ExtendedTooltip name="ТипСвойстваКонфигурацииРасширеннаяПодсказка" id="47"/>
+											</InputField>
+										</ChildItems>
+									</Page>
+									<Page name="СтраницаСопоставлениеСвойствВручнуюЛево" id="177">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств вручную лево</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств вручную лево</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СтраницаСопоставлениеСвойствВручнуюЛевоРасширеннаяПодсказка" id="178"/>
+										<ChildItems>
+											<InputField name="СвойствоКонфигурацииСтрокой" id="55">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Свойство конфигурации</v8:content>
+													</v8:item>
+												</Title>
+												<ContextMenu name="СвойствоКонфигурацииСтрокойКонтекстноеМеню" id="56"/>
+												<ExtendedTooltip name="СвойствоКонфигурацииСтрокойРасширеннаяПодсказка" id="57"/>
+											</InputField>
+										</ChildItems>
+									</Page>
 								</ChildItems>
-							</UsualGroup>
+							</Pages>
 						</ChildItems>
-					</Page>
+					</UsualGroup>
+					<UsualGroup name="ГруппаПраво" id="164">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа право</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа право</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Group>Vertical</Group>
+						<Representation>None</Representation>
+						<ShowTitle>false</ShowTitle>
+						<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="165"/>
+						<ChildItems>
+							<CheckBoxField name="УказыватьСвойстваСтрокой" id="28">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Способ выбора свойств</v8:content>
+									</v8:item>
+								</Title>
+								<CheckBoxType>Tumbler</CheckBoxType>
+								<EditFormat>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>БЛ='Выбор из списка'; БИ='Ввод вручную'</v8:content>
+									</v8:item>
+								</EditFormat>
+								<ContextMenu name="УказыватьСвойстваСтрокойКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="УказыватьСвойстваСтрокойРасширеннаяПодсказка" id="30"/>
+							</CheckBoxField>
+							<LabelDecoration name="УказыватьСвойстваСтрокойПустышка" id="166">
+								<Height>1</Height>
+								<ContextMenu name="УказыватьСвойстваСтрокойПустышкаКонтекстноеМеню" id="167"/>
+								<ExtendedTooltip name="УказыватьСвойстваСтрокойПустышкаРасширеннаяПодсказка" id="168"/>
+							</LabelDecoration>
+							<CheckBoxField name="ОтключитьXML" id="181">
+								<TitleLocation>Right</TitleLocation>
+								<CheckBoxType>Auto</CheckBoxType>
+								<ContextMenu name="ОтключитьXMLКонтекстноеМеню" id="182"/>
+								<ExtendedTooltip name="ОтключитьXMLРасширеннаяПодсказка" id="183"/>
+							</CheckBoxField>
+							<Pages name="СтраницыСопоставлениеСвойствПраво" id="171">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Страницы сопоставление свойств право</v8:content>
+									</v8:item>
+								</Title>
+								<PagesRepresentation>None</PagesRepresentation>
+								<ExtendedTooltip name="СтраницыСопоставлениеСвойствПравоРасширеннаяПодсказка" id="172"/>
+								<ChildItems>
+									<Page name="СтраницаСопоставлениеСвойствВыборПраво" id="175">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств выбор право</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств выбор право</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СтраницаСопоставлениеСвойствВыборПравоРасширеннаяПодсказка" id="176"/>
+										<ChildItems>
+											<InputField name="СвойствоКонфигурацииКорреспондента" id="72">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Получатель</v8:content>
+													</v8:item>
+												</Title>
+												<DropListButton>false</DropListButton>
+												<ChoiceButton>true</ChoiceButton>
+												<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+												<OpenButton>false</OpenButton>
+												<ContextMenu name="СвойствоКонфигурацииКорреспондентаКонтекстноеМеню" id="73"/>
+												<ExtendedTooltip name="СвойствоКонфигурацииКорреспондентаРасширеннаяПодсказка" id="74"/>
+											</InputField>
+											<InputField name="СвойствоФормата" id="40">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Свойство формата</v8:content>
+													</v8:item>
+												</Title>
+												<ChoiceButton>true</ChoiceButton>
+												<ContextMenu name="СвойствоФорматаКонтекстноеМеню" id="41"/>
+												<ExtendedTooltip name="СвойствоФорматаРасширеннаяПодсказка" id="42"/>
+											</InputField>
+											<InputField name="ТипСвойстваКонфигурацииКорреспондента" id="75">
+												<ReadOnly>true</ReadOnly>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Тип получателя</v8:content>
+													</v8:item>
+												</Title>
+												<ContextMenu name="ТипСвойстваКонфигурацииКорреспондентаКонтекстноеМеню" id="76"/>
+												<ExtendedTooltip name="ТипСвойстваКонфигурацииКорреспондентаРасширеннаяПодсказка" id="77"/>
+											</InputField>
+											<InputField name="ТипСвойстваФормата" id="48">
+												<ReadOnly>true</ReadOnly>
+												<OpenButton>false</OpenButton>
+												<ContextMenu name="ТипСвойстваФорматаКонтекстноеМеню" id="49"/>
+												<ExtendedTooltip name="ТипСвойстваФорматаРасширеннаяПодсказка" id="50"/>
+											</InputField>
+										</ChildItems>
+									</Page>
+									<Page name="СтраницаСопоставлениеСвойствВручнуюПраво" id="179">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств вручную право</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страница сопоставление свойств вручную право</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СтраницаСопоставлениеСвойствВручнуюПравоРасширеннаяПодсказка" id="180"/>
+										<ChildItems>
+											<InputField name="СвойствоФорматаСтрокой" id="58">
+												<ContextMenu name="СвойствоФорматаСтрокойКонтекстноеМеню" id="59"/>
+												<ExtendedTooltip name="СвойствоФорматаСтрокойРасширеннаяПодсказка" id="60"/>
+											</InputField>
+										</ChildItems>
+									</Page>
+								</ChildItems>
+							</Pages>
+						</ChildItems>
+					</UsualGroup>
 				</ChildItems>
-			</Pages>
+			</UsualGroup>
 			<Pages name="ГруппаXML" id="81">
 				<Title>
 					<v8:item>
@@ -846,6 +1018,7 @@
 						<v8:content>Группа XML</v8:content>
 					</v8:item>
 				</Title>
+				<PagesRepresentation>TabsOnTop</PagesRepresentation>
 				<ExtendedTooltip name="ГруппаXMLРасширеннаяПодсказка" id="82"/>
 				<ChildItems>
 					<Page name="Обработчики" id="83">
@@ -1112,6 +1285,7 @@
 										<v8:content>Группа код имя</v8:content>
 									</v8:item>
 								</Title>
+								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
 								<ExtendedTooltip name="ГруппаКодИмяРасширеннаяПодсказка" id="142"/>
@@ -1160,7 +1334,31 @@
 					</Page>
 				</ChildItems>
 			</Pages>
+			<InputField name="УсловиеПрименения" id="157">
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="УсловиеПримененияКонтекстноеМеню" id="158"/>
+				<ExtendedTooltip name="УсловиеПримененияРасширеннаяПодсказка" id="159"/>
+			</InputField>
+			<CheckBoxField name="ИспользуетсяАлгоритмКонвертации" id="154">
+				<TitleLocation>Right</TitleLocation>
+				<CheckBoxType>Auto</CheckBoxType>
+				<ContextMenu name="ИспользуетсяАлгоритмКонвертацииКонтекстноеМеню" id="155"/>
+				<ExtendedTooltip name="ИспользуетсяАлгоритмКонвертацииРасширеннаяПодсказка" id="156"/>
+			</CheckBoxField>
+			<CheckBoxField name="Отключить" id="69">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отключить правило</v8:content>
+					</v8:item>
+				</Title>
+				<TitleLocation>Right</TitleLocation>
+				<CheckBoxType>Auto</CheckBoxType>
+				<ContextMenu name="ОтключитьКонтекстноеМеню" id="70"/>
+				<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="71"/>
+			</CheckBoxField>
 			<InputField name="Комментарий" id="61">
+				<TitleLocation>Top</TitleLocation>
 				<AutoMaxWidth>false</AutoMaxWidth>
 				<ContextMenu name="КомментарийКонтекстноеМеню" id="62"/>
 				<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="63"/>

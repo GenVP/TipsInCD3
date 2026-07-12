@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommonCommand uuid="efb18dbd-4e13-42cb-bda2-cb2fd9cc2357">
+		<Properties>
+			<Name>КД3_НастройкиРедактораКода</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактор кода</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<Group>FormCommandBarImportant</Group>
+			<Representation>PictureAndText</Representation>
+			<ToolTip/>
+			<Picture>
+				<xr:Ref>StdPicture.Setting</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Shortcut/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<CommandParameterType>
+				<v8:Type>cfg:CatalogRef.ПравилаОбработкиДанных</v8:Type>
+				<v8:Type>cfg:CatalogRef.ПравилаРегистрацииОбъектов</v8:Type>
+				<v8:Type>cfg:CatalogRef.ПравилаКонвертацииПредопределенныхДанных</v8:Type>
+				<v8:Type>cfg:CatalogRef.Запросы</v8:Type>
+				<v8:Type>cfg:CatalogRef.Алгоритмы</v8:Type>
+				<v8:Type>cfg:CatalogRef.ПравилаКонвертацииСвойств</v8:Type>
+				<v8:Type>cfg:CatalogRef.ПравилаКонвертацииОбъектов</v8:Type>
+				<v8:Type>cfg:CatalogRef.Конвертации</v8:Type>
+			</CommandParameterType>
+			<ParameterUseMode>Single</ParameterUseMode>
+			<ModifiesData>false</ModifiesData>
+			<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>
+		</Properties>
+	</CommonCommand>
+</MetaDataObject>

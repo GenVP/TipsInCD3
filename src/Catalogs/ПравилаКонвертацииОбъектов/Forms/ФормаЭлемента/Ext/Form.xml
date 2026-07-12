@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<ChildItems>
-			<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="229">
-				<Type>CommandBarButton</Type>
-				<CommandName>0</CommandName>
-				<ExtendedTooltip name="ФормаДобавитьЭлементВСоставКонвертацииРасширеннаяПодсказка" id="230"/>
-			</Button>
-		</ChildItems>
-	</AutoCommandBar>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing" callType="After">КД3_ОбработчикОбработкаОповещенияПосле</Event>
+		<Event name="OnReadAtServer" callType="After">КД3_ПриЧтенииНаСервереПосле</Event>
+		<Event name="OnOpen" callType="After">КД3_ПриОткрытииПосле</Event>
+		<Event name="BeforeWrite" callType="After">КД3_ПередЗаписьюПосле</Event>
+		<Event name="OnCreateAtServer" callType="After">КД3_ПриСозданииНаСервереПосле</Event>
+	</Events>
 	<ChildItems>
 		<LabelDecoration name="ДекорацияНуженЗахват" id="471">
 			<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -29,7 +29,11 @@
 					<v8:content>Страницы</v8:content>
 				</v8:item>
 			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="79"/>
+			<Events>
+				<Event name="OnCurrentPageChange" callType="After">КД3_СтраницыПриСменеСтраницыПосле</Event>
+			</Events>
 			<ChildItems>
 				<Page name="ОсновныеСведения" id="80">
 					<Title>
@@ -40,17 +44,25 @@
 					</Title>
 					<ExtendedTooltip name="ОсновныеСведенияРасширеннаяПодсказка" id="81"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаВладельцы" id="74">
+						<UsualGroup name="ГруппаВерхнийРяд" id="519">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа владельцы</v8:content>
+									<v8:content>Группа верхний ряд</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа верхний ряд</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаВладельцыРасширеннаяПодсказка" id="75"/>
+							<ExtendedTooltip name="ГруппаВерхнийРядРасширеннаяПодсказка" id="520"/>
 							<ChildItems>
 								<InputField name="СписокКонвертаций" id="164">
 									<ReadOnly>true</ReadOnly>
@@ -60,12 +72,10 @@
 											<v8:content>Конвертации</v8:content>
 										</v8:item>
 									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
 									<ContextMenu name="СписокКонвертацийКонтекстноеМеню" id="165"/>
 									<ExtendedTooltip name="СписокКонвертацийРасширеннаяПодсказка" id="166"/>
-								</InputField>
-								<InputField name="Группа" id="71">
-									<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
-									<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
 								</InputField>
 								<LabelDecoration name="ДекорацияЗахвачен" id="465">
 									<TextColor>style:SpecialTextColor</TextColor>
@@ -75,11 +85,19 @@
 											<v8:content>захвачен</v8:content>
 										</v8:item>
 									</Title>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<HorizontalAlign>Right</HorizontalAlign>
 									<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="466"/>
 									<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="467"/>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
+						<InputField name="Группа" id="71">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
+						</InputField>
 						<UsualGroup name="ГруппаИдентификатор" id="503">
 							<Title>
 								<v8:item>
@@ -87,18 +105,22 @@
 									<v8:content>Группа идентификатор</v8:content>
 								</v8:item>
 							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
 							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаИдентификаторРасширеннаяПодсказка" id="504"/>
 							<ChildItems>
 								<InputField name="Код" id="51">
 									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
 									<ContextMenu name="КодКонтекстноеМеню" id="52"/>
 									<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
 								</InputField>
 								<Button name="ЗаполнитьИдентификатор" id="505">
 									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 									<CommandName>0</CommandName>
 									<Title>
 										<v8:item>
@@ -117,33 +139,489 @@
 									<v8:content>Группа объекты</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаОбъектыРасширеннаяПодсказка" id="77"/>
 							<ChildItems>
 								<InputField name="ОбъектКонфигурации" id="10">
 									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<Height>1</Height>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">31</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
 									<ContextMenu name="ОбъектКонфигурацииКонтекстноеМеню" id="11"/>
 									<ExtendedTooltip name="ОбъектКонфигурацииРасширеннаяПодсказка" id="12"/>
 								</InputField>
 								<InputField name="ОбъектФормата" id="13">
 									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<ChoiceButton>true</ChoiceButton>
 									<ContextMenu name="ОбъектФорматаКонтекстноеМеню" id="14"/>
 									<ExtendedTooltip name="ОбъектФорматаРасширеннаяПодсказка" id="15"/>
 								</InputField>
 								<InputField name="ОбъектКонфигурацииКорреспондент" id="254">
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">42</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
 									<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="255"/>
 									<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="256"/>
 								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Порядок" id="331">
+							<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
+							<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
+						</InputField>
+						<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
+							<TitleLocation>Left</TitleLocation>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для отправки</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для получения</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для отправки и получения</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
+						</RadioButtonField>
+						<UsualGroup name="ГруппаТеги" id="592">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Теги вырезки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа теги</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>false</HorizontalStretch>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalAlign>Left</HorizontalAlign>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="593"/>
+							<ChildItems>
+								<Table name="Теги" id="600">
+									<HeightInTableRows>3</HeightInTableRows>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТегиКонтекстноеМеню" id="601"/>
+									<AutoCommandBar name="ТегиКоманднаяПанель" id="602"/>
+									<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="603"/>
+									<SearchStringAddition name="ТегиСтрокаПоиска" id="604">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="605"/>
+										<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="606"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТегиСостояниеПросмотра" id="607">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="608"/>
+										<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="609"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТегиУправлениеПоиском" id="610">
+										<AdditionSource>
+											<Item>Теги</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="611"/>
+										<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="612"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ТегиНомерСтроки" id="613">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="614"/>
+											<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="615"/>
+										</LabelField>
+										<InputField name="ТегиТег" id="616">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТегиТегКонтекстноеМеню" id="617"/>
+											<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="618"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ВыгрузкаВМодули" id="521">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выгружать в модуль</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выгрузка в модули</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ВыгрузкаВМодулиРасширеннаяПодсказка" id="522"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПредопределенныйМодуль" id="557">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа предопределенный модуль</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа предопределенный модуль</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПредопределенныйМодульРасширеннаяПодсказка" id="558"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_Предопределенный" id="523">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Предопределенный</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">0</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_ПредопределенныйКонтекстноеМеню" id="524"/>
+											<ExtendedTooltip name="ВариантВыгрузки_ПредопределенныйРасширеннаяПодсказка" id="525"/>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ1" id="563">
+											<Width>7</Width>
+											<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="564"/>
+											<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="565"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДекорацияПредопределенныйМодуль" id="529">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>1</Height>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HorizontalStretch>true</HorizontalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация предопределенный модуль</v8:content>
+												</v8:item>
+											</Title>
+											<VerticalAlign>Bottom</VerticalAlign>
+											<ContextMenu name="ДекорацияПредопределенныйМодульКонтекстноеМеню" id="530"/>
+											<ExtendedTooltip name="ДекорацияПредопределенныйМодульРасширеннаяПодсказка" id="531"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПользовательскийМодуль" id="559">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа пользовательский модуль</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа пользовательский модуль</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПользовательскийМодульРасширеннаяПодсказка" id="560"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_Пользовательский" id="548">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Пользовательский</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_ПользовательскийКонтекстноеМеню" id="549"/>
+											<ExtendedTooltip name="ВариантВыгрузки_ПользовательскийРасширеннаяПодсказка" id="550"/>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ2" id="566">
+											<Width>8</Width>
+											<ContextMenu name="ДекорацияОтступ2КонтекстноеМеню" id="567"/>
+											<ExtendedTooltip name="ДекорацияОтступ2РасширеннаяПодсказка" id="568"/>
+										</LabelDecoration>
+										<InputField name="ДополнительныйМодуль" id="513">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пользовательский модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ClearButton>true</ClearButton>
+											<OpenButton>true</OpenButton>
+											<ContextMenu name="ДополнительныйМодульКонтекстноеМеню" id="514"/>
+											<ExtendedTooltip name="ДополнительныйМодульРасширеннаяПодсказка" id="515"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМодульМенеджераПравило" id="561">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера правило</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера правило</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаМодульМенеджераПравилоРасширеннаяПодсказка" id="562"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_Менеджера" id="551">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Менеджера (объект правила)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_МенеджераКонтекстноеМеню" id="552"/>
+											<ExtendedTooltip name="ВариантВыгрузки_МенеджераРасширеннаяПодсказка" id="553"/>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ3" id="569">
+											<Width>1</Width>
+											<ContextMenu name="ДекорацияОтступ3КонтекстноеМеню" id="570"/>
+											<ExtendedTooltip name="ДекорацияОтступ3РасширеннаяПодсказка" id="571"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДекорацияМодульМенеджера" id="545">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HorizontalStretch>true</HorizontalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация модуль менеджера</v8:content>
+												</v8:item>
+											</Title>
+											<VerticalAlign>Center</VerticalAlign>
+											<ContextMenu name="ДекорацияМодульМенеджераКонтекстноеМеню" id="546"/>
+											<ExtendedTooltip name="ДекорацияМодульМенеджераРасширеннаяПодсказка" id="547"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМодульМенеджераОбъекта" id="537">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера объекта</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа модуль менеджера объекта</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаМодульМенеджераОбъектаРасширеннаяПодсказка" id="538"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантВыгрузки_МенеджераОбьекта" id="554">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгружать в модуль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Менеджера (с выбором объекта)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">3</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантВыгрузки_МенеджераОбьектаКонтекстноеМеню" id="555"/>
+											<ExtendedTooltip name="ВариантВыгрузки_МенеджераОбьектаРасширеннаяПодсказка" id="556"/>
+										</RadioButtonField>
+										<InputField name="ОбъектКонфигурацииДляВыгрузкиМодуля" id="526">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Объект</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<DropListButton>false</DropListButton>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+											<ContextMenu name="ОбъектКонфигурацииДляВыгрузкиМодуляКонтекстноеМеню" id="527"/>
+											<ExtendedTooltip name="ОбъектКонфигурацииДляВыгрузкиМодуляРасширеннаяПодсказка" id="528"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПрочее" id="329">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа прочее</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
+							<ChildItems>
+								<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
+								</CheckBoxField>
 								<CheckBoxField name="ОбъектСДвижениями" id="510">
 									<TitleLocation>Right</TitleLocation>
 									<ToolTip>
@@ -159,94 +637,22 @@
 								</CheckBoxField>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ОбластьПрименения" id="49">
-							<Title>
+						<CheckBoxField name="Отключить" id="161">
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Область применения</v8:content>
+									<v8:content>При установке флага правило не будет выгружаться в модуль менеджера обмена</v8:content>
 								</v8:item>
-							</Title>
-							<Group>Horizontal</Group>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ОбластьПримененияРасширеннаяПодсказка" id="50"/>
-							<ChildItems>
-								<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
-									<RadioButtonType>Tumbler</RadioButtonType>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Для отправки</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:decimal">0</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Для получения</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:decimal">1</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Для отправки и получения</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:decimal">2</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
-									<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
-								</RadioButtonField>
-								<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
-									<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
-								</CheckBoxField>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаПрочее" id="329">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа прочее</v8:content>
-								</v8:item>
-							</Title>
-							<Group>AlwaysHorizontal</Group>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
-							<ChildItems>
-								<CheckBoxField name="Отключить" id="161">
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
-									<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
-								</CheckBoxField>
-								<InputField name="Порядок" id="331">
-									<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
-									<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<VerticalAlign>Bottom</VerticalAlign>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
+							<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
+						</CheckBoxField>
 					</ChildItems>
 				</Page>
 				<Page name="Страница_ПравилаКонвертацииСвойств" id="176">
@@ -277,8 +683,6 @@
 									<v8:content>Правила конвертации свойств</v8:content>
 								</v8:item>
 							</Title>
-							<ViewMode>All</ViewMode>
-							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 							<AutoRefresh>false</AutoRefresh>
 							<AutoRefreshPeriod>60</AutoRefreshPeriod>
 							<Period>
@@ -292,6 +696,7 @@
 							<ShowRoot>true</ShowRoot>
 							<AllowRootChoice>false</AllowRootChoice>
 							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 							<ContextMenu name="ПравилаКонвертацииСвойствКонтекстноеМеню" id="406"/>
 							<AutoCommandBar name="ПравилаКонвертацииСвойствКоманднаяПанель" id="407">
 								<ChildItems>
@@ -300,15 +705,29 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="ПравилаКонвертацииСвойствНастройкаПКСРасширеннаяПодсказка" id="462"/>
 									</Button>
-									<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+									<ButtonGroup name="ПравилаКонвертацииСвойствГруппа1" id="574">
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="ПравилаКонвертацииСвойствГруппа1РасширеннаяПодсказка" id="575"/>
+										<ChildItems>
+											<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>0</CommandName>
+												<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
+											</Button>
+											<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>0</CommandName>
+												<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="ПравилаКонвертацииСвойствПометитьКакПроверено" id="572">
 										<Type>CommandBarButton</Type>
 										<CommandName>0</CommandName>
-										<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
-									</Button>
-									<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
-										<Type>CommandBarButton</Type>
-										<CommandName>0</CommandName>
-										<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+										<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+										<ExtendedTooltip name="ПравилаКонвертацииСвойствПометитьКакПровереноРасширеннаяПодсказка" id="573"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
@@ -370,6 +789,17 @@
 									<Group>Horizontal</Group>
 									<ExtendedTooltip name="ПравилаКонвертацииСвойствXMLРасширеннаяПодсказка" id="455"/>
 									<ChildItems>
+										<CheckBoxField name="ПравилаКонвертацииСвойствПоиск" id="634">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поле поиска</v8:content>
+												</v8:item>
+											</Title>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПравилаКонвертацииСвойствПоискКонтекстноеМеню" id="635"/>
+											<ExtendedTooltip name="ПравилаКонвертацииСвойствПоискРасширеннаяПодсказка" id="636"/>
+										</CheckBoxField>
 										<CheckBoxField name="ПравилаКонвертацииСвойствПолучитьИзВходящихДанных" id="448">
 											<Title>
 												<v8:item>
@@ -447,47 +877,86 @@
 									<ContextMenu name="ПравилаКонвертацииСвойствТипСвойстваФорматаКонтекстноеМеню" id="434"/>
 									<ExtendedTooltip name="ПравилаКонвертацииСвойствТипСвойстваФорматаРасширеннаяПодсказка" id="435"/>
 								</LabelField>
+								<InputField name="ПравилаКонвертацииСвойствУсловиеПрименения" id="631">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Условие</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Есть условие инициализации</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПравилаКонвертацииСвойствУсловиеПримененияКонтекстноеМеню" id="632"/>
+									<ExtendedTooltip name="ПравилаКонвертацииСвойствУсловиеПримененияРасширеннаяПодсказка" id="633"/>
+								</InputField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
 				</Page>
-				<Page name="Страница_ОбработчикиXDTO" id="257">
+				<Page name="Страница_ОбработчикиСобытийXDTO" id="787">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Обработчики событий</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="Страница_ОбработчикиXDTOРасширеннаяПодсказка" id="258"/>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="Страница_ОбработчикиСобытийXDTOРасширеннаяПодсказка" id="788"/>
 					<ChildItems>
-						<Pages name="ОбработчикиXDTO" id="259">
+						<Pages name="Страница_МоделиСобытийXDTO" id="791">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Обработчики XDTO</v8:content>
+									<v8:content>Страница модели событий XDTO</v8:content>
 								</v8:item>
 							</Title>
-							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
-							<ExtendedTooltip name="ОбработчикиXDTOРасширеннаяПодсказка" id="260"/>
+							<ExtendedTooltip name="Страница_МоделиСобытийXDTOРасширеннаяПодсказка" id="792"/>
 							<ChildItems>
-								<Page name="Страница_ПриОтправке" id="35">
+								<Page name="Страница_ПакетныеСобытияXDTO" id="795">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>При отправке</v8:content>
+											<v8:content>Пакетные события</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="Страница_ПриОтправкеРасширеннаяПодсказка" id="36"/>
+									<ExtendedTooltip name="Страница_ПакетныеСобытияXDTOРасширеннаяПодсказка" id="796"/>
 									<ChildItems>
-										<InputField name="ИмяОбработчикаПриОтправке" id="65">
-											<ToolTipRepresentation>Button</ToolTipRepresentation>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<ContextMenu name="ИмяОбработчикаПриОтправкеКонтекстноеМеню" id="66"/>
-											<ExtendedTooltip name="ИмяОбработчикаПриОтправкеРасширеннаяПодсказка" id="67">
-												<Title formatted="true">
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+										<Pages name="Страницы_СобытияПакетнойМоделиXDTO" id="815">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страницы события пакетной модели XDTO</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+											<ExtendedTooltip name="Страницы_СобытияПакетнойМоделиXDTOРасширеннаяПодсказка" id="816"/>
+											<Events>
+												<Event name="OnCurrentPageChange" callType="After">КД3_Страницы_СобытияПакетнойМоделиXDTOПриСменеСтраницыПосле</Event>
+											</Events>
+											<ChildItems>
+												<Page name="Страница_ПакетноеСобытиеПриОтправке" id="711">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При отправке</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ПакетноеСобытиеПриОтправкеРасширеннаяПодсказка" id="712"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаПакетноеСобытиеПриОтправке" id="713">
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПриОтправкеКонтекстноеМеню" id="714"/>
+															<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПриОтправкеРасширеннаяПодсказка" id="715">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
@@ -514,44 +983,122 @@
 &lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации логики конвертации данных, содержащихся в объекте информационной базы, в описание объекта XDTO.
 </v8:content>
-													</v8:item>
-												</Title>
-											</ExtendedTooltip>
-										</InputField>
-										<TextDocumentField name="АлгоритмПриОтправкеДанных" id="19">
-											<TitleLocation>None</TitleLocation>
-											<ToolTip>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ПриОтправкеДанных(Источник, Приемник, ТипПриемника, ВерсияФормата)
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмПакетноеСобытиеПриОтправкеДанных" id="716">
+															<TitleLocation>None</TitleLocation>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>ПриОтправкеДанных(Источник, Приемник, ТипПриемника, ВерсияФормата)
 Этот обработчик используется для заполнения полей приемника по данным источника и данным информационной базы в случаях, когда автоматическое заполнение полей приемника невозможно.</v8:content>
-												</v8:item>
-											</ToolTip>
-											<HorizontalAlign>Left</HorizontalAlign>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="АлгоритмПриОтправкеДанныхКонтекстноеМеню" id="20"/>
-											<ExtendedTooltip name="АлгоритмПриОтправкеДанныхРасширеннаяПодсказка" id="21"/>
-										</TextDocumentField>
-									</ChildItems>
-								</Page>
-								<Page name="Страница_ПриКонвертацииДанныхXDTO" id="37">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>При конвертации данных XDTO</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="Страница_ПриКонвертацииДанныхXDTOРасширеннаяПодсказка" id="38"/>
-									<ChildItems>
-										<InputField name="ИмяОбработчикаПередПолучением" id="62">
-											<ToolTipRepresentation>Button</ToolTipRepresentation>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<ContextMenu name="ИмяОбработчикаПередПолучениемКонтекстноеМеню" id="63"/>
-											<ExtendedTooltip name="ИмяОбработчикаПередПолучениемРасширеннаяПодсказка" id="64">
-												<Title formatted="true">
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+																</v8:item>
+															</ToolTip>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмПакетноеСобытиеПриОтправкеДанныхКонтекстноеМеню" id="717"/>
+															<ExtendedTooltip name="АлгоритмПакетноеСобытиеПриОтправкеДанныхРасширеннаяПодсказка" id="718"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="841">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При получении запроса выгрузки объекта</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="842"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="843">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя обработчика</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="844"/>
+															<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="845">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;При&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;п&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;олучении&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;з&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;апроса&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;ыгрузки&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;о&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;бъекта"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;b&gt;
+&lt;/&gt;&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках
+выполнения текущего сеанса обмена.
+
+&lt;b&gt;ПравилоКонвертации&lt;/&gt;
+Тип: СтрокаТабличнойЧасти
+Содержит правило конвертации объекта.
+
+&lt;b&gt;ОписаниеСсылкиЗапроса&lt;/&gt;
+Тип: Структура
+Содержит структуру описания недостающей ссылки в сообщениях о проблемах конвертации.
+
+&lt;b&gt;ПодобраннаяОбъектнаяСсылка&lt;/&gt;
+Тип: Неопределено, СправочникСсылка, ДокументСсылка
+Содержит подобранную ссылку к регистрации.
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для подбора и регистрации к полной выгрузке в базу корреспондента недостающих ссылок.</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<LabelDecoration name="ДекорацияПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="852">
+															<Visible>false</Visible>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Данное событие не поддерживается</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Формат конвертации должен поддерживать "запрос на выгрузку"
+Версия формата менеджера обмена - 3</v8:content>
+																</v8:item>
+															</ToolTip>
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<Hyperlink>true</Hyperlink>
+															<ContextMenu name="ДекорацияПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="853"/>
+															<ExtendedTooltip name="ДекорацияПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="854"/>
+														</LabelDecoration>
+														<TextDocumentField name="АлгоритмПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="846">
+															<TitleLocation>None</TitleLocation>
+															<ContextMenu name="АлгоритмПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="847"/>
+															<ExtendedTooltip name="АлгоритмПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="848"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ПакетноеСобытиеПриКонвертацииДанныхXDTO" id="735">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При конвертации данных XDTO</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ПакетноеСобытиеПриКонвертацииДанныхXDTOРасширеннаяПодсказка" id="736"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаПакетноеСобытиеПередПолучением" id="737">
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПередПолучениемКонтекстноеМеню" id="738"/>
+															<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПередПолучениемРасширеннаяПодсказка" id="739">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
@@ -569,37 +1116,37 @@
 
 &lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации произвольной логики конвертации данных XDTO.</v8:content>
-													</v8:item>
-												</Title>
-											</ExtendedTooltip>
-										</InputField>
-										<TextDocumentField name="АлгоритмПередПолучениемДанных" id="22">
-											<TitleLocation>None</TitleLocation>
-											<HorizontalAlign>Left</HorizontalAlign>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="АлгоритмПередПолучениемДанныхКонтекстноеМеню" id="23"/>
-											<ExtendedTooltip name="АлгоритмПередПолучениемДанныхРасширеннаяПодсказка" id="24"/>
-										</TextDocumentField>
-									</ChildItems>
-								</Page>
-								<Page name="Страница_ПередЗаписьюПолученныхДанных" id="39">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Перед записью полученных данных</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="Страница_ПередЗаписьюПолученныхДанныхРасширеннаяПодсказка" id="40"/>
-									<ChildItems>
-										<InputField name="ИмяОбработчикаПриПолучении" id="68">
-											<ToolTipRepresentation>Button</ToolTipRepresentation>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<ContextMenu name="ИмяОбработчикаПриПолученииКонтекстноеМеню" id="69"/>
-											<ExtendedTooltip name="ИмяОбработчикаПриПолученииРасширеннаяПодсказка" id="70">
-												<Title formatted="true">
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмПакетноеСобытиеПередПолучениемДанных" id="740">
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмПакетноеСобытиеПередПолучениемДанныхКонтекстноеМеню" id="741"/>
+															<ExtendedTooltip name="АлгоритмПакетноеСобытиеПередПолучениемДанныхРасширеннаяПодсказка" id="742"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ПакетноеСобытиеПередЗаписьюПолученныхДанных" id="743">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Перед записью полученных данных</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ПакетноеСобытиеПередЗаписьюПолученныхДанныхРасширеннаяПодсказка" id="744"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаПакетноеСобытиеПриПолучении" id="745">
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПриПолученииКонтекстноеМеню" id="746"/>
+															<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПриПолученииРасширеннаяПодсказка" id="747">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
@@ -629,55 +1176,82 @@
 &lt;b&gt;&lt;fontsize 10&gt;См. также&lt;/&gt;&lt;/&gt;
 ЗаполнитьТабличнуюЧастьОбъектаНачальнымиДанными()
 </v8:content>
-													</v8:item>
-												</Title>
-											</ExtendedTooltip>
-										</InputField>
-										<TextDocumentField name="АлгоритмПриПолученииДанных" id="25">
-											<TitleLocation>None</TitleLocation>
-											<HorizontalAlign>Left</HorizontalAlign>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="АлгоритмПриПолученииДанныхКонтекстноеМеню" id="26"/>
-											<ExtendedTooltip name="АлгоритмПриПолученииДанныхРасширеннаяПодсказка" id="27"/>
-										</TextDocumentField>
-									</ChildItems>
-								</Page>
-								<Page name="Страница_ПослеЗагрузкиВсехДанных" id="245">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>После загрузки всех данных</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="Страница_ПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="246"/>
-									<ChildItems>
-										<UsualGroup name="ПослеЗагрузкиВсехДанныхГоризонтальная" id="250">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>После загрузки всех данных горизонтальная</v8:content>
-												</v8:item>
-											</Title>
-											<Group>Horizontal</Group>
-											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ПослеЗагрузкиВсехДанныхГоризонтальнаяРасширеннаяПодсказка" id="251"/>
-											<ChildItems>
-												<InputField name="АлгоритмПослеЗагрузкиВсехДанных" id="239">
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмПакетноеСобытиеПриПолученииДанных" id="748">
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмПакетноеСобытиеПриПолученииДанныхКонтекстноеМеню" id="749"/>
+															<ExtendedTooltip name="АлгоритмПакетноеСобытиеПриПолученииДанныхРасширеннаяПодсказка" id="750"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ПакетныеСобытияПослеЗагрузкиВсехДанных" id="759">
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Алгоритм</v8:content>
+															<v8:content>После загрузки всех данных</v8:content>
 														</v8:item>
 													</Title>
-													<ToolTipRepresentation>Button</ToolTipRepresentation>
-													<ChoiceButton>true</ChoiceButton>
-													<OpenButton>true</OpenButton>
-													<ContextMenu name="АлгоритмПослеЗагрузкиВсехДанныхКонтекстноеМеню" id="240"/>
-													<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="241">
-														<Title formatted="true">
-															<v8:item>
-																<v8:lang>ru</v8:lang>
-																<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
+													<ExtendedTooltip name="Страница_ПакетныеСобытияПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="760"/>
+													<ChildItems>
+														<CheckBoxField name="ИспользоватьВстроенныйОбработчикПакетноеСобытиеПослеЗагрузки" id="761">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Вариант обработчика</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>При использовании отдельного алгоритма можно использовать одинаковые алгоритмы в разных правилах. Встроенный обработчик хранится в конкретном ПКО</v8:content>
+																</v8:item>
+															</ToolTip>
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<CheckBoxType>Tumbler</CheckBoxType>
+															<EditFormat>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>БЛ='Встроенный обработчик'; БИ='Внешний алгоритм'</v8:content>
+																</v8:item>
+															</EditFormat>
+															<ContextMenu name="ИспользоватьВстроенныйОбработчикПакетноеСобытиеПослеЗагрузкиКонтекстноеМеню" id="762"/>
+															<ExtendedTooltip name="ИспользоватьВстроенныйОбработчикПакетноеСобытиеПослеЗагрузкиРасширеннаяПодсказка" id="763"/>
+														</CheckBoxField>
+														<UsualGroup name="ПакетноеСобытиеПослеЗагрузкиВсехДанныхГоризонтальная" id="764">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>После загрузки всех данных горизонтальная</v8:content>
+																</v8:item>
+															</Title>
+															<Group>Horizontal</Group>
+															<Behavior>Usual</Behavior>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ПакетноеСобытиеПослеЗагрузкиВсехДанныхГоризонтальнаяРасширеннаяПодсказка" id="765"/>
+															<ChildItems>
+																<InputField name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанных" id="766">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Алгоритм</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ToolTipRepresentation>Button</ToolTipRepresentation>
+																	<DropListButton>true</DropListButton>
+																	<ChoiceButton>false</ChoiceButton>
+																	<OpenButton>true</OpenButton>
+																	<ListChoiceMode>true</ListChoiceMode>
+																	<ContextMenu name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхКонтекстноеМеню" id="767"/>
+																	<ExtendedTooltip name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="768">
+																		<Title formatted="true">
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры обработчика:&lt;/&gt;&lt;/&gt;
 
@@ -699,31 +1273,427 @@
 Выполнение обработчика происходит на этапе, когда загрузка данных в информационную базу завершена.
 
 </v8:content>
-															</v8:item>
-														</Title>
-													</ExtendedTooltip>
-												</InputField>
-												<Button name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанных" id="252">
-													<Type>Hyperlink</Type>
-													<CommandName>0</CommandName>
-													<ExtendedTooltip name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="253"/>
-												</Button>
+																			</v8:item>
+																		</Title>
+																	</ExtendedTooltip>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+														<TextDocumentField name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхТекст" id="769">
+															<ReadOnly>true</ReadOnly>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Просмотр алгоритма (редактирование осуществляется из формы алгоритма)</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>Top</TitleLocation>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхТекстКонтекстноеМеню" id="770"/>
+															<ExtendedTooltip name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхТекстРасширеннаяПодсказка" id="771"/>
+														</TextDocumentField>
+														<InputField name="ИмяОбработчикаПакетноеСобытиеПослеЗагрузкиПКО" id="772">
+															<ReadOnly>true</ReadOnly>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя обработчика</v8:content>
+																</v8:item>
+															</Title>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПослеЗагрузкиПКОКонтекстноеМеню" id="773"/>
+															<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПослеЗагрузкиПКОРасширеннаяПодсказка" id="774"/>
+														</InputField>
+														<TextDocumentField name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхВстроенный" id="775">
+															<TitleLocation>None</TitleLocation>
+															<ContextMenu name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхВстроенныйКонтекстноеМеню" id="776"/>
+															<ExtendedTooltip name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхВстроенныйРасширеннаяПодсказка" id="777"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
 											</ChildItems>
-										</UsualGroup>
-										<TextDocumentField name="АлгоритмПослеЗагрузкиВсехДанныхТекст" id="247">
-											<ReadOnly>true</ReadOnly>
+										</Pages>
+									</ChildItems>
+								</Page>
+								<Page name="Страница_ОбъектныеСобытия" id="793">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объектные события</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Страница_ОбъектныеСобытияРасширеннаяПодсказка" id="794"/>
+									<ChildItems>
+										<Pages name="Страницы_СобытияОбъектнойМоделиXDTO" id="813">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Просмотр алгоритма (редактирование осуществляется из формы алгоритма)</v8:content>
+													<v8:content>Страницы события объектной модели XDTO</v8:content>
 												</v8:item>
 											</Title>
-											<TitleLocation>Top</TitleLocation>
-											<HorizontalAlign>Left</HorizontalAlign>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="АлгоритмПослеЗагрузкиВсехДанныхТекстКонтекстноеМеню" id="248"/>
-											<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхТекстРасширеннаяПодсказка" id="249"/>
-										</TextDocumentField>
+											<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+											<ExtendedTooltip name="Страницы_СобытияОбъектнойМоделиXDTOРасширеннаяПодсказка" id="814"/>
+											<Events>
+												<Event name="OnCurrentPageChange" callType="After">КД3_Страницы_СобытияОбъектнойМоделиXDTOПриСменеСтраницыПосле</Event>
+											</Events>
+											<ChildItems>
+												<Page name="Страница_ОбъектноеСобытиеПриОтправке" id="817">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При отправке</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриОтправкеРасширеннаяПодсказка" id="818"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаОбъектноеСобытиеПриОтправке" id="819">
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриОтправкеКонтекстноеМеню" id="820"/>
+															<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриОтправкеРасширеннаяПодсказка" id="821">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Обрабатываемый объект информационной базы.
+
+&lt;b&gt;ДанныеXDTO&lt;/&gt;
+Тип: Структура
+Предназначен для доступа к данным объекта XDTO.
+
+&lt;b&gt;ПараметрыКонвертации&lt;/&gt;
+Тип: Структура
+Содержит параметры, инициализированные в рамках выполнения ПОД.
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила обмена,  инициализированные в рамках выполнения сеанса обмена.
+
+&lt;b&gt;СтекВыгрузки&lt;/&gt;
+Тип: Массив.
+Содержит ссылки на выгружаемые объекты с учетом вложенности..
+
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
+Обработчик предназначен для реализации логики конвертации данных, содержащихся в объекте информационной базы, в описание объекта XDTO.
+</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмОбъектноеСобытиеПриОтправкеДанных" id="822">
+															<TitleLocation>None</TitleLocation>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>ПриОтправкеДанных(Источник, Приемник, ТипПриемника, ВерсияФормата)
+Этот обработчик используется для заполнения полей приемника по данным источника и данным информационной базы в случаях, когда автоматическое заполнение полей приемника невозможно.</v8:content>
+																</v8:item>
+															</ToolTip>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмОбъектноеСобытиеПриОтправкеДанныхКонтекстноеМеню" id="823"/>
+															<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриОтправкеДанныхРасширеннаяПодсказка" id="824"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="719">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При получении запроса выгрузки объекта</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="720"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="721">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя обработчика</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="722"/>
+															<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="723">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;При&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;п&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;олучении&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;з&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;апроса&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;ыгрузки&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;о&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;бъекта"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;b&gt;
+&lt;/&gt;&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках
+выполнения текущего сеанса обмена.
+
+&lt;b&gt;ПравилоКонвертации&lt;/&gt;
+Тип: СтрокаТабличнойЧасти
+Содержит правило конвертации объекта.
+
+&lt;b&gt;ОписаниеСсылкиЗапроса&lt;/&gt;
+Тип: Структура
+Содержит структуру описания недостающей ссылки в сообщениях о проблемах конвертации.
+
+&lt;b&gt;ПодобраннаяОбъектнаяСсылка&lt;/&gt;
+Тип: Неопределено, СправочникСсылка, ДокументСсылка
+Содержит подобранную ссылку к регистрации.
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для подбора и регистрации к полной выгрузке в базу корреспондента недостающих ссылок.</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="724">
+															<TitleLocation>None</TitleLocation>
+															<ContextMenu name="АлгоритмОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="725"/>
+															<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="726"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ОбъектноеСобытиеПриУдаленииОбъектаИБ" id="727">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При удалении объекта ИБ</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриУдаленииОбъектаИБРасширеннаяПодсказка" id="728"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаОбъектноеСобытиеПриУдаленииОбъектаИБ" id="729">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя обработчика</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриУдаленииОбъектаИБКонтекстноеМеню" id="730"/>
+															<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриУдаленииОбъектаИБРасширеннаяПодсказка" id="731">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;"При&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;у&lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;далении&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;о&lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;бъекта&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;ИБ"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10----10----10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках выполнения текущего сеанса обмена.
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Объект, предназначенный к удалению или установки пометки удаления.
+
+&lt;b&gt;УдалитьНепосредственно&lt;/&gt;
+Тип: Булево
+Если значение параметра «Истина» - объект будет удален непосредственно, 
+в противном случае установится пометка удаления.
+
+&lt;b&gt;СтандартнаяОбработка&lt;/&gt;
+Тип: Булево
+Если значение параметра «Истина» - будет использован стандартный механизм
+удаления объекта, в противном случае удаление ограничено только директивами
+события «При удалении объекта ИБ».
+
+&lt;font DefaultFont--10----10----10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для описания логики конвертации удаления объекта.</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмОбъектноеСобытиеПриУдаленииОбъектаИБ" id="732">
+															<TitleLocation>None</TitleLocation>
+															<ContextMenu name="АлгоритмОбъектноеСобытиеПриУдаленииОбъектаИБКонтекстноеМеню" id="733"/>
+															<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриУдаленииОбъектаИБРасширеннаяПодсказка" id="734"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ОбъектноеСобытиеПриКонвертацииДанныхXDTO" id="825">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>При конвертации данных XDTO</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриКонвертацииДанныхXDTOРасширеннаяПодсказка" id="826"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаОбъектноеСобытиеПередПолучением" id="827">
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПередПолучениемКонтекстноеМеню" id="828"/>
+															<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПередПолучениемРасширеннаяПодсказка" id="829">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;ДанныеXDTO&lt;/&gt;
+Тип: Структура
+Свойства объекта XDTO, прошедшие предварительную обработку для упрощения доступа к ним.
+
+&lt;b&gt;ПолученныеДанные&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Объект информационной базы, сформированный путем конвертации данных XDTO. Не записан в информационную базу.
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила обмена, инициализированные в рамках выполнения текущего сеанса обмена.
+
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
+Обработчик предназначен для реализации произвольной логики конвертации данных XDTO.</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмОбъектноеСобытиеПередПолучениемДанных" id="830">
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмОбъектноеСобытиеПередПолучениемДанныхКонтекстноеМеню" id="831"/>
+															<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПередПолучениемДанныхРасширеннаяПодсказка" id="832"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ОбъектноеСобытиеПередЗаписьюПолученныхДанных" id="833">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Перед записью полученных данных</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ОбъектноеСобытиеПередЗаписьюПолученныхДанныхРасширеннаяПодсказка" id="834"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаОбъектноеСобытиеПриПолучении" id="835">
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриПолученииКонтекстноеМеню" id="836"/>
+															<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриПолученииРасширеннаяПодсказка" id="837">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;ПолученныеДанные&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Элемент данных, сформированный путем конвертации данных XDTO.
+Записывается в случае, если эти данные являются для информационной базы новыми (параметр ДанныеИБ содержит значение Неопределено).
+В противном случае полученные данные замещают собой данные ИБ (все свойства из ПолученныеДанные переносятся в ДанныеИБ).
+Если стандартное замещение данных ИБ полученными данными не требуется, следует прописать свою логику переноса, после чего установить параметру ПолученныеДанные значение Неопределено
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Элемент данных информационной базы, соответствующие полученным данным. Если соответствующие данные не найдены, содержит Неопределено.
+
+&lt;b&gt;Конвертация свойств&lt;/&gt;
+Тип: Таблица значений
+Содержит правила конвертации свойств текущего объекта, инициализированные в рамках выполнения сеанса обмена.
+
+&lt;b&gt;Компоненты обмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила обмена,  инициализированные в рамках выполнения сеанса обмена..
+
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
+Обработчик предназначен для реализации дополнительной логики, которую необходимо выполнить перед записью объекта в информационную базу.
+Например, в этом обработчике указывается, нужно ли загрузить изменения в существующие данные ИБ, либо нужно загрузить как новые данные.
+
+&lt;b&gt;&lt;fontsize 10&gt;См. также&lt;/&gt;&lt;/&gt;
+ЗаполнитьТабличнуюЧастьОбъектаНачальнымиДанными()
+</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмОбъектноеСобытиеПриПолученииДанных" id="838">
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Left</HorizontalAlign>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="АлгоритмОбъектноеСобытиеПриПолученииДанныхКонтекстноеМеню" id="839"/>
+															<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриПолученииДанныхРасширеннаяПодсказка" id="840"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+												<Page name="Страница_ОбъектноеСобытиеПослеКонвертацииОбъекта" id="751">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>После конвертации объекта</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="Страница_ОбъектноеСобытиеПослеКонвертацииОбъектаРасширеннаяПодсказка" id="752"/>
+													<ChildItems>
+														<InputField name="ИмяОбработчикаОбъектноеСобытиеПослеКонвертацииОбъекта" id="753">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя обработчика</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTipRepresentation>Button</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПослеКонвертацииОбъектаКонтекстноеМеню" id="754"/>
+															<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПослеКонвертацииОбъектаРасширеннаяПодсказка" id="755">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>&lt;font DefaultFont--12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12--&gt;&lt;b&gt;"После конвертации объекта"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках
+выполнения текущего сеанса обмена.
+
+&lt;b&gt;ПравилоКонвертации&lt;/&gt;
+Тип: СтрокаТабличнойЧасти
+Содержит правило конвертации объекта.
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: Неопределено,
+ДокументОбъект, СправочникОбъект, ПланВидовХарактеристикОбъект, ПланСчетовОбъект,
+ПланВидовРасчетаОбъект, БизнесПроцессОбъект, ЗадачаОбъект, РегистрСведенийНаборЗаписей,
+РегистрНакопленияНаборЗаписей, РегистрБухгалтерииНаборЗаписей, РегистрРасчетаНаборЗаписей
+ПланВидовРасчетаОбъект, БизнесПроцессОбъект,ЗадачаОбъект, РегистрСведенийНаборЗаписей,
+РегистрНакопленияНаборЗаписей, РегистрБухгалтерииНаборЗаписей, РегистрРасчетаНаборЗаписей
+
+Содержит объект информационной базы, найденный при идентификации загружаемых данных.
+Если соответствующий объект не найден, ДанныеИБ = Неопределено.
+
+&lt;b&gt;ЗаписьДанныхВыполнена&lt;/&gt;
+Тип: Булево
+Если значение параметра «Истина» - ДанныеИБ были проведены (записаны или сохранены), 
+в противном случае не записаны.
+
+&lt;font DefaultFont--10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для описания логики обработки после конвертации объекта.</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</InputField>
+														<TextDocumentField name="АлгоритмОбъектноеСобытиеПослеКонвертацииОбъекта" id="756">
+															<TitleLocation>None</TitleLocation>
+															<ContextMenu name="АлгоритмОбъектноеСобытиеПослеКонвертацииОбъектаКонтекстноеМеню" id="757"/>
+															<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПослеКонвертацииОбъектаРасширеннаяПодсказка" id="758"/>
+														</TextDocumentField>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
 									</ChildItems>
 								</Page>
 							</ChildItems>
@@ -748,6 +1718,9 @@
 							</Title>
 							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
 							<ExtendedTooltip name="ОбработчикиXMLРасширеннаяПодсказка" id="264"/>
+							<Events>
+								<Event name="OnCurrentPageChange" callType="After">КД3_ОбработчикиXMLПриСменеСтраницыПосле</Event>
+							</Events>
 							<ChildItems>
 								<Page name="Страница_ПередВыгрузкой" id="265">
 									<Title>
@@ -1204,6 +2177,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<ExtendedTooltip name="Страница_Идентификация_ВертикальнаяГруппа1РасширеннаяПодсказка" id="105"/>
 							<ChildItems>
 								<Button name="ЗадатьПорядокПолейПоиска" id="89">
@@ -1211,10 +2185,22 @@
 									<CommandName>0</CommandName>
 									<ExtendedTooltip name="ЗадатьПорядокПолейПоискаРасширеннаяПодсказка" id="90"/>
 								</Button>
+								<LabelDecoration name="ПредупреждениеЗачемПоля" id="628">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>При идентификации по УИД поля поиска необходимы для интерактивного сопоставления данных</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПредупреждениеЗачемПоляКонтекстноеМеню" id="629"/>
+									<ExtendedTooltip name="ПредупреждениеЗачемПоляРасширеннаяПодсказка" id="630"/>
+								</LabelDecoration>
 								<LabelDecoration name="Предупреждение_МногоПолей" id="507">
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<HorizontalStretch>true</HorizontalStretch>
-									<TextColor>style:SpecialTextColor</TextColor>
+									<TextColor>style:ПоясняющийТекст</TextColor>
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -1232,6 +2218,7 @@
 										</v8:item>
 									</Title>
 									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="Страница_Идентификация_ГоризонтальнаяГруппа1РасширеннаяПодсказка" id="149"/>
 									<ChildItems>
@@ -1261,8 +2248,6 @@
 									<SearchStringLocation>None</SearchStringLocation>
 									<ViewStatusLocation>None</ViewStatusLocation>
 									<SearchControlLocation>None</SearchControlLocation>
-									<ViewMode>All</ViewMode>
-									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="ИдентификацияПоПолямПоискаКонтекстноеМеню" id="126"/>
 									<AutoCommandBar name="ИдентификацияПоПолямПоискаКоманднаяПанель" id="127">
@@ -1369,6 +2354,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<ExtendedTooltip name="ГруппаЗагрузкаРасширеннаяПодсказка" id="337"/>
 							<ChildItems>
 								<RadioButtonField name="ВариантИдентификацииXML" id="341">
@@ -1476,6 +2462,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<ExtendedTooltip name="ГруппаВыгрузкаРасширеннаяПодсказка" id="357"/>
 							<ChildItems>
 								<CheckBoxField name="НеВыгружатьОбъектыСвойствПоСсылкам" id="358">
@@ -1518,6 +2505,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<ExtendedTooltip name="ОнЛайнОбменРасширеннаяПодсказка" id="368"/>
 							<ChildItems>
 								<CheckBoxField name="ВыгружатьОбъектТолькоПриНаличииНаНегоСсылки" id="369">
@@ -1566,8 +2554,6 @@
 											<v8:content>Варианты настроек полей поиска</v8:content>
 										</v8:item>
 									</Title>
-									<ViewMode>All</ViewMode>
-									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="НастройкаВариантовПоискаОбъектовXMLКонтекстноеМеню" id="479"/>
 									<AutoCommandBar name="НастройкаВариантовПоискаОбъектовXMLКоманднаяПанель" id="480"/>
@@ -1650,17 +2636,10 @@
 			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
-	<BaseForm version="2.11">
+	<BaseForm version="2.20">
 		<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
-		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-			<ChildItems>
-				<Button name="ФормаДобавитьЭлементВСоставКонвертации" id="229">
-					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
-					<ExtendedTooltip name="ФормаДобавитьЭлементВСоставКонвертацииРасширеннаяПодсказка" id="230"/>
-				</Button>
-			</ChildItems>
-		</AutoCommandBar>
+		<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>
 			<LabelDecoration name="ДекорацияНуженЗахват" id="471">
 				<TextColor>style:FieldSelectionBackColor</TextColor>
@@ -1680,6 +2659,7 @@
 						<v8:content>Страницы</v8:content>
 					</v8:item>
 				</Title>
+				<PagesRepresentation>TabsOnTop</PagesRepresentation>
 				<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="79"/>
 				<ChildItems>
 					<Page name="ОсновныеСведения" id="80">
@@ -1691,17 +2671,25 @@
 						</Title>
 						<ExtendedTooltip name="ОсновныеСведенияРасширеннаяПодсказка" id="81"/>
 						<ChildItems>
-							<UsualGroup name="ГруппаВладельцы" id="74">
+							<UsualGroup name="ГруппаВерхнийРяд" id="519">
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Группа владельцы</v8:content>
+										<v8:content>Группа верхний ряд</v8:content>
 									</v8:item>
 								</Title>
-								<Group>Horizontal</Group>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа верхний ряд</v8:content>
+									</v8:item>
+								</ToolTip>
+								<HorizontalStretch>true</HorizontalStretch>
+								<Group>AlwaysHorizontal</Group>
+								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ГруппаВладельцыРасширеннаяПодсказка" id="75"/>
+								<ExtendedTooltip name="ГруппаВерхнийРядРасширеннаяПодсказка" id="520"/>
 								<ChildItems>
 									<InputField name="СписокКонвертаций" id="164">
 										<ReadOnly>true</ReadOnly>
@@ -1711,12 +2699,10 @@
 												<v8:content>Конвертации</v8:content>
 											</v8:item>
 										</Title>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<HorizontalStretch>true</HorizontalStretch>
 										<ContextMenu name="СписокКонвертацийКонтекстноеМеню" id="165"/>
 										<ExtendedTooltip name="СписокКонвертацийРасширеннаяПодсказка" id="166"/>
-									</InputField>
-									<InputField name="Группа" id="71">
-										<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
-										<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
 									</InputField>
 									<LabelDecoration name="ДекорацияЗахвачен" id="465">
 										<TextColor>style:SpecialTextColor</TextColor>
@@ -1726,11 +2712,19 @@
 												<v8:content>захвачен</v8:content>
 											</v8:item>
 										</Title>
+										<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+										<HorizontalAlign>Right</HorizontalAlign>
 										<ContextMenu name="ДекорацияЗахваченКонтекстноеМеню" id="466"/>
 										<ExtendedTooltip name="ДекорацияЗахваченРасширеннаяПодсказка" id="467"/>
 									</LabelDecoration>
 								</ChildItems>
 							</UsualGroup>
+							<InputField name="Группа" id="71">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<HorizontalStretch>true</HorizontalStretch>
+								<ContextMenu name="ГруппаКонтекстноеМеню" id="72"/>
+								<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="73"/>
+							</InputField>
 							<UsualGroup name="ГруппаИдентификатор" id="503">
 								<Title>
 									<v8:item>
@@ -1738,18 +2732,22 @@
 										<v8:content>Группа идентификатор</v8:content>
 									</v8:item>
 								</Title>
+								<HorizontalStretch>true</HorizontalStretch>
 								<Group>AlwaysHorizontal</Group>
+								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
 								<ExtendedTooltip name="ГруппаИдентификаторРасширеннаяПодсказка" id="504"/>
 								<ChildItems>
 									<InputField name="Код" id="51">
 										<AutoMaxWidth>false</AutoMaxWidth>
+										<HorizontalStretch>true</HorizontalStretch>
 										<ContextMenu name="КодКонтекстноеМеню" id="52"/>
 										<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
 									</InputField>
 									<Button name="ЗаполнитьИдентификатор" id="505">
 										<Type>UsualButton</Type>
+										<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 										<CommandName>0</CommandName>
 										<Title>
 											<v8:item>
@@ -1768,33 +2766,489 @@
 										<v8:content>Группа объекты</v8:content>
 									</v8:item>
 								</Title>
-								<Group>Horizontal</Group>
+								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
 								<Representation>None</Representation>
 								<ShowTitle>false</ShowTitle>
 								<ExtendedTooltip name="ГруппаОбъектыРасширеннаяПодсказка" id="77"/>
 								<ChildItems>
 									<InputField name="ОбъектКонфигурации" id="10">
 										<EditMode>EnterOnInput</EditMode>
+										<AutoMaxWidth>false</AutoMaxWidth>
 										<Height>1</Height>
 										<DropListButton>false</DropListButton>
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ChoiceParameterLinks>
+											<xr:Link>
+												<xr:Name>Отбор.Владелец</xr:Name>
+												<xr:DataPath xsi:type="xs:string">31</xr:DataPath>
+												<xr:ValueChange>Clear</xr:ValueChange>
+											</xr:Link>
+										</ChoiceParameterLinks>
 										<ContextMenu name="ОбъектКонфигурацииКонтекстноеМеню" id="11"/>
 										<ExtendedTooltip name="ОбъектКонфигурацииРасширеннаяПодсказка" id="12"/>
 									</InputField>
 									<InputField name="ОбъектФормата" id="13">
 										<EditMode>EnterOnInput</EditMode>
+										<AutoMaxWidth>false</AutoMaxWidth>
 										<ChoiceButton>true</ChoiceButton>
 										<ContextMenu name="ОбъектФорматаКонтекстноеМеню" id="14"/>
 										<ExtendedTooltip name="ОбъектФорматаРасширеннаяПодсказка" id="15"/>
 									</InputField>
 									<InputField name="ОбъектКонфигурацииКорреспондент" id="254">
+										<AutoMaxWidth>false</AutoMaxWidth>
 										<DropListButton>false</DropListButton>
 										<ChoiceButton>true</ChoiceButton>
 										<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+										<ChoiceParameterLinks>
+											<xr:Link>
+												<xr:Name>Отбор.Владелец</xr:Name>
+												<xr:DataPath xsi:type="xs:string">42</xr:DataPath>
+												<xr:ValueChange>Clear</xr:ValueChange>
+											</xr:Link>
+										</ChoiceParameterLinks>
 										<ContextMenu name="ОбъектКонфигурацииКорреспондентКонтекстноеМеню" id="255"/>
 										<ExtendedTooltip name="ОбъектКонфигурацииКорреспондентРасширеннаяПодсказка" id="256"/>
 									</InputField>
+								</ChildItems>
+							</UsualGroup>
+							<InputField name="Порядок" id="331">
+								<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
+								<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
+							</InputField>
+							<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
+								<TitleLocation>Left</TitleLocation>
+								<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+								<RadioButtonType>Tumbler</RadioButtonType>
+								<ChoiceList>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для отправки</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">0</Value>
+										</xr:Value>
+									</xr:Item>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для получения</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">1</Value>
+										</xr:Value>
+									</xr:Item>
+									<xr:Item>
+										<xr:Presentation/>
+										<xr:CheckState>0</xr:CheckState>
+										<xr:Value xsi:type="FormChoiceListDesTimeValue">
+											<Presentation>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для отправки и получения</v8:content>
+												</v8:item>
+											</Presentation>
+											<Value xsi:type="xs:decimal">2</Value>
+										</xr:Value>
+									</xr:Item>
+								</ChoiceList>
+								<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
+								<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
+							</RadioButtonField>
+							<UsualGroup name="ГруппаТеги" id="592">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Теги вырезки</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа теги</v8:content>
+									</v8:item>
+								</ToolTip>
+								<HorizontalStretch>false</HorizontalStretch>
+								<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+								<Group>AlwaysHorizontal</Group>
+								<HorizontalAlign>Left</HorizontalAlign>
+								<Behavior>Collapsible</Behavior>
+								<Collapsed>true</Collapsed>
+								<Representation>None</Representation>
+								<ExtendedTooltip name="ГруппаТегиРасширеннаяПодсказка" id="593"/>
+								<ChildItems>
+									<Table name="Теги" id="600">
+										<HeightInTableRows>3</HeightInTableRows>
+										<AutoInsertNewRow>true</AutoInsertNewRow>
+										<EnableStartDrag>true</EnableStartDrag>
+										<EnableDrag>true</EnableDrag>
+										<RowFilter xsi:nil="true"/>
+										<ContextMenu name="ТегиКонтекстноеМеню" id="601"/>
+										<AutoCommandBar name="ТегиКоманднаяПанель" id="602"/>
+										<ExtendedTooltip name="ТегиРасширеннаяПодсказка" id="603"/>
+										<SearchStringAddition name="ТегиСтрокаПоиска" id="604">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>SearchStringRepresentation</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиСтрокаПоискаКонтекстноеМеню" id="605"/>
+											<ExtendedTooltip name="ТегиСтрокаПоискаРасширеннаяПодсказка" id="606"/>
+										</SearchStringAddition>
+										<ViewStatusAddition name="ТегиСостояниеПросмотра" id="607">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>ViewStatusRepresentation</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиСостояниеПросмотраКонтекстноеМеню" id="608"/>
+											<ExtendedTooltip name="ТегиСостояниеПросмотраРасширеннаяПодсказка" id="609"/>
+										</ViewStatusAddition>
+										<SearchControlAddition name="ТегиУправлениеПоиском" id="610">
+											<AdditionSource>
+												<Item>Теги</Item>
+												<Type>SearchControl</Type>
+											</AdditionSource>
+											<ContextMenu name="ТегиУправлениеПоискомКонтекстноеМеню" id="611"/>
+											<ExtendedTooltip name="ТегиУправлениеПоискомРасширеннаяПодсказка" id="612"/>
+										</SearchControlAddition>
+										<ChildItems>
+											<LabelField name="ТегиНомерСтроки" id="613">
+												<EditMode>EnterOnInput</EditMode>
+												<ContextMenu name="ТегиНомерСтрокиКонтекстноеМеню" id="614"/>
+												<ExtendedTooltip name="ТегиНомерСтрокиРасширеннаяПодсказка" id="615"/>
+											</LabelField>
+											<InputField name="ТегиТег" id="616">
+												<EditMode>EnterOnInput</EditMode>
+												<ContextMenu name="ТегиТегКонтекстноеМеню" id="617"/>
+												<ExtendedTooltip name="ТегиТегРасширеннаяПодсказка" id="618"/>
+											</InputField>
+										</ChildItems>
+									</Table>
+								</ChildItems>
+							</UsualGroup>
+							<UsualGroup name="ВыгрузкаВМодули" id="521">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выгружать в модуль</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выгрузка в модули</v8:content>
+									</v8:item>
+								</ToolTip>
+								<Group>Vertical</Group>
+								<Behavior>Collapsible</Behavior>
+								<Collapsed>true</Collapsed>
+								<Representation>NormalSeparation</Representation>
+								<ExtendedTooltip name="ВыгрузкаВМодулиРасширеннаяПодсказка" id="522"/>
+								<ChildItems>
+									<UsualGroup name="ГруппаПредопределенныйМодуль" id="557">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа предопределенный модуль</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа предопределенный модуль</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаПредопределенныйМодульРасширеннаяПодсказка" id="558"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_Предопределенный" id="523">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Предопределенный</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">0</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_ПредопределенныйКонтекстноеМеню" id="524"/>
+												<ExtendedTooltip name="ВариантВыгрузки_ПредопределенныйРасширеннаяПодсказка" id="525"/>
+											</RadioButtonField>
+											<LabelDecoration name="ДекорацияОтступ1" id="563">
+												<Width>7</Width>
+												<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="564"/>
+												<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="565"/>
+											</LabelDecoration>
+											<LabelDecoration name="ДекорацияПредопределенныйМодуль" id="529">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<Height>1</Height>
+												<AutoMaxHeight>false</AutoMaxHeight>
+												<HorizontalStretch>true</HorizontalStretch>
+												<TextColor>style:ПоясняющийТекст</TextColor>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Декорация предопределенный модуль</v8:content>
+													</v8:item>
+												</Title>
+												<VerticalAlign>Bottom</VerticalAlign>
+												<ContextMenu name="ДекорацияПредопределенныйМодульКонтекстноеМеню" id="530"/>
+												<ExtendedTooltip name="ДекорацияПредопределенныйМодульРасширеннаяПодсказка" id="531"/>
+											</LabelDecoration>
+										</ChildItems>
+									</UsualGroup>
+									<UsualGroup name="ГруппаПользовательскийМодуль" id="559">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа пользовательский модуль</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа пользовательский модуль</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаПользовательскийМодульРасширеннаяПодсказка" id="560"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_Пользовательский" id="548">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Пользовательский</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">1</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_ПользовательскийКонтекстноеМеню" id="549"/>
+												<ExtendedTooltip name="ВариантВыгрузки_ПользовательскийРасширеннаяПодсказка" id="550"/>
+											</RadioButtonField>
+											<LabelDecoration name="ДекорацияОтступ2" id="566">
+												<Width>8</Width>
+												<ContextMenu name="ДекорацияОтступ2КонтекстноеМеню" id="567"/>
+												<ExtendedTooltip name="ДекорацияОтступ2РасширеннаяПодсказка" id="568"/>
+											</LabelDecoration>
+											<InputField name="ДополнительныйМодуль" id="513">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Пользовательский модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<DropListButton>false</DropListButton>
+												<ChoiceButton>true</ChoiceButton>
+												<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+												<ClearButton>true</ClearButton>
+												<OpenButton>true</OpenButton>
+												<ContextMenu name="ДополнительныйМодульКонтекстноеМеню" id="514"/>
+												<ExtendedTooltip name="ДополнительныйМодульРасширеннаяПодсказка" id="515"/>
+											</InputField>
+										</ChildItems>
+									</UsualGroup>
+									<UsualGroup name="ГруппаМодульМенеджераПравило" id="561">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера правило</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера правило</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаМодульМенеджераПравилоРасширеннаяПодсказка" id="562"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_Менеджера" id="551">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Менеджера (объект правила)</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">2</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_МенеджераКонтекстноеМеню" id="552"/>
+												<ExtendedTooltip name="ВариантВыгрузки_МенеджераРасширеннаяПодсказка" id="553"/>
+											</RadioButtonField>
+											<LabelDecoration name="ДекорацияОтступ3" id="569">
+												<Width>1</Width>
+												<ContextMenu name="ДекорацияОтступ3КонтекстноеМеню" id="570"/>
+												<ExtendedTooltip name="ДекорацияОтступ3РасширеннаяПодсказка" id="571"/>
+											</LabelDecoration>
+											<LabelDecoration name="ДекорацияМодульМенеджера" id="545">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<AutoMaxHeight>false</AutoMaxHeight>
+												<HorizontalStretch>true</HorizontalStretch>
+												<TextColor>style:ПоясняющийТекст</TextColor>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Декорация модуль менеджера</v8:content>
+													</v8:item>
+												</Title>
+												<VerticalAlign>Center</VerticalAlign>
+												<ContextMenu name="ДекорацияМодульМенеджераКонтекстноеМеню" id="546"/>
+												<ExtendedTooltip name="ДекорацияМодульМенеджераРасширеннаяПодсказка" id="547"/>
+											</LabelDecoration>
+										</ChildItems>
+									</UsualGroup>
+									<UsualGroup name="ГруппаМодульМенеджераОбъекта" id="537">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера объекта</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа модуль менеджера объекта</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Group>AlwaysHorizontal</Group>
+										<Behavior>Usual</Behavior>
+										<Representation>None</Representation>
+										<ShowTitle>false</ShowTitle>
+										<ExtendedTooltip name="ГруппаМодульМенеджераОбъектаРасширеннаяПодсказка" id="538"/>
+										<ChildItems>
+											<RadioButtonField name="ВариантВыгрузки_МенеджераОбьекта" id="554">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выгружать в модуль</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<RadioButtonType>RadioButtons</RadioButtonType>
+												<ColumnsCount>1</ColumnsCount>
+												<ChoiceList>
+													<xr:Item>
+														<xr:Presentation/>
+														<xr:CheckState>0</xr:CheckState>
+														<xr:Value xsi:type="FormChoiceListDesTimeValue">
+															<Presentation>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Менеджера (с выбором объекта)</v8:content>
+																</v8:item>
+															</Presentation>
+															<Value xsi:type="xs:decimal">3</Value>
+														</xr:Value>
+													</xr:Item>
+												</ChoiceList>
+												<ContextMenu name="ВариантВыгрузки_МенеджераОбьектаКонтекстноеМеню" id="555"/>
+												<ExtendedTooltip name="ВариантВыгрузки_МенеджераОбьектаРасширеннаяПодсказка" id="556"/>
+											</RadioButtonField>
+											<InputField name="ОбъектКонфигурацииДляВыгрузкиМодуля" id="526">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Объект</v8:content>
+													</v8:item>
+												</Title>
+												<TitleLocation>None</TitleLocation>
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<DropListButton>false</DropListButton>
+												<ChoiceButton>true</ChoiceButton>
+												<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+												<ContextMenu name="ОбъектКонфигурацииДляВыгрузкиМодуляКонтекстноеМеню" id="527"/>
+												<ExtendedTooltip name="ОбъектКонфигурацииДляВыгрузкиМодуляРасширеннаяПодсказка" id="528"/>
+											</InputField>
+										</ChildItems>
+									</UsualGroup>
+								</ChildItems>
+							</UsualGroup>
+							<UsualGroup name="ГруппаПрочее" id="329">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Группа прочее</v8:content>
+									</v8:item>
+								</Title>
+								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
+								<Representation>None</Representation>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
+								<ChildItems>
+									<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
+										<TitleLocation>Right</TitleLocation>
+										<CheckBoxType>Auto</CheckBoxType>
+										<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
+										<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
+									</CheckBoxField>
 									<CheckBoxField name="ОбъектСДвижениями" id="510">
 										<TitleLocation>Right</TitleLocation>
 										<ToolTip>
@@ -1810,94 +3264,22 @@
 									</CheckBoxField>
 								</ChildItems>
 							</UsualGroup>
-							<UsualGroup name="ОбластьПрименения" id="49">
-								<Title>
+							<CheckBoxField name="Отключить" id="161">
+								<TitleLocation>Right</TitleLocation>
+								<ToolTip>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Область применения</v8:content>
+										<v8:content>При установке флага правило не будет выгружаться в модуль менеджера обмена</v8:content>
 									</v8:item>
-								</Title>
-								<Group>Horizontal</Group>
-								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ОбластьПримененияРасширеннаяПодсказка" id="50"/>
-								<ChildItems>
-									<RadioButtonField name="Тумблер_ОбластьПрименения" id="54">
-										<RadioButtonType>Tumbler</RadioButtonType>
-										<ChoiceList>
-											<xr:Item>
-												<xr:Presentation/>
-												<xr:CheckState>0</xr:CheckState>
-												<xr:Value xsi:type="FormChoiceListDesTimeValue">
-													<Presentation>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Для отправки</v8:content>
-														</v8:item>
-													</Presentation>
-													<Value xsi:type="xs:decimal">0</Value>
-												</xr:Value>
-											</xr:Item>
-											<xr:Item>
-												<xr:Presentation/>
-												<xr:CheckState>0</xr:CheckState>
-												<xr:Value xsi:type="FormChoiceListDesTimeValue">
-													<Presentation>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Для получения</v8:content>
-														</v8:item>
-													</Presentation>
-													<Value xsi:type="xs:decimal">1</Value>
-												</xr:Value>
-											</xr:Item>
-											<xr:Item>
-												<xr:Presentation/>
-												<xr:CheckState>0</xr:CheckState>
-												<xr:Value xsi:type="FormChoiceListDesTimeValue">
-													<Presentation>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Для отправки и получения</v8:content>
-														</v8:item>
-													</Presentation>
-													<Value xsi:type="xs:decimal">2</Value>
-												</xr:Value>
-											</xr:Item>
-										</ChoiceList>
-										<ContextMenu name="Тумблер_ОбластьПримененияКонтекстноеМеню" id="55"/>
-										<ExtendedTooltip name="Тумблер_ОбластьПримененияРасширеннаяПодсказка" id="56"/>
-									</RadioButtonField>
-									<CheckBoxField name="ПравилоДляГруппыСправочника" id="155">
-										<TitleLocation>Right</TitleLocation>
-										<CheckBoxType>Auto</CheckBoxType>
-										<ContextMenu name="ПравилоДляГруппыСправочникаКонтекстноеМеню" id="156"/>
-										<ExtendedTooltip name="ПравилоДляГруппыСправочникаРасширеннаяПодсказка" id="157"/>
-									</CheckBoxField>
-								</ChildItems>
-							</UsualGroup>
-							<UsualGroup name="ГруппаПрочее" id="329">
-								<Title>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Группа прочее</v8:content>
-									</v8:item>
-								</Title>
-								<Group>AlwaysHorizontal</Group>
-								<Representation>None</Representation>
-								<ShowTitle>false</ShowTitle>
-								<ExtendedTooltip name="ГруппаПрочееРасширеннаяПодсказка" id="330"/>
-								<ChildItems>
-									<CheckBoxField name="Отключить" id="161">
-										<CheckBoxType>Auto</CheckBoxType>
-										<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
-										<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
-									</CheckBoxField>
-									<InputField name="Порядок" id="331">
-										<ContextMenu name="ПорядокКонтекстноеМеню" id="332"/>
-										<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="333"/>
-									</InputField>
-								</ChildItems>
-							</UsualGroup>
+								</ToolTip>
+								<ToolTipRepresentation>Button</ToolTipRepresentation>
+								<VerticalAlign>Bottom</VerticalAlign>
+								<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+								<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+								<CheckBoxType>Auto</CheckBoxType>
+								<ContextMenu name="ОтключитьКонтекстноеМеню" id="162"/>
+								<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="163"/>
+							</CheckBoxField>
 						</ChildItems>
 					</Page>
 					<Page name="Страница_ПравилаКонвертацииСвойств" id="176">
@@ -1941,6 +3323,7 @@
 								<ShowRoot>true</ShowRoot>
 								<AllowRootChoice>false</AllowRootChoice>
 								<UpdateOnDataChange>Auto</UpdateOnDataChange>
+								<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 								<ContextMenu name="ПравилаКонвертацииСвойствКонтекстноеМеню" id="406"/>
 								<AutoCommandBar name="ПравилаКонвертацииСвойствКоманднаяПанель" id="407">
 									<ChildItems>
@@ -1949,15 +3332,29 @@
 											<CommandName>0</CommandName>
 											<ExtendedTooltip name="ПравилаКонвертацииСвойствНастройкаПКСРасширеннаяПодсказка" id="462"/>
 										</Button>
-										<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+										<ButtonGroup name="ПравилаКонвертацииСвойствГруппа1" id="574">
+											<Representation>Compact</Representation>
+											<ExtendedTooltip name="ПравилаКонвертацииСвойствГруппа1РасширеннаяПодсказка" id="575"/>
+											<ChildItems>
+												<Button name="ПравилаКонвертацииСвойствПереместитьВверх" id="476">
+													<Type>CommandBarButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>0</CommandName>
+													<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
+												</Button>
+												<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
+													<Type>CommandBarButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>0</CommandName>
+													<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+										<Button name="ПравилаКонвертацииСвойствПометитьКакПроверено" id="572">
 											<Type>CommandBarButton</Type>
 											<CommandName>0</CommandName>
-											<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВверхРасширеннаяПодсказка" id="477"/>
-										</Button>
-										<Button name="ПравилаКонвертацииСвойствПереместитьВниз" id="474">
-											<Type>CommandBarButton</Type>
-											<CommandName>0</CommandName>
-											<ExtendedTooltip name="ПравилаКонвертацииСвойствПереместитьВнизРасширеннаяПодсказка" id="475"/>
+											<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+											<ExtendedTooltip name="ПравилаКонвертацииСвойствПометитьКакПровереноРасширеннаяПодсказка" id="573"/>
 										</Button>
 									</ChildItems>
 								</AutoCommandBar>
@@ -2019,6 +3416,17 @@
 										<Group>Horizontal</Group>
 										<ExtendedTooltip name="ПравилаКонвертацииСвойствXMLРасширеннаяПодсказка" id="455"/>
 										<ChildItems>
+											<CheckBoxField name="ПравилаКонвертацииСвойствПоиск" id="634">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Поле поиска</v8:content>
+													</v8:item>
+												</Title>
+												<CheckBoxType>Auto</CheckBoxType>
+												<ContextMenu name="ПравилаКонвертацииСвойствПоискКонтекстноеМеню" id="635"/>
+												<ExtendedTooltip name="ПравилаКонвертацииСвойствПоискРасширеннаяПодсказка" id="636"/>
+											</CheckBoxField>
 											<CheckBoxField name="ПравилаКонвертацииСвойствПолучитьИзВходящихДанных" id="448">
 												<Title>
 													<v8:item>
@@ -2096,47 +3504,83 @@
 										<ContextMenu name="ПравилаКонвертацииСвойствТипСвойстваФорматаКонтекстноеМеню" id="434"/>
 										<ExtendedTooltip name="ПравилаКонвертацииСвойствТипСвойстваФорматаРасширеннаяПодсказка" id="435"/>
 									</LabelField>
+									<InputField name="ПравилаКонвертацииСвойствУсловиеПрименения" id="631">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Условие</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Есть условие инициализации</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+										<ContextMenu name="ПравилаКонвертацииСвойствУсловиеПримененияКонтекстноеМеню" id="632"/>
+										<ExtendedTooltip name="ПравилаКонвертацииСвойствУсловиеПримененияРасширеннаяПодсказка" id="633"/>
+									</InputField>
 								</ChildItems>
 							</Table>
 						</ChildItems>
 					</Page>
-					<Page name="Страница_ОбработчикиXDTO" id="257">
+					<Page name="Страница_ОбработчикиСобытийXDTO" id="787">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Обработчики событий</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="Страница_ОбработчикиXDTOРасширеннаяПодсказка" id="258"/>
+						<Group>AlwaysHorizontal</Group>
+						<ExtendedTooltip name="Страница_ОбработчикиСобытийXDTOРасширеннаяПодсказка" id="788"/>
 						<ChildItems>
-							<Pages name="ОбработчикиXDTO" id="259">
+							<Pages name="Страница_МоделиСобытийXDTO" id="791">
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Обработчики XDTO</v8:content>
+										<v8:content>Страница модели событий XDTO</v8:content>
 									</v8:item>
 								</Title>
-								<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
-								<ExtendedTooltip name="ОбработчикиXDTOРасширеннаяПодсказка" id="260"/>
+								<ExtendedTooltip name="Страница_МоделиСобытийXDTOРасширеннаяПодсказка" id="792"/>
 								<ChildItems>
-									<Page name="Страница_ПриОтправке" id="35">
+									<Page name="Страница_ПакетныеСобытияXDTO" id="795">
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>При отправке</v8:content>
+												<v8:content>Пакетные события</v8:content>
 											</v8:item>
 										</Title>
-										<ExtendedTooltip name="Страница_ПриОтправкеРасширеннаяПодсказка" id="36"/>
+										<ExtendedTooltip name="Страница_ПакетныеСобытияXDTOРасширеннаяПодсказка" id="796"/>
 										<ChildItems>
-											<InputField name="ИмяОбработчикаПриОтправке" id="65">
-												<ToolTipRepresentation>Button</ToolTipRepresentation>
-												<AutoMaxWidth>false</AutoMaxWidth>
-												<ContextMenu name="ИмяОбработчикаПриОтправкеКонтекстноеМеню" id="66"/>
-												<ExtendedTooltip name="ИмяОбработчикаПриОтправкеРасширеннаяПодсказка" id="67">
-													<Title formatted="true">
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+											<Pages name="Страницы_СобытияПакетнойМоделиXDTO" id="815">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Страницы события пакетной модели XDTO</v8:content>
+													</v8:item>
+												</Title>
+												<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+												<ExtendedTooltip name="Страницы_СобытияПакетнойМоделиXDTOРасширеннаяПодсказка" id="816"/>
+												<ChildItems>
+													<Page name="Страница_ПакетноеСобытиеПриОтправке" id="711">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При отправке</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ПакетноеСобытиеПриОтправкеРасширеннаяПодсказка" id="712"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаПакетноеСобытиеПриОтправке" id="713">
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПриОтправкеКонтекстноеМеню" id="714"/>
+																<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПриОтправкеРасширеннаяПодсказка" id="715">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
@@ -2163,44 +3607,122 @@
 &lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации логики конвертации данных, содержащихся в объекте информационной базы, в описание объекта XDTO.
 </v8:content>
-														</v8:item>
-													</Title>
-												</ExtendedTooltip>
-											</InputField>
-											<TextDocumentField name="АлгоритмПриОтправкеДанных" id="19">
-												<TitleLocation>None</TitleLocation>
-												<ToolTip>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>ПриОтправкеДанных(Источник, Приемник, ТипПриемника, ВерсияФормата)
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмПакетноеСобытиеПриОтправкеДанных" id="716">
+																<TitleLocation>None</TitleLocation>
+																<ToolTip>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>ПриОтправкеДанных(Источник, Приемник, ТипПриемника, ВерсияФормата)
 Этот обработчик используется для заполнения полей приемника по данным источника и данным информационной базы в случаях, когда автоматическое заполнение полей приемника невозможно.</v8:content>
-													</v8:item>
-												</ToolTip>
-												<HorizontalAlign>Left</HorizontalAlign>
-												<EditMode>EnterOnInput</EditMode>
-												<ContextMenu name="АлгоритмПриОтправкеДанныхКонтекстноеМеню" id="20"/>
-												<ExtendedTooltip name="АлгоритмПриОтправкеДанныхРасширеннаяПодсказка" id="21"/>
-											</TextDocumentField>
-										</ChildItems>
-									</Page>
-									<Page name="Страница_ПриКонвертацииДанныхXDTO" id="37">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>При конвертации данных XDTO</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="Страница_ПриКонвертацииДанныхXDTOРасширеннаяПодсказка" id="38"/>
-										<ChildItems>
-											<InputField name="ИмяОбработчикаПередПолучением" id="62">
-												<ToolTipRepresentation>Button</ToolTipRepresentation>
-												<AutoMaxWidth>false</AutoMaxWidth>
-												<ContextMenu name="ИмяОбработчикаПередПолучениемКонтекстноеМеню" id="63"/>
-												<ExtendedTooltip name="ИмяОбработчикаПередПолучениемРасширеннаяПодсказка" id="64">
-													<Title formatted="true">
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+																	</v8:item>
+																</ToolTip>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмПакетноеСобытиеПриОтправкеДанныхКонтекстноеМеню" id="717"/>
+																<ExtendedTooltip name="АлгоритмПакетноеСобытиеПриОтправкеДанныхРасширеннаяПодсказка" id="718"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="841">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При получении запроса выгрузки объекта</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="842"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="843">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Имя обработчика</v8:content>
+																	</v8:item>
+																</Title>
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="844"/>
+																<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="845">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;При&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;п&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;олучении&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;з&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;апроса&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;ыгрузки&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;о&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;бъекта"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;b&gt;
+&lt;/&gt;&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках
+выполнения текущего сеанса обмена.
+
+&lt;b&gt;ПравилоКонвертации&lt;/&gt;
+Тип: СтрокаТабличнойЧасти
+Содержит правило конвертации объекта.
+
+&lt;b&gt;ОписаниеСсылкиЗапроса&lt;/&gt;
+Тип: Структура
+Содержит структуру описания недостающей ссылки в сообщениях о проблемах конвертации.
+
+&lt;b&gt;ПодобраннаяОбъектнаяСсылка&lt;/&gt;
+Тип: Неопределено, СправочникСсылка, ДокументСсылка
+Содержит подобранную ссылку к регистрации.
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для подбора и регистрации к полной выгрузке в базу корреспондента недостающих ссылок.</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<LabelDecoration name="ДекорацияПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="852">
+																<Visible>false</Visible>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<Title formatted="false">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Данное событие не поддерживается</v8:content>
+																	</v8:item>
+																</Title>
+																<ToolTip>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Формат конвертации должен поддерживать "запрос на выгрузку"
+Версия формата менеджера обмена - 3</v8:content>
+																	</v8:item>
+																</ToolTip>
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<Hyperlink>true</Hyperlink>
+																<ContextMenu name="ДекорацияПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="853"/>
+																<ExtendedTooltip name="ДекорацияПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="854"/>
+															</LabelDecoration>
+															<TextDocumentField name="АлгоритмПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="846">
+																<TitleLocation>None</TitleLocation>
+																<ContextMenu name="АлгоритмПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="847"/>
+																<ExtendedTooltip name="АлгоритмПакетноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="848"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ПакетноеСобытиеПриКонвертацииДанныхXDTO" id="735">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При конвертации данных XDTO</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ПакетноеСобытиеПриКонвертацииДанныхXDTOРасширеннаяПодсказка" id="736"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаПакетноеСобытиеПередПолучением" id="737">
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПередПолучениемКонтекстноеМеню" id="738"/>
+																<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПередПолучениемРасширеннаяПодсказка" id="739">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
@@ -2218,37 +3740,37 @@
 
 &lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
 Обработчик предназначен для реализации произвольной логики конвертации данных XDTO.</v8:content>
-														</v8:item>
-													</Title>
-												</ExtendedTooltip>
-											</InputField>
-											<TextDocumentField name="АлгоритмПередПолучениемДанных" id="22">
-												<TitleLocation>None</TitleLocation>
-												<HorizontalAlign>Left</HorizontalAlign>
-												<EditMode>EnterOnInput</EditMode>
-												<ContextMenu name="АлгоритмПередПолучениемДанныхКонтекстноеМеню" id="23"/>
-												<ExtendedTooltip name="АлгоритмПередПолучениемДанныхРасширеннаяПодсказка" id="24"/>
-											</TextDocumentField>
-										</ChildItems>
-									</Page>
-									<Page name="Страница_ПередЗаписьюПолученныхДанных" id="39">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Перед записью полученных данных</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="Страница_ПередЗаписьюПолученныхДанныхРасширеннаяПодсказка" id="40"/>
-										<ChildItems>
-											<InputField name="ИмяОбработчикаПриПолучении" id="68">
-												<ToolTipRepresentation>Button</ToolTipRepresentation>
-												<AutoMaxWidth>false</AutoMaxWidth>
-												<ContextMenu name="ИмяОбработчикаПриПолученииКонтекстноеМеню" id="69"/>
-												<ExtendedTooltip name="ИмяОбработчикаПриПолученииРасширеннаяПодсказка" id="70">
-													<Title formatted="true">
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмПакетноеСобытиеПередПолучениемДанных" id="740">
+																<TitleLocation>None</TitleLocation>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмПакетноеСобытиеПередПолучениемДанныхКонтекстноеМеню" id="741"/>
+																<ExtendedTooltip name="АлгоритмПакетноеСобытиеПередПолучениемДанныхРасширеннаяПодсказка" id="742"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ПакетноеСобытиеПередЗаписьюПолученныхДанных" id="743">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Перед записью полученных данных</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ПакетноеСобытиеПередЗаписьюПолученныхДанныхРасширеннаяПодсказка" id="744"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаПакетноеСобытиеПриПолучении" id="745">
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПриПолученииКонтекстноеМеню" id="746"/>
+																<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПриПолученииРасширеннаяПодсказка" id="747">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
 
@@ -2278,55 +3800,82 @@
 &lt;b&gt;&lt;fontsize 10&gt;См. также&lt;/&gt;&lt;/&gt;
 ЗаполнитьТабличнуюЧастьОбъектаНачальнымиДанными()
 </v8:content>
-														</v8:item>
-													</Title>
-												</ExtendedTooltip>
-											</InputField>
-											<TextDocumentField name="АлгоритмПриПолученииДанных" id="25">
-												<TitleLocation>None</TitleLocation>
-												<HorizontalAlign>Left</HorizontalAlign>
-												<EditMode>EnterOnInput</EditMode>
-												<ContextMenu name="АлгоритмПриПолученииДанныхКонтекстноеМеню" id="26"/>
-												<ExtendedTooltip name="АлгоритмПриПолученииДанныхРасширеннаяПодсказка" id="27"/>
-											</TextDocumentField>
-										</ChildItems>
-									</Page>
-									<Page name="Страница_ПослеЗагрузкиВсехДанных" id="245">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>После загрузки всех данных</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="Страница_ПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="246"/>
-										<ChildItems>
-											<UsualGroup name="ПослеЗагрузкиВсехДанныхГоризонтальная" id="250">
-												<Title>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>После загрузки всех данных горизонтальная</v8:content>
-													</v8:item>
-												</Title>
-												<Group>Horizontal</Group>
-												<ShowTitle>false</ShowTitle>
-												<ExtendedTooltip name="ПослеЗагрузкиВсехДанныхГоризонтальнаяРасширеннаяПодсказка" id="251"/>
-												<ChildItems>
-													<InputField name="АлгоритмПослеЗагрузкиВсехДанных" id="239">
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмПакетноеСобытиеПриПолученииДанных" id="748">
+																<TitleLocation>None</TitleLocation>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмПакетноеСобытиеПриПолученииДанныхКонтекстноеМеню" id="749"/>
+																<ExtendedTooltip name="АлгоритмПакетноеСобытиеПриПолученииДанныхРасширеннаяПодсказка" id="750"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ПакетныеСобытияПослеЗагрузкиВсехДанных" id="759">
 														<Title>
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Алгоритм</v8:content>
+																<v8:content>После загрузки всех данных</v8:content>
 															</v8:item>
 														</Title>
-														<ToolTipRepresentation>Button</ToolTipRepresentation>
-														<ChoiceButton>true</ChoiceButton>
-														<OpenButton>true</OpenButton>
-														<ContextMenu name="АлгоритмПослеЗагрузкиВсехДанныхКонтекстноеМеню" id="240"/>
-														<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="241">
-															<Title formatted="true">
-																<v8:item>
-																	<v8:lang>ru</v8:lang>
-																	<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
+														<ExtendedTooltip name="Страница_ПакетныеСобытияПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="760"/>
+														<ChildItems>
+															<CheckBoxField name="ИспользоватьВстроенныйОбработчикПакетноеСобытиеПослеЗагрузки" id="761">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Вариант обработчика</v8:content>
+																	</v8:item>
+																</Title>
+																<ToolTip>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>При использовании отдельного алгоритма можно использовать одинаковые алгоритмы в разных правилах. Встроенный обработчик хранится в конкретном ПКО</v8:content>
+																	</v8:item>
+																</ToolTip>
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<CheckBoxType>Tumbler</CheckBoxType>
+																<EditFormat>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>БЛ='Встроенный обработчик'; БИ='Внешний алгоритм'</v8:content>
+																	</v8:item>
+																</EditFormat>
+																<ContextMenu name="ИспользоватьВстроенныйОбработчикПакетноеСобытиеПослеЗагрузкиКонтекстноеМеню" id="762"/>
+																<ExtendedTooltip name="ИспользоватьВстроенныйОбработчикПакетноеСобытиеПослеЗагрузкиРасширеннаяПодсказка" id="763"/>
+															</CheckBoxField>
+															<UsualGroup name="ПакетноеСобытиеПослеЗагрузкиВсехДанныхГоризонтальная" id="764">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>После загрузки всех данных горизонтальная</v8:content>
+																	</v8:item>
+																</Title>
+																<Group>Horizontal</Group>
+																<Behavior>Usual</Behavior>
+																<ShowTitle>false</ShowTitle>
+																<ExtendedTooltip name="ПакетноеСобытиеПослеЗагрузкиВсехДанныхГоризонтальнаяРасширеннаяПодсказка" id="765"/>
+																<ChildItems>
+																	<InputField name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанных" id="766">
+																		<Title>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Алгоритм</v8:content>
+																			</v8:item>
+																		</Title>
+																		<ToolTipRepresentation>Button</ToolTipRepresentation>
+																		<DropListButton>true</DropListButton>
+																		<ChoiceButton>false</ChoiceButton>
+																		<OpenButton>true</OpenButton>
+																		<ListChoiceMode>true</ListChoiceMode>
+																		<ContextMenu name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхКонтекстноеМеню" id="767"/>
+																		<ExtendedTooltip name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="768">
+																			<Title formatted="true">
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "После загрузки всех данных"&lt;/&gt;&lt;/&gt;
 
 &lt;b&gt;&lt;fontsize 10&gt;Параметры обработчика:&lt;/&gt;&lt;/&gt;
 
@@ -2348,31 +3897,424 @@
 Выполнение обработчика происходит на этапе, когда загрузка данных в информационную базу завершена.
 
 </v8:content>
-																</v8:item>
-															</Title>
-														</ExtendedTooltip>
-													</InputField>
-													<Button name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанных" id="252">
-														<Type>Hyperlink</Type>
-														<CommandName>0</CommandName>
-														<ExtendedTooltip name="ПоказатьТекстАлгоритмаПослеЗагрузкиВсехДанныхРасширеннаяПодсказка" id="253"/>
-													</Button>
+																				</v8:item>
+																			</Title>
+																		</ExtendedTooltip>
+																	</InputField>
+																</ChildItems>
+															</UsualGroup>
+															<TextDocumentField name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхТекст" id="769">
+																<ReadOnly>true</ReadOnly>
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Просмотр алгоритма (редактирование осуществляется из формы алгоритма)</v8:content>
+																	</v8:item>
+																</Title>
+																<TitleLocation>Top</TitleLocation>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхТекстКонтекстноеМеню" id="770"/>
+																<ExtendedTooltip name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхТекстРасширеннаяПодсказка" id="771"/>
+															</TextDocumentField>
+															<InputField name="ИмяОбработчикаПакетноеСобытиеПослеЗагрузкиПКО" id="772">
+																<ReadOnly>true</ReadOnly>
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Имя обработчика</v8:content>
+																	</v8:item>
+																</Title>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+																<ContextMenu name="ИмяОбработчикаПакетноеСобытиеПослеЗагрузкиПКОКонтекстноеМеню" id="773"/>
+																<ExtendedTooltip name="ИмяОбработчикаПакетноеСобытиеПослеЗагрузкиПКОРасширеннаяПодсказка" id="774"/>
+															</InputField>
+															<TextDocumentField name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхВстроенный" id="775">
+																<TitleLocation>None</TitleLocation>
+																<ContextMenu name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхВстроенныйКонтекстноеМеню" id="776"/>
+																<ExtendedTooltip name="АлгоритмПакетноеСобытиеПослеЗагрузкиВсехДанныхВстроенныйРасширеннаяПодсказка" id="777"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
 												</ChildItems>
-											</UsualGroup>
-											<TextDocumentField name="АлгоритмПослеЗагрузкиВсехДанныхТекст" id="247">
-												<ReadOnly>true</ReadOnly>
+											</Pages>
+										</ChildItems>
+									</Page>
+									<Page name="Страница_ОбъектныеСобытия" id="793">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Объектные события</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="Страница_ОбъектныеСобытияРасширеннаяПодсказка" id="794"/>
+										<ChildItems>
+											<Pages name="Страницы_СобытияОбъектнойМоделиXDTO" id="813">
 												<Title>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Просмотр алгоритма (редактирование осуществляется из формы алгоритма)</v8:content>
+														<v8:content>Страницы события объектной модели XDTO</v8:content>
 													</v8:item>
 												</Title>
-												<TitleLocation>Top</TitleLocation>
-												<HorizontalAlign>Left</HorizontalAlign>
-												<EditMode>EnterOnInput</EditMode>
-												<ContextMenu name="АлгоритмПослеЗагрузкиВсехДанныхТекстКонтекстноеМеню" id="248"/>
-												<ExtendedTooltip name="АлгоритмПослеЗагрузкиВсехДанныхТекстРасширеннаяПодсказка" id="249"/>
-											</TextDocumentField>
+												<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+												<ExtendedTooltip name="Страницы_СобытияОбъектнойМоделиXDTOРасширеннаяПодсказка" id="814"/>
+												<ChildItems>
+													<Page name="Страница_ОбъектноеСобытиеПриОтправке" id="817">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При отправке</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриОтправкеРасширеннаяПодсказка" id="818"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаОбъектноеСобытиеПриОтправке" id="819">
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриОтправкеКонтекстноеМеню" id="820"/>
+																<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриОтправкеРасширеннаяПодсказка" id="821">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При отправке&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Обрабатываемый объект информационной базы.
+
+&lt;b&gt;ДанныеXDTO&lt;/&gt;
+Тип: Структура
+Предназначен для доступа к данным объекта XDTO.
+
+&lt;b&gt;ПараметрыКонвертации&lt;/&gt;
+Тип: Структура
+Содержит параметры, инициализированные в рамках выполнения ПОД.
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила обмена,  инициализированные в рамках выполнения сеанса обмена.
+
+&lt;b&gt;СтекВыгрузки&lt;/&gt;
+Тип: Массив.
+Содержит ссылки на выгружаемые объекты с учетом вложенности..
+
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
+Обработчик предназначен для реализации логики конвертации данных, содержащихся в объекте информационной базы, в описание объекта XDTO.
+</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмОбъектноеСобытиеПриОтправкеДанных" id="822">
+																<TitleLocation>None</TitleLocation>
+																<ToolTip>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>ПриОтправкеДанных(Источник, Приемник, ТипПриемника, ВерсияФормата)
+Этот обработчик используется для заполнения полей приемника по данным источника и данным информационной базы в случаях, когда автоматическое заполнение полей приемника невозможно.</v8:content>
+																	</v8:item>
+																</ToolTip>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмОбъектноеСобытиеПриОтправкеДанныхКонтекстноеМеню" id="823"/>
+																<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриОтправкеДанныхРасширеннаяПодсказка" id="824"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="719">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При получении запроса выгрузки объекта</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="720"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="721">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Имя обработчика</v8:content>
+																	</v8:item>
+																</Title>
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="722"/>
+																<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="723">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;"&lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;При&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;п&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;олучении&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;з&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;апроса&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;ыгрузки&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;о&lt;/&gt;&lt;font DefaultFont--12----12----12----12--&gt;&lt;b&gt;бъекта"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;b&gt;
+&lt;/&gt;&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках
+выполнения текущего сеанса обмена.
+
+&lt;b&gt;ПравилоКонвертации&lt;/&gt;
+Тип: СтрокаТабличнойЧасти
+Содержит правило конвертации объекта.
+
+&lt;b&gt;ОписаниеСсылкиЗапроса&lt;/&gt;
+Тип: Структура
+Содержит структуру описания недостающей ссылки в сообщениях о проблемах конвертации.
+
+&lt;b&gt;ПодобраннаяОбъектнаяСсылка&lt;/&gt;
+Тип: Неопределено, СправочникСсылка, ДокументСсылка
+Содержит подобранную ссылку к регистрации.
+
+&lt;font DefaultFont--10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для подбора и регистрации к полной выгрузке в базу корреспондента недостающих ссылок.</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъекта" id="724">
+																<TitleLocation>None</TitleLocation>
+																<ContextMenu name="АлгоритмОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаКонтекстноеМеню" id="725"/>
+																<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриПолученииЗапросаВыгрузкиОбъектаРасширеннаяПодсказка" id="726"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ОбъектноеСобытиеПриУдаленииОбъектаИБ" id="727">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При удалении объекта ИБ</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриУдаленииОбъектаИБРасширеннаяПодсказка" id="728"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаОбъектноеСобытиеПриУдаленииОбъектаИБ" id="729">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Имя обработчика</v8:content>
+																	</v8:item>
+																</Title>
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриУдаленииОбъектаИБКонтекстноеМеню" id="730"/>
+																<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриУдаленииОбъектаИБРасширеннаяПодсказка" id="731">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;"При&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;у&lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;далении&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;о&lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;бъекта&lt;/&gt;&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;font DefaultFont--12----12----12----12----12----12----12--&gt;&lt;b&gt;ИБ"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10----10----10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках выполнения текущего сеанса обмена.
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Объект, предназначенный к удалению или установки пометки удаления.
+
+&lt;b&gt;УдалитьНепосредственно&lt;/&gt;
+Тип: Булево
+Если значение параметра «Истина» - объект будет удален непосредственно, 
+в противном случае установится пометка удаления.
+
+&lt;b&gt;СтандартнаяОбработка&lt;/&gt;
+Тип: Булево
+Если значение параметра «Истина» - будет использован стандартный механизм
+удаления объекта, в противном случае удаление ограничено только директивами
+события «При удалении объекта ИБ».
+
+&lt;font DefaultFont--10----10----10----10----10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для описания логики конвертации удаления объекта.</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмОбъектноеСобытиеПриУдаленииОбъектаИБ" id="732">
+																<TitleLocation>None</TitleLocation>
+																<ContextMenu name="АлгоритмОбъектноеСобытиеПриУдаленииОбъектаИБКонтекстноеМеню" id="733"/>
+																<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриУдаленииОбъектаИБРасширеннаяПодсказка" id="734"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ОбъектноеСобытиеПриКонвертацииДанныхXDTO" id="825">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>При конвертации данных XDTO</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ОбъектноеСобытиеПриКонвертацииДанныхXDTOРасширеннаяПодсказка" id="826"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаОбъектноеСобытиеПередПолучением" id="827">
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПередПолучениемКонтекстноеМеню" id="828"/>
+																<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПередПолучениемРасширеннаяПодсказка" id="829">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "При конвертации данных XDTO&lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 12&gt;"&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;ДанныеXDTO&lt;/&gt;
+Тип: Структура
+Свойства объекта XDTO, прошедшие предварительную обработку для упрощения доступа к ним.
+
+&lt;b&gt;ПолученныеДанные&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Объект информационной базы, сформированный путем конвертации данных XDTO. Не записан в информационную базу.
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила обмена, инициализированные в рамках выполнения текущего сеанса обмена.
+
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
+Обработчик предназначен для реализации произвольной логики конвертации данных XDTO.</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмОбъектноеСобытиеПередПолучениемДанных" id="830">
+																<TitleLocation>None</TitleLocation>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмОбъектноеСобытиеПередПолучениемДанныхКонтекстноеМеню" id="831"/>
+																<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПередПолучениемДанныхРасширеннаяПодсказка" id="832"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ОбъектноеСобытиеПередЗаписьюПолученныхДанных" id="833">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Перед записью полученных данных</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ОбъектноеСобытиеПередЗаписьюПолученныхДанныхРасширеннаяПодсказка" id="834"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаОбъектноеСобытиеПриПолучении" id="835">
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПриПолученииКонтекстноеМеню" id="836"/>
+																<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПриПолученииРасширеннаяПодсказка" id="837">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Обработчик "Перед записью полученных данных"&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;&lt;fontsize 10&gt;Параметры:&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;ПолученныеДанные&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Элемент данных, сформированный путем конвертации данных XDTO.
+Записывается в случае, если эти данные являются для информационной базы новыми (параметр ДанныеИБ содержит значение Неопределено).
+В противном случае полученные данные замещают собой данные ИБ (все свойства из ПолученныеДанные переносятся в ДанныеИБ).
+Если стандартное замещение данных ИБ полученными данными не требуется, следует прописать свою логику переноса, после чего установить параметру ПолученныеДанные значение Неопределено
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: СправочникОбъект, ДокументОбъект
+Элемент данных информационной базы, соответствующие полученным данным. Если соответствующие данные не найдены, содержит Неопределено.
+
+&lt;b&gt;Конвертация свойств&lt;/&gt;
+Тип: Таблица значений
+Содержит правила конвертации свойств текущего объекта, инициализированные в рамках выполнения сеанса обмена.
+
+&lt;b&gt;Компоненты обмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила обмена,  инициализированные в рамках выполнения сеанса обмена..
+
+&lt;b&gt;&lt;fontsize 10&gt;Описание:&lt;/&gt;&lt;/&gt;
+Обработчик предназначен для реализации дополнительной логики, которую необходимо выполнить перед записью объекта в информационную базу.
+Например, в этом обработчике указывается, нужно ли загрузить изменения в существующие данные ИБ, либо нужно загрузить как новые данные.
+
+&lt;b&gt;&lt;fontsize 10&gt;См. также&lt;/&gt;&lt;/&gt;
+ЗаполнитьТабличнуюЧастьОбъектаНачальнымиДанными()
+</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмОбъектноеСобытиеПриПолученииДанных" id="838">
+																<TitleLocation>None</TitleLocation>
+																<HorizontalAlign>Left</HorizontalAlign>
+																<EditMode>EnterOnInput</EditMode>
+																<ContextMenu name="АлгоритмОбъектноеСобытиеПриПолученииДанныхКонтекстноеМеню" id="839"/>
+																<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПриПолученииДанныхРасширеннаяПодсказка" id="840"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+													<Page name="Страница_ОбъектноеСобытиеПослеКонвертацииОбъекта" id="751">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>После конвертации объекта</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="Страница_ОбъектноеСобытиеПослеКонвертацииОбъектаРасширеннаяПодсказка" id="752"/>
+														<ChildItems>
+															<InputField name="ИмяОбработчикаОбъектноеСобытиеПослеКонвертацииОбъекта" id="753">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Имя обработчика</v8:content>
+																	</v8:item>
+																</Title>
+																<ToolTipRepresentation>Button</ToolTipRepresentation>
+																<AutoMaxWidth>false</AutoMaxWidth>
+																<ContextMenu name="ИмяОбработчикаОбъектноеСобытиеПослеКонвертацииОбъектаКонтекстноеМеню" id="754"/>
+																<ExtendedTooltip name="ИмяОбработчикаОбъектноеСобытиеПослеКонвертацииОбъектаРасширеннаяПодсказка" id="755">
+																	<Title formatted="true">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>&lt;font DefaultFont--12----12--&gt;&lt;b&gt;Обработчик &lt;/&gt;&lt;/&gt;&lt;font DefaultFont--12----12--&gt;&lt;b&gt;"После конвертации объекта"&lt;/&gt;&lt;/&gt;
+
+&lt;font DefaultFont--10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Параметры:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+
+&lt;b&gt;КомпонентыОбмена&lt;/&gt;
+Тип: Структура
+Содержит параметры и правила, инициализированные в рамках
+выполнения текущего сеанса обмена.
+
+&lt;b&gt;ПравилоКонвертации&lt;/&gt;
+Тип: СтрокаТабличнойЧасти
+Содержит правило конвертации объекта.
+
+&lt;b&gt;ДанныеИБ&lt;/&gt;
+Тип: Неопределено,
+ДокументОбъект, СправочникОбъект, ПланВидовХарактеристикОбъект, ПланСчетовОбъект,
+ПланВидовРасчетаОбъект, БизнесПроцессОбъект, ЗадачаОбъект, РегистрСведенийНаборЗаписей,
+РегистрНакопленияНаборЗаписей, РегистрБухгалтерииНаборЗаписей, РегистрРасчетаНаборЗаписей
+ПланВидовРасчетаОбъект, БизнесПроцессОбъект,ЗадачаОбъект, РегистрСведенийНаборЗаписей,
+РегистрНакопленияНаборЗаписей, РегистрБухгалтерииНаборЗаписей, РегистрРасчетаНаборЗаписей
+
+Содержит объект информационной базы, найденный при идентификации загружаемых данных.
+Если соответствующий объект не найден, ДанныеИБ = Неопределено.
+
+&lt;b&gt;ЗаписьДанныхВыполнена&lt;/&gt;
+Тип: Булево
+Если значение параметра «Истина» - ДанныеИБ были проведены (записаны или сохранены), 
+в противном случае не записаны.
+
+&lt;font DefaultFont--10----10--&gt;&lt;fontsize 10&gt;&lt;b&gt;Описание:&lt;/&gt;&lt;/&gt;&lt;/&gt;
+Событие предназначено для описания логики обработки после конвертации объекта.</v8:content>
+																		</v8:item>
+																	</Title>
+																</ExtendedTooltip>
+															</InputField>
+															<TextDocumentField name="АлгоритмОбъектноеСобытиеПослеКонвертацииОбъекта" id="756">
+																<TitleLocation>None</TitleLocation>
+																<ContextMenu name="АлгоритмОбъектноеСобытиеПослеКонвертацииОбъектаКонтекстноеМеню" id="757"/>
+																<ExtendedTooltip name="АлгоритмОбъектноеСобытиеПослеКонвертацииОбъектаРасширеннаяПодсказка" id="758"/>
+															</TextDocumentField>
+														</ChildItems>
+													</Page>
+												</ChildItems>
+											</Pages>
 										</ChildItems>
 									</Page>
 								</ChildItems>
@@ -2853,6 +4795,7 @@
 									</v8:item>
 								</Title>
 								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
 								<ExtendedTooltip name="Страница_Идентификация_ВертикальнаяГруппа1РасширеннаяПодсказка" id="105"/>
 								<ChildItems>
 									<Button name="ЗадатьПорядокПолейПоиска" id="89">
@@ -2860,10 +4803,22 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="ЗадатьПорядокПолейПоискаРасширеннаяПодсказка" id="90"/>
 									</Button>
+									<LabelDecoration name="ПредупреждениеЗачемПоля" id="628">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<TextColor>style:ПоясняющийТекст</TextColor>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>При идентификации по УИД поля поиска необходимы для интерактивного сопоставления данных</v8:content>
+											</v8:item>
+										</Title>
+										<ContextMenu name="ПредупреждениеЗачемПоляКонтекстноеМеню" id="629"/>
+										<ExtendedTooltip name="ПредупреждениеЗачемПоляРасширеннаяПодсказка" id="630"/>
+									</LabelDecoration>
 									<LabelDecoration name="Предупреждение_МногоПолей" id="507">
 										<AutoMaxWidth>false</AutoMaxWidth>
 										<HorizontalStretch>true</HorizontalStretch>
-										<TextColor>style:SpecialTextColor</TextColor>
+										<TextColor>style:ПоясняющийТекст</TextColor>
 										<Title formatted="false">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
@@ -2881,6 +4836,7 @@
 											</v8:item>
 										</Title>
 										<Group>Horizontal</Group>
+										<Behavior>Usual</Behavior>
 										<ShowTitle>false</ShowTitle>
 										<ExtendedTooltip name="Страница_Идентификация_ГоризонтальнаяГруппа1РасширеннаяПодсказка" id="149"/>
 										<ChildItems>
@@ -3016,6 +4972,7 @@
 									</v8:item>
 								</Title>
 								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
 								<ExtendedTooltip name="ГруппаЗагрузкаРасширеннаяПодсказка" id="337"/>
 								<ChildItems>
 									<RadioButtonField name="ВариантИдентификацииXML" id="341">
@@ -3123,6 +5080,7 @@
 									</v8:item>
 								</Title>
 								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
 								<ExtendedTooltip name="ГруппаВыгрузкаРасширеннаяПодсказка" id="357"/>
 								<ChildItems>
 									<CheckBoxField name="НеВыгружатьОбъектыСвойствПоСсылкам" id="358">
@@ -3165,6 +5123,7 @@
 									</v8:item>
 								</Title>
 								<Group>Vertical</Group>
+								<Behavior>Usual</Behavior>
 								<ExtendedTooltip name="ОнЛайнОбменРасширеннаяПодсказка" id="368"/>
 								<ChildItems>
 									<CheckBoxField name="ВыгружатьОбъектТолькоПриНаличииНаНегоСсылки" id="369">
